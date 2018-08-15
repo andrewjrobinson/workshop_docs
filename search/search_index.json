@@ -2,18 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "LSCC Documentation\n\n\nContents\n\n\n\n\nTutorials and Protocols", 
+            "text": "Bioinformatics Workshops\n\n\n\n\nIntro to Unix\n\n\nIntro to HPC", 
             "title": "Home"
         }, 
         {
-            "location": "/#lscc-documentation", 
-            "text": "", 
-            "title": "LSCC Documentation"
-        }, 
-        {
-            "location": "/#contents", 
-            "text": "Tutorials and Protocols", 
-            "title": "Contents"
+            "location": "/#bioinformatics-workshops", 
+            "text": "Intro to Unix  Intro to HPC", 
+            "title": "Bioinformatics Workshops"
         }, 
         {
             "location": "/tutorials/hpc/", 
