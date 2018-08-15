@@ -1,0 +1,3809 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Introduction to Unix - Bioinformatics Documentation</title>
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://www.latrobe.edu.au/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://www.latrobe.edu.au/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://www.latrobe.edu.au/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://www.latrobe.edu.au/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://www.latrobe.edu.au/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://www.latrobe.edu.au/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://www.latrobe.edu.au/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://www.latrobe.edu.au/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://www.latrobe.edu.au/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/favicon-16x16.png" sizes="16x16">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../assets/ltu.css"/>
+	<link rel="stylesheet" href="../../includes/media/mdx_showable.css"/>
+	<link rel="stylesheet" href="../../includes/media/mdx_showable_user.css"/>
+	<link rel="stylesheet" href="../../includes/media/tute.css"/>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+		            <li class="">
+		                <a href="../..">Home</a>
+		            </li>
+		            <li role="presentation" class="dropdown">
+		            	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tutorials <span class="caret"></span></a>
+		                <ul class="dropdown-menu">
+		                    <li class="">
+		                        <a href="../hpc/">Introduction to HPC</a>
+		                    </li>
+		                    <li class="current">
+		                        <a href="./">Introduction to Unix</a>
+		                    </li>
+		                </ul>
+		            </li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<!-- TOC -->
+			<div class="col-md-3">
+				<ul class="nav nav-sidebar">
+					<li><a href="#introduction-to-unix">Introduction to Unix</a></li> 
+					<li><a href="#introduction">Introduction</a></li> 
+					<li><a href="#topic-1-remote-log-in">Topic 1: Remote log in</a></li> 
+					<li><a href="#topic-2-exploring-your-home-directory">Topic 2: Exploring your home directory</a></li> 
+					<li><a href="#topic-3-exploring-the-file-system">Topic 3: Exploring the file system</a></li> 
+					<li><a href="#topic-4-working-with-files-and-directories">Topic 4: Working with files and directories</a></li> 
+					<li><a href="#topic-5-pipes-output-redirection-and-shell-scripts">Topic 5: Pipes, output redirection and shell scripts</a></li> 
+					<li><a href="#finished">Finished</a></li>  
+				</ul>
+			</div>
+			
+			<!-- Content -->
+			<div class="col-md-9">
+				<div class="row header-icons">
+					<div class="col-sm-6 ltu-logo"><img class="ltu" src="http://www.latrobe.edu.au/_media/la-trobe-api/v5/img/logo.svg" /></div>
+				</div>
+				
+<style src="../../includes/media/tute.css" ></style>
+
+<h1 id="introduction-to-unix">Introduction to Unix</h1>
+<p>A hands-on-workshop covering the basics of the Unix/Linux command line interface</p>
+<div class="environment_if" id="ifenv1">
+<h2 id="introduction">Introduction</h2>
+<p>Before we commence the hands-on part of this workshop we will first give a short 30 minute talk to introduce the Unix concepts. 
+The <a href="./slides.html">sides</a> are available if you would like.  Additionally the following reference material is available for later
+use.</p>
+<div class="showable-container information showable-hidden" id="showable0">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle0"><a href="" id="showablelink0">Reference Material</a></div>
+<div class="showable-body information" id="showablebody0">
+<h3 id="why-use-unix">Why use unix</h3>
+<ul>
+<li><strong>Powerful</strong>: Unix computers are typically very powerful in comparision to your desktop/laptop computers.
+  Additionally they don't typically use a Graphical User Interface which can free up much resources for actual
+  computing.</li>
+<li><strong>Big data</strong>: Unix programs are designed to handle large data sets</li>
+<li><strong>Flexible</strong>: Small programs that can be arranged in many ways to solve your problems</li>
+<li><strong>Automation</strong>: Scripting allows you to do many tasks in one step and repeat steps many times</li>
+<li><strong>Pipelines</strong>: Unix programs are designed to be 'chained' together to form long multi-step pipelines</li>
+<li><strong>Science Software</strong>: Lots of Scientific software is designed to run in a Unix environment</li>
+</ul>
+<h3 id="user-interface">User interface</h3>
+<p>The Unix interface is a text-based command driven one; often known as a Command Line Interface (CLI).  This means 
+that you control it by issuing (i.e. typing) commands at the command prompt.  Consequently, the Mouse does not perform
+any function in the unix environment.</p>
+<p><img src="media/unix-screen.png" title="Unix Screen" alt="Unix Screen" width="500px" /></p>
+<h3 id="command-prompt">Command prompt</h3>
+<p>The command prompt is the first thing you see when you connect to a Unix Computer.  It's purpose is to receive the next
+command from you, the user.</p>
+<p><img src="media/cli-parts.png" title="Command prompt" alt="Command prompt" width="500px" /></p>
+<p>There are several parts that make up the command prompt:</p>
+<ul>
+<li><strong>Time</strong>: the time (when the last command finished)</li>
+<li><strong>Username</strong>: the username that you are logged in as</li>
+<li><strong>Hostname</strong>: the name of the computer that your are connected to</li>
+<li><strong>Current working directory</strong>: the current position within the file system that your are working.  More to follow</li>
+<li><strong>Prompt</strong>: this is simply a sign to the user that the computer is ready to accept the next command </li>
+</ul>
+<p>From this point forward in this document, the command prompt will be simply represented as a '$' rather than
+the full command prompt as shown above.  When copying and pasting commands you should NOT copy the '$' sign.</p>
+<h3 id="command-line">Command line</h3>
+<p>Below is an example command with various flags and options.</p>
+<p><img src="media/cli-command.png" title="Command line" alt="Command line" width="500px" /></p>
+<p>There are a number of parts which may be included in a command; each is separated by one of more 'white-space' characters (i.e. space, tab):</p>
+<ul>
+<li><strong>Command</strong>: this is the name of the program (command) that you want to run</li>
+<li><strong>Flag</strong>: these turn on (or off) specific features in the program.  They consist of a dash (-) followed by
+  a single character.</li>
+<li><strong>Long flag</strong>: same as flag except they are generally two dashes (--) followed by a word (or two)</li>
+<li><strong>Option</strong>: set the value of a configurable option.  They are a flag (or long flag) followed by a value</li>
+<li><strong>Anonymous options</strong>: these are one or more options that are specified in the required order</li>
+<li><strong>Quoted value</strong>: if you need to specify a space (or tab) in an option then you will need to use double (") or 
+  single (') quotes on each side of the value. </li>
+</ul>
+<h3 id="file-system">File system</h3>
+<p>The file-system of a unix computer can be thought of as an up-side-down tree.  The top most directory has a special name
+called 'root'; it contains all files and directories that are on the computer system.  It is represented by a single 
+slash (/).  The figure below shows an example file system with directories (black outline boxes) and files (grey dashed 
+boxes).</p>
+<p><img src="media/file-system.png" title="File system" alt="File system" width="400px" /></p>
+<p>At the top level we have one file (settings) and one directory (home).  Inside the home directory we have two directories
+(user1 and user2) and so on.</p>
+<h4 id="absolute-file-names">Absolute file names</h4>
+<p>Absolute file names are a single unique name for each file and directory within the computer.  They start with the slash (/)
+character and follow all the parent directories above the file/directory.</p>
+<p><img src="media/file-system-settings.png" title="File system" alt="File system" width="400px" /></p>
+<p><strong>Absolute file name</strong>: <em>/settings</em></p>
+<p><img src="media/file-system-file01.png" title="File system" alt="File system" width="400px" /></p>
+<p><strong>Absolute file name</strong>: <em>/home/user1/file01.txt</em></p>
+<p><img src="media/file-system-user2.png" title="File system" alt="File system" width="400px" /></p>
+<p><strong>Absolute file name</strong>: <em>/home/user2</em>  </p>
+<p><strong>Note</strong>: the final slash is not needed (but generally doesn't hurt if it is present).</p>
+<h4 id="current-working-directory">Current working directory</h4>
+<p>The <em>current working directory</em> is the current location within the file system that you are currently using. 
+When you first login to a unix computer it will begin with the current working directory set to your home directory, that 
+is, a place that is unique to you and generally nobody else will have access to it.</p>
+<p><img src="media/unix-cwd.png" title="Current working directory" alt="Current working directory" width="500px" /></p>
+<p>Remember from earlier that the current working directory is shown in the command prompt.</p>
+<h4 id="relative-file-names">Relative file names</h4>
+<p>Relative file names are a short cut to writing file names that are shorter.  The difference between an absolute file
+name is that relative file names do NOT begin with a slash.</p>
+<p><img src="media/file-system-muscle.png" title="File system" alt="File system" width="400px" /></p>
+<p>If your current working directory is set to <em>/home</em> you can leave this part from the beginning of the filename.</p>
+<p><strong>Relative file name</strong>: <em>user1/muscle.fq</em></p>
+<p>(Note: the absence of the leading slash)</p>
+<p><strong>Special file names</strong>:</p>
+<p>There are a few further short cuts for typing relative file names:</p>
+<ul>
+<li><em>~</em> (Tilde): is a short cut to your home directory</li>
+<li><em>.</em> (dot): is a short cut for the current directory</li>
+<li><em>..</em> (2x dot): means the parent (or one directory up) from current directory</li>
+<li><em>...</em> (3x dot): does not mean anything (a got-ya for new users).  If you want 2 directories up then chain two 
+double dot's  e.g. <em>../..</em> </li>
+</ul>
+<p><strong>Note</strong>: the special file names above can be used within absolute and relative file name and used multiple times.</p>
+<p><img src="media/file-system-muscle2.png" title="File system" alt="File system" width="400px" /></p>
+<p>Now, if the current working directory is changed to <em>/home/user2</em> the relative path to muscle.fq is different.</p>
+<p><strong>Relative file name</strong>: <em>../user1/muscle.fq</em></p>
+</div>
+</div>
+</div>
+<script>//<![CDATA[<!--
+(function(w,d,u){if(!w.$){w._delayed=true;console.info("Delaying JQuery calls");w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}}})(window,document)
+//-->]]></script>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink0").click(function(e){
+            e.preventDefault();
+            $("#showable0").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+</div>
+<h2 id="topic-1-remote-log-in">Topic 1: Remote log in</h2>
+<p>In this topic we will learn how to connect to a <em>Unix</em> computer via a method called <em>SSH</em> and run a few basic commands.</p>
+<h3 id="connecting-to-a-unix-computer">Connecting to a Unix computer</h3>
+<p>To begin this workshop you will need to connect to an HPC.  Today we will use the <span class="environment_env" id="env0">LIMS-HPC</span>.  The computer called 
+<em><span class="environment_env" id="env1">lims-hpc-m.latrobe.edu.au</span></em> (m is for master which is another name for head node) is the 
+one that coordinates all the HPCs tasks.</p>
+<p><strong>Server details</strong>:</p>
+<ul>
+<li><strong>host</strong>: <span class="environment_env" id="env30">lims-hpc-m.latrobe.edu.au</span></li>
+<li><strong>port</strong>: <span class="environment_env" id="env31">6022</span> </li>
+<li><strong>username</strong>: <span class="environment_env" id="env32">trainingXX</span></li>
+<li><strong>password</strong>: <span class="environment_env" id="env33">(provided at workshop)</span></li>
+</ul>
+<div class="showable-container information showable-hidden" id="showable1">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle1"><a href="" id="showablelink1">Mac OS X / Linux</a></div>
+<div class="showable-body information" id="showablebody1">
+<p>Both Mac OS X and Linux come with a version of ssh (called OpenSSH) that can be used from the command line.  To use OpenSSH you must 
+first start a terminal program on your computer.  On OS X the standard terminal is called Terminal, and it is installed by default. 
+On Linux there are many popular terminal programs including: xterm, gnome-terminal, konsole (if you aren't sure, then xterm is a good 
+default).  When you've started the terminal you should see a command prompt.  To log into <span class="environment_env" id="env25">LIMS-HPC</span>, for example, type this command at 
+the prompt and press return (where the word username is replaced with your <span class="environment_env" id="env26">LIMS-HPC</span> username):</p>
+<p><em>$ ssh -p <span class="environment_env" id="env27">6022</span> <span class="environment_env" id="env28">trainingXX</span>@<span class="environment_env" id="env29">lims-hpc-m.latrobe.edu.au</span></em></p>
+<p>The same procedure works for any other machine where you have an account except that if your Unix computer uses a port other than 22 you will
+need to specify the port by adding the option <em>-p PORT</em> with PORT substituted with the port number.</p>
+<p>You may be presented with a message along the lines of:</p>
+<pre><code class="text">The authenticity of host 'lims-hpc-m.latrobe.edu.au (131.172.24.10)' can't be  established.
+...
+Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+
+<p>Although you should never ignore a warning, this particular one is nothing to be concerned about; type <strong>yes</strong> and then <strong>press enter</strong>. 
+If all goes well you will be asked to enter your password.  Assuming you type the correct username and password the system should 
+then display a welcome message, and then present you with a Unix prompt.  If you get this far then you are ready to start entering 
+Unix commands and thus begin using the remote computer.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink1").click(function(e){
+            e.preventDefault();
+            $("#showable1").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container information showable-hidden" id="showable2">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle2"><a href="" id="showablelink2">Windows</a></div>
+<div class="showable-body information" id="showablebody2">
+<p>On Microsoft Windows (Vista, 7, 8, 10) we recommend that you use the PuTTY ssh client.  PuTTY (putty.exe) can be downloaded 
+from this web page:</p>
+<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a></p>
+<p>Documentation for using PuTTY is here:</p>
+<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html</a></p>
+<p>When you start PuTTY you should see a window which looks something like this:</p>
+<p><img src="../../includes/media/putty1.png" title="Putty Connection Dialog" alt="Putty Connection Dialog" width="400px" /></p>
+<p>To connect to <span class="environment_env" id="env21">LIMS-HPC</span> you should enter <em><span class="environment_env" id="env22">lims-hpc-m.latrobe.edu.au</span></em> into the box entitled "Host Name (or IP address)" 
+and <em><span class="environment_env" id="env23">6022</span></em> in the port, 
+then click on the Open button. All of the settings should remain the same as they were when PuTTY started (which should be the 
+same as they are in the picture above).</p>
+<p>In some circumstances you will be presented with a window entitled PuTTY Security Alert. It will say something along the lines 
+of <em>"The server's host key is not cached in the registry"</em>. This is nothing to worry about, and you should agree to continue (by 
+clicking on Yes). You usually see this message the first time you try to connect to a particular remote computer.</p>
+<p>If all goes well, a terminal window will open, showing a prompt with the text <em>"login as:"</em>. An example terminal window is shown 
+below. You should type your <span class="environment_env" id="env24">LIMS-HPC</span> username and press enter. After entering your username you will be prompted for your 
+password. Assuming you type the correct username and password the system should then display a welcome message, and then 
+present you with a Unix prompt. If you get this far then you are ready to start entering Unix commands and thus begin using 
+the remote computer.</p>
+<p><img src="../../includes/media/putty2.png" title="Putty login screen" alt="Putty login screen" width="400px" /></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink2").click(function(e){
+            e.preventDefault();
+            $("#showable2").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<p><strong>Note</strong>: for security reasons ssh will not display any characters when you enter your password. This 
+can be confusing because it appears as if your typing is not recognised by the computer. Don’t be 
+alarmed; type your password in and press return at the end.</p>
+<p><span class="environment_env" id="env2">LIMS-HPC</span> is a high performance computer for <span class="environment_env" id="env3">La Trobe</span> Users.  Logging in connects your local computer 
+(e.g. laptop) to <span class="environment_env" id="env4">LIMS-HPC</span>, and allows you to type commands into the Unix prompt which are run on 
+the HPC, and have the results displayed on your local screen.</p>
+<p>You will be allocated a training account on <span class="environment_env" id="env5">LIMS-HPC</span> for the duration of the workshop. Your 
+username and password will be supplied at the start of the workshop.</p>
+<p>Log out of <span class="environment_env" id="env6">LIMS-HPC</span>, and log back in again (to make sure you can repeat the process).</p>
+<p>All the remaining parts assume that you are logged into <span class="environment_env" id="env7">LIMS-HPC</span> over ssh.</p>
+<h3 id="exercises">Exercises</h3>
+<div class="showable-container quest" id="showable3">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle3"><a href="" id="showablelink3">1.1) When you've logged into the Unix server, run the following commands and see what they do:</a></div>
+<div class="showable-body quest" id="showablebody3">
+<ul>
+<li><em>who</em></li>
+<li><em>whoami</em></li>
+<li><em>date</em></li>
+<li><em>cal</em></li>
+<li><em>hostname</em></li>
+<li><em><span class="environment_env" id="env20">/home/group/common/training/Intro_to_Unix</span>/hi</em></li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink3").click(function(e){
+            e.preventDefault();
+            $("#showable3").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable4">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle4"><a href="" id="showablelink4">Answer</a></div>
+<div class="showable-body answer" id="showablebody4">
+<ul>
+<li><strong>who</strong>: displays a list of the users who are currently using this Unix computer.</li>
+<li><strong>whoami</strong>: displays your username (i.e. they person currently logged in).</li>
+<li><strong>date</strong>: displays the current date and time.</li>
+<li><strong>cal</strong>: displays a calendar on the terminal.  It can be configured to display more than just 
+the current month.</li>
+<li><strong>hostname</strong>: displays the name of the computer we are logged in to.</li>
+<li><strong><span class="environment_env" id="env19">/home/group/common/training/Intro_to_Unix</span>/hi</strong>: displays the text "Hello World"</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink4").click(function(e){
+            e.preventDefault();
+            $("#showable4").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="topic-2-exploring-your-home-directory">Topic 2: Exploring your home directory</h2>
+<p>In this topic we will learn how to "look" at the filesystem and further expand our repertoire of Unix commands. </p>
+<p><strong>Duration</strong>: 20 minutes. <!-- See "The shell and the command line" and "The file system" section of the workshop notes. --></p>
+<p><strong>Relevant commands</strong>: <em>ls</em>, <em>pwd</em>, <em>echo</em>, <em>man</em></p>
+<p>Your home directory contains your own private working space.  Your <em>current working directory</em> is automatically set 
+to your <em>home</em> directory when you log into a Unix computer.</p>
+<div class="showable-container quest showable-hidden" id="showable5">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle5"><span class="link-like" id="showablelink5">2.1) Use the <em>ls</em> command to list the files in your <em>home</em> directory.  How many files are there?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable6">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle6"><a href="" id="showablelink6">Hint</a></div>
+<div class="showable-body hint" id="showablebody6">
+<p>Literally, type <em>ls</em> and press the <em>ENTER</em> key.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink6").click(function(e){
+            e.preventDefault();
+            $("#showable6").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable7">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle7"><a href="" id="showablelink7">Answer</a></div>
+<div class="showable-body answer" id="showablebody7">
+<pre><code class="sh">$ ls
+exp01  file01  muscle.fq  task01  task02  task03
+</code></pre>
+
+<p>When running the <em>ls</em> command with no options it will list files in your current working directory.  The place 
+where you start when you first login is your <em>HOME</em> directory.</p>
+<p><strong>Answer</strong>: 6 (exp01, file01, muscle.fq, task01, task02 and task03)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink7").click(function(e){
+            e.preventDefault();
+            $("#showable7").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<p>The above answer is not quite correct.  There are a number of <em>hidden</em> files in your home directory as well.</p>
+<div class="showable-container quest showable-hidden" id="showable8">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle8"><span class="link-like" id="showablelink8">2.2) What <em>flag</em> might you use to display <em>all</em> files with the <em>ls</em> command?  How many files are really there?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable9">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle9"><a href="" id="showablelink9">Hint</a></div>
+<div class="showable-body hint" id="showablebody9">
+<p>Take the <em>all</em> quite literally.</p>
+<div class="showable-container showable-hidden" id="showable10">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle10"><a href="" id="showablelink10">More</a></div>
+<div class="showable-body" id="showablebody10">
+<p>Type <em>ls --all</em> and press the <em>ENTER</em> key.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink10").click(function(e){
+            e.preventDefault();
+            $("#showable10").toggleClass("showable-hidden");
+            if ($("#showable10").hasClass("showable-hidden")) {
+                $("#showablelink10").text("More");
+            } else {
+                $("#showablelink10").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink9").click(function(e){
+            e.preventDefault();
+            $("#showable9").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable11">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle11"><a href="" id="showablelink11">Answer</a></div>
+<div class="showable-body answer" id="showablebody11">
+<p><strong>Answer 1</strong>: <em>--all</em> (or <em>-a</em>) flag</p>
+<p>Now you should see several files in your home directory whose names all begin with a dot. All these files are 
+created automatically for your user account. They are mostly configuration options for various programs including 
+the shell. It is safe to ignore them for the moment.</p>
+<pre><code class="sh">$ ls --all
+.   .bash_history  .bash_profile  exp01   .kshrc    muscle.fq  task01  task03
+..  .bash_logout   .bashrc        file01  .lesshst  .ssh       task02  .viminfo
+</code></pre>
+
+<p>There are two trick files here; namely <em>.</em> and <em>..</em> which are not real files but instead, shortcuts.  <em>.</em> is a shortcut
+for the current directory and <em>..</em> a shortcut for the directory above the current one.</p>
+<p><strong>Answer 2</strong>: 14 files (don't count <em>.</em> and <em>..</em>)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink11").click(function(e){
+            e.preventDefault();
+            $("#showable11").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable12">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle12"><span class="link-like" id="showablelink12">2.3) What is the full path name of your <em>home</em> directory?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable13">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle13"><a href="" id="showablelink13">Hint</a></div>
+<div class="showable-body hint" id="showablebody13">
+<p>Remember your <em>Current Working Directory</em> start's in your <em>home</em> directory.</p>
+<div class="showable-container showable-hidden" id="showable14">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle14"><a href="" id="showablelink14">More</a></div>
+<div class="showable-body" id="showablebody14">
+<p>Try a shortened version of <em>print working directory</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink14").click(function(e){
+            e.preventDefault();
+            $("#showable14").toggleClass("showable-hidden");
+            if ($("#showable14").hasClass("showable-hidden")) {
+                $("#showablelink14").text("More");
+            } else {
+                $("#showablelink14").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink13").click(function(e){
+            e.preventDefault();
+            $("#showable13").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable15">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle15"><a href="" id="showablelink15">Answer</a></div>
+<div class="showable-body answer" id="showablebody15">
+<p>You can find out the full path name of the current working directory with the <em>pwd</em> command. Your home directory 
+will look something like this:</p>
+<pre><code class="sh">$ pwd
+/home/trainingXX
+</code></pre>
+
+<p><strong>Answer</strong>: <em><span class="environment_env" id="env18">/home/trainingXX</span></em></p>
+<p>where <em>XX</em> is replaced by some 2 digit sequence.</p>
+<p><strong>Alternate method</strong>:
+You can also find out the name of your home directory by printing the value of the <em>$HOME</em> shell variable:</p>
+<pre><code class="sh">echo $HOME
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink15").click(function(e){
+            e.preventDefault();
+            $("#showable15").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable16">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle16"><span class="link-like" id="showablelink16">2.4) Run <em>ls</em> using the long flag (<em>-l</em>), how did the output change?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable17">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle17"><a href="" id="showablelink17">Hint</a></div>
+<div class="showable-body hint" id="showablebody17">
+<p>Run <em>ls -l</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink17").click(function(e){
+            e.preventDefault();
+            $("#showable17").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable18">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle18"><a href="" id="showablelink18">Answer</a></div>
+<div class="showable-body answer" id="showablebody18">
+<p><strong>Answer</strong>: it changed the output to place 1 file/directory per line.  It also added some extra information
+about each.</p>
+<pre><code class="sh">$ ls -l
+total 192
+drwxr-x--- 2 training01 training 2048 Jul 26 15:50 exp01
+-rw-r----- 1 training01 training   97 Jul 26 15:50 file01
+-rw-r----- 1 training01 training 2461 Jul 26 15:50 muscle.fq
+-rw-r----- 1 training01 training  300 Jul 26 15:50 task01
+-rw-r----- 1 training01 training  317 Jul 26 15:50 task02
+-rw-r----- 1 training01 training  303 Jul 26 15:50 task03
+</code></pre>
+
+<p><strong>Details</strong>:</p>
+<pre><code class="sh">drwxr-x--- 2 training01 training 2048 Jun 14 11:28 exp01
+\--------/ ^ \--------/ \------/ \--/ \----------/ \---/
+permission |  username   group   size    date       name
+       /---^---\
+       linkcount
+</code></pre>
+
+<p>Where:</p>
+<ul>
+<li><strong>permissions</strong>: 4 parts, file type, user perms, group perms and other perms<ul>
+<li><em>filetype</em>: 1 character, <em>d</em> = directory and <em>-</em> regular file</li>
+<li><em>user</em> permissions: 3 characters, <em>r</em> = read, <em>w</em> = write, <em>x</em> = execute and <em>-</em> no permission</li>
+<li><em>group</em> permissions: same as user except for users within the owner group</li>
+<li><em>other</em> permissions: same as user except for users that are not in either user <em>or</em> <em>group</em></li>
+</ul>
+</li>
+<li><strong>username</strong>: the user who <em>owns</em> this file/directory</li>
+<li><strong>group</strong>: the group name who <em>owns</em> this file/directory</li>
+<li><strong>size</strong>: the number of bytes this file/directory takes to store on disk</li>
+<li><strong>date</strong>: the date and time when this file/directory was <em>last edited</em></li>
+<li><strong>name</strong>: name of the file</li>
+<li><strong>linkcount</strong>: technical detail which represents the number of links this file has in the file system (safe to ignore)</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink18").click(function(e){
+            e.preventDefault();
+            $("#showable18").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable19">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle19"><span class="link-like" id="showablelink19">2.5) What type of file is <em>exp01</em> and <em>muscle.fq</em>?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable20">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle20"><a href="" id="showablelink20">Hint</a></div>
+<div class="showable-body hint" id="showablebody20">
+<p>Check the output from the <em>ls -l</em>.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink20").click(function(e){
+            e.preventDefault();
+            $("#showable20").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable21">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle21"><a href="" id="showablelink21">Answer</a></div>
+<div class="showable-body answer" id="showablebody21">
+<p><strong>Answer</strong>:</p>
+<ul>
+<li><em>exp01</em>: Directory (given the 'd' as the first letter of its permissions)</li>
+<li><em>muscle.fq</em>: Regular File (given the '-')</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink21").click(function(e){
+            e.preventDefault();
+            $("#showable21").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable22">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle22"><span class="link-like" id="showablelink22">2.6) Who has permission to <em>read</em>, <em>write</em> and <em>execute</em> your <em>home</em> directory?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable23">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle23"><a href="" id="showablelink23">Hint</a></div>
+<div class="showable-body hint" id="showablebody23">
+<p>You can also give <em>ls</em> a filename as the first option.</p>
+<div class="showable-container showable-hidden" id="showable24">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle24"><a href="" id="showablelink24">More</a></div>
+<div class="showable-body" id="showablebody24">
+<p><em>ls -l</em> will show you the contents of the <em>CWD</em>; how might you see the contents of the <em>parent</em> directory? (remember
+the slides)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink24").click(function(e){
+            e.preventDefault();
+            $("#showable24").toggleClass("showable-hidden");
+            if ($("#showable24").hasClass("showable-hidden")) {
+                $("#showablelink24").text("More");
+            } else {
+                $("#showablelink24").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink23").click(function(e){
+            e.preventDefault();
+            $("#showable23").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable25">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle25"><a href="" id="showablelink25">Answer</a></div>
+<div class="showable-body answer" id="showablebody25">
+<p>If you pass the <em>-l</em> flag to ls it will display a "long" listing of file information including file permissions.</p>
+<p>There are various ways you could find out the permissions on your home directory.</p>
+<p><strong>Method 1</strong>: given we know the <em>CWD</em> is our home directory.</p>
+<pre><code class="sh">$ ls -l ..
+...
+drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 trainingXY
+...
+</code></pre>
+
+<p>The <em>..</em> refers to the parent directory.</p>
+<p><strong>Method 2</strong>: using $HOME.  This works no matter what our <em>CWD</em> is set to. </p>
+<p>You could list the permissions of all files and directories in the parent directory of your home:</p>
+<pre><code class="sh">$ ls -l $HOME/..
+...
+drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 trainingXY
+...
+</code></pre>
+
+<p>In this case we use the shell variable to refer to our home directory.</p>
+<p><strong>Method 3</strong>: using <em>~</em> (tilde) shortcut</p>
+<p>You may also refer to your home directory using the <em>~</em> (tilde) character:</p>
+<pre><code class="sh">$ ls -l ~/..
+...
+drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 trainingXY
+...
+</code></pre>
+
+<p>All 3 of the methods above mean the same thing.</p>
+<p>You will see a list of files and directories in the parent directory of your home directory. One of them will 
+be the name of your home directory, something like <em><span class="environment_env" id="env17">trainingXX</span></em>.  Where <em>XX</em> is replaced by a two digit string</p>
+<p><strong>Altername</strong>: using the <em>-a</em> flag and looking at the <em>.</em> (dot) special file.</p>
+<pre><code class="sh">$ ls -la
+...
+drwxr-x--- 4 trainingXY training  512 Feb  9 14:18 .
+...
+</code></pre>
+
+<p><strong>Answer</strong>: <em>drwxr-x---</em></p>
+<ul>
+<li><strong>You</strong>: read (see filenames), write (add, delete files), execute (change your CWD to this directory).</li>
+<li><strong>Training users</strong>: read, execute</li>
+<li><strong>Everyone else</strong>: No access</li>
+</ul>
+<p><strong>Discussion on Permissions</strong>:</p>
+<p>The permission string is <em>"drwxr-x---"</em>. The <em>d</em> means it is a directory. The <em>rwx</em> means that the owner of the directory 
+(your user account) can <em>read</em>, <em>write</em> and <em>execute</em> the directory. Execute permissions on a directory means that you 
+can <em>cd</em> into the directory. The <em>r-x</em> means that anyone in the same user group as <em>training</em> can read or execute the 
+directory. The <em>---</em> means that nobody else (other users on the system) can do anything with the directory.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink25").click(function(e){
+            e.preventDefault();
+            $("#showable25").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="info">
+<p><b><em>man</em> is for manual</b>: and it will be your best friend!</p>
+<p>Manual pages include a lot of detail about a command and its available flags/options.  It should be your first (or second) 
+port of call when you are trying to work out what a command or option does.</p>
+<p>You can scroll <em>up</em> and <em>down</em> in the man page using the <em>arrow</em> keys.</p>
+<p>You can search in the man page using the forward 
+slash followed by the search text followed by the <em>ENTER</em> key. e.g. 
+type <em>/author</em> and press <em>ENTER</em> to search for the word <em>author</em>.  Press <em>n</em> key to find next 
+occurance of <em>hello</em> etc.</p>
+<p>You can <em>quit</em> the man page by pressing <em>q</em>.</p>
+</div>
+
+<hr />
+<div class="showable-container quest showable-hidden" id="showable26">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle26"><span class="link-like" id="showablelink26">2.7) Use the <em>man</em> command to find out what the <em>-h</em> flag does for <em>ls</em></span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable27">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle27"><a href="" id="showablelink27">Hint</a></div>
+<div class="showable-body hint" id="showablebody27">
+<p>Give <em>ls</em> as an option to <em>man</em> command.</p>
+<div class="showable-container showable-hidden" id="showable28">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle28"><a href="" id="showablelink28">More</a></div>
+<div class="showable-body" id="showablebody28">
+<p><em>man ls</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink28").click(function(e){
+            e.preventDefault();
+            $("#showable28").toggleClass("showable-hidden");
+            if ($("#showable28").hasClass("showable-hidden")) {
+                $("#showablelink28").text("More");
+            } else {
+                $("#showablelink28").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink27").click(function(e){
+            e.preventDefault();
+            $("#showable27").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable29">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle29"><a href="" id="showablelink29">Answer</a></div>
+<div class="showable-body answer" id="showablebody29">
+<p>Use the following command to view the <em>man</em> page for <em>ls</em>:</p>
+<pre><code class="sh">$ man ls
+</code></pre>
+
+<p><strong>Answer</strong>: You should discover that the <em>-h</em> option prints file sizes in human readable format</p>
+<pre><code class="sh">-h, --human-readable
+              with -l, print sizes in human readable format (e.g., 1K 234M 2G)
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink29").click(function(e){
+            e.preventDefault();
+            $("#showable29").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable30">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle30"><span class="link-like" id="showablelink30">2.8) Use the <em>-h</em>, how did the output change of <em>muscle.fq</em>?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable31">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle31"><a href="" id="showablelink31">Hint</a></div>
+<div class="showable-body hint" id="showablebody31">
+<p>Don't forget the <em>-l</em> option too.</p>
+<div class="showable-container showable-hidden" id="showable32">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle32"><a href="" id="showablelink32">More</a></div>
+<div class="showable-body" id="showablebody32">
+<p>Run <em>ls -lh</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink32").click(function(e){
+            e.preventDefault();
+            $("#showable32").toggleClass("showable-hidden");
+            if ($("#showable32").hasClass("showable-hidden")) {
+                $("#showablelink32").text("More");
+            } else {
+                $("#showablelink32").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink31").click(function(e){
+            e.preventDefault();
+            $("#showable31").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable33">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle33"><a href="" id="showablelink33">Answer</a></div>
+<div class="showable-body answer" id="showablebody33">
+<pre><code class="sh">$ ls -lh
+...
+-rw-r----- 1 training01 training 2.5K Jun 14 11:28 muscle.fq
+</code></pre>
+
+<p><strong>Answer</strong>: it changed the output so the <em>filesize</em> of <em>muscle.fq</em> is now <em>2.5K</em> instead of <em>2461</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink33").click(function(e){
+            e.preventDefault();
+            $("#showable33").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="topic-3-exploring-the-file-system">Topic 3: Exploring the file system</h2>
+<p>In this topic we will learn how to move around the filesystem and see what is there.</p>
+<p><strong>Duration</strong>: 30 minutes. <!-- See "The file system" section of the workshop notes. --></p>
+<p><strong>Relevant commands</strong>: <em>pwd</em>, <em>cd</em>, <em>ls</em>, <em>file</em></p>
+<div class="showable-container quest showable-hidden" id="showable34">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle34"><span class="link-like" id="showablelink34">3.1) Print the value of your current working directory.</span></div>
+</div>
+</div>
+<div class="showable-container answer showable-hidden" id="showable35">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle35"><a href="" id="showablelink35">Answer</a></div>
+<div class="showable-body answer" id="showablebody35">
+<p>The <em>pwd</em> command prints the value of your current working directory.</p>
+<pre><code class="sh">$ pwd
+/home/training01
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink35").click(function(e){
+            e.preventDefault();
+            $("#showable35").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable36">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle36"><span class="link-like" id="showablelink36">3.2) List the contents of the root directory, called '<em>/</em>' (forward 
+slash).</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable37">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle37"><a href="" id="showablelink37">Hint</a></div>
+<div class="showable-body hint" id="showablebody37">
+<p><em>ls</em> expects one or more anonymous options which are the files/directories to list.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink37").click(function(e){
+            e.preventDefault();
+            $("#showable37").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable38">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle38"><a href="" id="showablelink38">Answer</a></div>
+<div class="showable-body answer" id="showablebody38">
+<pre><code class="sh">$ ls /
+applications-merged  etc         media    opt      srv
+bin                  home        misc     proc     sys
+boot                 lib         mnt      root     tmp
+data                 lib64       net      sbin     usr
+dev                  lost+found  oldhome  selinux  var
+</code></pre>
+
+<p>Here we see that <em>ls</em> can take a filepath as its argument, which allows you to list the contents of directories 
+other than your current working directory.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink38").click(function(e){
+            e.preventDefault();
+            $("#showable38").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable39">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle39"><span class="link-like" id="showablelink39">3.3) Use the <em>cd</em> command to change your working directory to the root directory.  Did your prompt 
+change?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable40">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle40"><a href="" id="showablelink40">Hint</a></div>
+<div class="showable-body hint" id="showablebody40">
+<p><em>cd</em> expects a single option which is the directory to change to</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink40").click(function(e){
+            e.preventDefault();
+            $("#showable40").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable41">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle41"><a href="" id="showablelink41">Answer</a></div>
+<div class="showable-body answer" id="showablebody41">
+<p>The <em>cd</em> command changes the value of your current working directory. To change to the root directory use the 
+following command:</p>
+<pre><code class="sh">$ cd /
+</code></pre>
+
+<p><strong>Answer</strong>: Yes, it now says the CWD is <em>/</em> instead of <em>~</em>.</p>
+<p>Some people imagine that changing the working directory is akin to moving your focus within the file system. 
+So people often say "move to", "go to" or "charge directory to" when they want to change the working directory.</p>
+<p>The root directory is special in Unix. It is the topmost directory in the whole file system.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink41").click(function(e){
+            e.preventDefault();
+            $("#showable41").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="info">
+<b>Output on ERROR only</b>: Many Unix commands will not produce any output if everything went well; <em>cd</em> is one
+such command.  However, it will get grumpy if something went wrong by way of an error message on-screen.
+</div>
+
+<hr />
+<div class="showable-container quest showable-hidden" id="showable42">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle42"><span class="link-like" id="showablelink42">3.4) List the contents of the CWD and verify it matches the list in 3.2</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable43">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle43"><a href="" id="showablelink43">Hint</a></div>
+<div class="showable-body hint" id="showablebody43">
+<p><em>ls</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink43").click(function(e){
+            e.preventDefault();
+            $("#showable43").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable44">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle44"><a href="" id="showablelink44">Answer</a></div>
+<div class="showable-body answer" id="showablebody44">
+<p>Assuming you have changed to the root directory then this can be achieved with <em>ls</em>, or <em>ls -a</em> (for all files) or 
+<em>ls -la</em> for a long listing of all files.</p>
+<p>If you are not currently in the root directory then you can list its contents by passing it as an argument to ls:</p>
+<pre><code class="sh">$ ls
+applications-merged  etc         media    opt      srv
+bin                  home        misc     proc     sys
+boot                 lib         mnt      root     tmp
+data                 lib64       net      sbin     usr
+dev                  lost+found  oldhome  selinux  var
+</code></pre>
+
+<p><strong>Answer</strong>: Yes, we got the same output as exercise 3.2</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink44").click(function(e){
+            e.preventDefault();
+            $("#showable44").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable45">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle45"><span class="link-like" id="showablelink45">3.5) Change your current working directory back to your home directory. What is the simplest Unix command that 
+will get you back to your home directory from anywhere else in the file system?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable46">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle46"><a href="" id="showablelink46">Hint</a></div>
+<div class="showable-body hint" id="showablebody46">
+<p>The answer to exercise 2.6 might give some hints on how to get back to the home directory</p>
+<div class="showable-container showable-hidden" id="showable47">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle47"><a href="" id="showablelink47">More</a></div>
+<div class="showable-body" id="showablebody47">
+<p><em>$HOME</em>, <em>~</em>, <em><span class="environment_env" id="env16">/home/trainingXX</span></em> are all methods to name your home directory.  Yet there is a simpler method; the answer
+is buried in <em>man cd</em> however <em>cd</em> doesn't have its own manpage so you will need to search for it.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink47").click(function(e){
+            e.preventDefault();
+            $("#showable47").toggleClass("showable-hidden");
+            if ($("#showable47").hasClass("showable-hidden")) {
+                $("#showablelink47").text("More");
+            } else {
+                $("#showablelink47").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink46").click(function(e){
+            e.preventDefault();
+            $("#showable46").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable48">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle48"><a href="" id="showablelink48">Answer</a></div>
+<div class="showable-body answer" id="showablebody48">
+<p>Use the <em>cd</em> command to change your working directory to your home directory. There are a number of ways to refer 
+to your home directory:</p>
+<pre><code class="sh">cd $HOME
+</code></pre>
+
+<p>is equivalent to:</p>
+<pre><code class="sh">cd ~
+</code></pre>
+
+<p>The simplest way to change your current working directory to your home directory is to run the <em>cd</em> command with 
+no arguments:</p>
+<p><strong>Answer</strong>: the simplest for is cd with NO options.</p>
+<pre><code class="sh">cd
+</code></pre>
+
+<p>This is a special-case behaviour which is built into <em>cd</em> for convenience.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink48").click(function(e){
+            e.preventDefault();
+            $("#showable48").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest" id="showable49">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle49"><a href="" id="showablelink49">3.6) Change your working directory to the following directory</a></div>
+<div class="showable-body quest" id="showablebody49">
+<p><em><span class="environment_env" id="env15">/home/group/common/training/Intro_to_Unix</span></em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink49").click(function(e){
+            e.preventDefault();
+            $("#showable49").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable50">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle50"><a href="" id="showablelink50">Answer</a></div>
+<div class="showable-body answer" id="showablebody50">
+<p><strong>Answer</strong>: <em>cd <span class="environment_env" id="env14">/home/group/common/training/Intro_to_Unix</span></em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink50").click(function(e){
+            e.preventDefault();
+            $("#showable50").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable51">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle51"><span class="link-like" id="showablelink51">3.7) List the contents of that directory. How many files does it contain?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable52">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle52"><a href="" id="showablelink52">Hint</a></div>
+<div class="showable-body hint" id="showablebody52">
+<p><em>ls</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink52").click(function(e){
+            e.preventDefault();
+            $("#showable52").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable53">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle53"><a href="" id="showablelink53">Answer</a></div>
+<div class="showable-body answer" id="showablebody53">
+<p>You can do this with <em>ls</em></p>
+<pre><code class="sh">$ ls
+expectations.txt  hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
+</code></pre>
+
+<p><strong>Answer</strong>: 7 files (expectations.txt  hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink53").click(function(e){
+            e.preventDefault();
+            $("#showable53").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable54">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle54"><span class="link-like" id="showablelink54">3.8) What kind of <em>file</em> is</span> <em><span class="environment_env" id="env13">/home/group/common/training/Intro_to_Unix</span>/sleepy</em>?</div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable55">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle55"><a href="" id="showablelink55">Hint</a></div>
+<div class="showable-body hint" id="showablebody55">
+<p>Take the word <em>file</em> quite literally.</p>
+<div class="showable-container showable-hidden" id="showable56">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle56"><a href="" id="showablelink56">More</a></div>
+<div class="showable-body" id="showablebody56">
+<p><em>file sleepy</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink56").click(function(e){
+            e.preventDefault();
+            $("#showable56").toggleClass("showable-hidden");
+            if ($("#showable56").hasClass("showable-hidden")) {
+                $("#showablelink56").text("More");
+            } else {
+                $("#showablelink56").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink55").click(function(e){
+            e.preventDefault();
+            $("#showable55").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable57">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle57"><a href="" id="showablelink57">Answer</a></div>
+<div class="showable-body answer" id="showablebody57">
+<p>Use the <em>file</em> command to get extra information about the contents of a file:</p>
+<p>Assuming your current working directory is <em><span class="environment_env" id="env12">/home/group/common/training/Intro_to_Unix</span></em></p>
+<pre><code class="sh">$ file sleepy
+sleepy: Bourne-Again shell script text executable
+</code></pre>
+
+<p>Otherwise specify the full path of sleepy:</p>
+<div class="environment_if" id="ifenv5">
+<pre><code class="sh">$ file /home/group/common/training/Intro_to_Unix/sleepy
+sleepy: Bourne-Again shell script text executable
+</code></pre>
+
+</div>
+<p><strong>Answer</strong>: Bourne-Again shell script text executable</p>
+<p>The "Bourne-Again shell" is more commonly known as BASH, "text" means you can read it (rather than a program) 
+and "executable" means it can be run like other programs in the system. The <em>file</em> command is telling us that sleepy 
+is (probably) a shell script written in the language of BASH.</p>
+<p>The file command uses various heuristics to guess the "type" of a file. If you want to know how it works 
+then read the Unix manual page like so:</p>
+<pre><code class="sh">man file
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink57").click(function(e){
+            e.preventDefault();
+            $("#showable57").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable58">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle58"><span class="link-like" id="showablelink58">3.9) What kind of <em>file</em> is </span> <em><span class="environment_env" id="env11">/home/group/common/training/Intro_to_Unix</span>/hi</em>?</div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable59">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle59"><a href="" id="showablelink59">Hint</a></div>
+<div class="showable-body hint" id="showablebody59">
+<p>Take the word <em>file</em> quite literally.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink59").click(function(e){
+            e.preventDefault();
+            $("#showable59").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable60">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle60"><a href="" id="showablelink60">Answer</a></div>
+<div class="showable-body answer" id="showablebody60">
+<p>Use the file command again. If you are in the same directory as <em>hi</em> then:</p>
+<pre><code class="sh">$ file hi
+ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 
+2.6.9, not stripped
+</code></pre>
+
+<p><strong>Answer</strong>: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.9, not stripped</p>
+<p>This rather complicated output is roughly saying that the file called <em>hi</em> contains a binary executable 
+program (raw instructions that the computer can execute directly).</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink60").click(function(e){
+            e.preventDefault();
+            $("#showable60").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable61">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle61"><span class="link-like" id="showablelink61">3.10) What are the file permissions of the following file and what do they mean?</span> <em><span class="environment_env" id="env10">/home/group/common/training/Intro_to_Unix</span>/sleepy</em>
+</div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable62">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle62"><a href="" id="showablelink62">Hint</a></div>
+<div class="showable-body hint" id="showablebody62">
+<p>Remember the <em>ls</em> command, and don't forget the <em>-l</em> flag</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink62").click(function(e){
+            e.preventDefault();
+            $("#showable62").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable63">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle63"><a href="" id="showablelink63">Answer</a></div>
+<div class="showable-body answer" id="showablebody63">
+<p>You can find the permissions of <em>sleepy</em> using the <em>ls</em> command with the <em>-l</em> flag. If you are in the same 
+directory as <em>sleepy</em> then:</p>
+<pre><code class="sh">$ ls -l sleepy
+-rw-r--r-- 1 arobinson common 183 Feb  9  2015 sleepy
+</code></pre>
+
+<p><strong>Answer</strong>: The Answer is dependent on the computer you are connected too however will follow something like above. 
+We can see that this particular instance of sleepy is owned by the user arobinson, and is part of the common 
+user group. It is 183 bytes in size, and was last modified on the 9th of February. The file is 
+readable to everyone, and write-able only to arobinson.  The digit '1' between the file permission string and 
+the owner indicates that there is one link to the file. The Unix file system allows files to be referred to 
+by multiple "links". When you create a file it is referred to by one link, but you may add others later. For 
+future reference: links are created with the <em>ln</em> command.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink63").click(function(e){
+            e.preventDefault();
+            $("#showable63").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable64">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle64"><span class="link-like" id="showablelink64">3.11) Change your working directory back to your home directory ready for the next topic.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable65">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle65"><a href="" id="showablelink65">Hint</a></div>
+<div class="showable-body hint" id="showablebody65">
+<p><em>cd</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink65").click(function(e){
+            e.preventDefault();
+            $("#showable65").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable66">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle66"><a href="" id="showablelink66">Answer</a></div>
+<div class="showable-body answer" id="showablebody66">
+<p>You should know how to do this with the cd command:</p>
+<pre><code class="sh">cd
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink66").click(function(e){
+            e.preventDefault();
+            $("#showable66").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="topic-4-working-with-files-and-directories">Topic 4: Working with files and directories</h2>
+<p>In this topic we will start to read, create, edit and delete files and directories.</p>
+<p><strong>Duration</strong>: 50 minutes.  <!-- See "Working with files" from the workshop notes. --></p>
+<p><strong>Relevant commands</strong>: <em>mkdir</em>, <em>cp</em>, <em>ls</em>, <em>diff</em>, <em>wc</em>, <em>nano</em>, <em>mv</em>, <em>rm</em>, <em>rmdir</em>, <em>head</em>, <em>tail</em>, <em>grep</em>, <em>gzip</em>, <em>gunzip</em></p>
+<div class="info">
+<b>Hint</b>: Look at the commands above; you will need them roughly in order for this topic.  Use the <em>man</em>
+command find out what they do, in particular the NAME, SYNOPSIS and DESCRIPTION sections.
+</div>
+
+<hr />
+<div class="showable-container quest showable-hidden" id="showable67">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle67"><span class="link-like" id="showablelink67">4.1) In your home directory make a sub-directory called test.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable68">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle68"><a href="" id="showablelink68">Hint</a></div>
+<div class="showable-body hint" id="showablebody68">
+<p>You are trying to <em>make a directory</em>, which of the above commands looks like a shortened version of this?</p>
+<div class="showable-container showable-hidden" id="showable69">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle69"><a href="" id="showablelink69">More</a></div>
+<div class="showable-body" id="showablebody69">
+<p><em>mkdir</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink69").click(function(e){
+            e.preventDefault();
+            $("#showable69").toggleClass("showable-hidden");
+            if ($("#showable69").hasClass("showable-hidden")) {
+                $("#showablelink69").text("More");
+            } else {
+                $("#showablelink69").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink68").click(function(e){
+            e.preventDefault();
+            $("#showable68").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable70">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle70"><a href="" id="showablelink70">Answer</a></div>
+<div class="showable-body answer" id="showablebody70">
+<p>Make sure you are in your home directory first. If not <em>cd</em> to your home directory.</p>
+<p>Use the <em>mkdir</em> command to make new directories:</p>
+<pre><code class="sh">$ mkdir test
+</code></pre>
+
+<p>Use the <em>ls</em> command to check that the new directory was created.</p>
+<pre><code class="sh">$ ls
+exp01  file01  muscle.fq  task01  task02  task03  test
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink70").click(function(e){
+            e.preventDefault();
+            $("#showable70").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable71">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle71"><span class="link-like" id="showablelink71">4.2) Copy all the files from the following directory into the newly created test directory.</span> <em><span class="environment_env" id="env9">/home/group/common/training/Intro_to_Unix</span></em></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable72">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle72"><a href="" id="showablelink72">Hint</a></div>
+<div class="showable-body hint" id="showablebody72">
+<p>You are trying to <em>copy</em>, which of the above commands looks like a shortened version of this?</p>
+<div class="showable-container showable-hidden" id="showable73">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle73"><a href="" id="showablelink73">More</a></div>
+<div class="showable-body" id="showablebody73">
+<pre><code class="sh">$ man cp
+...
+SYNOPSIS
+       cp [OPTION]... [-T] SOURCE DEST
+...
+DESCRIPTION
+       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+</code></pre>
+
+<p>which means <em>cp</em> expects zero or more flags, a SOURCE file followed by a DEST file or directory </p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink73").click(function(e){
+            e.preventDefault();
+            $("#showable73").toggleClass("showable-hidden");
+            if ($("#showable73").hasClass("showable-hidden")) {
+                $("#showablelink73").text("More");
+            } else {
+                $("#showablelink73").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink72").click(function(e){
+            e.preventDefault();
+            $("#showable72").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable74">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle74"><a href="" id="showablelink74">Answer</a></div>
+<div class="showable-body answer" id="showablebody74">
+<p>Use the <em>cp</em> command to copy files. </p>
+<div class="info"><b>Wildcards</b>: You could copy them one-by-one, but that would be tedious, so use 
+the <em>*</em> wildcard to specify that you want to copy all the files.
+</div>
+
+<p>There are a number of ways you could do this depending on how you specify the source and destination 
+paths to <em>cp</em>. You only need to perform one of these ways, but we show multiple ones for your reference.</p>
+<p><strong>Answer 1</strong>: From your home directory:</p>
+<div class="environment_if" id="ifenv7">
+<pre><code class="sh">$ cp /home/group/common/training/Intro_to_Unix/* test
+</code></pre>
+
+</div>
+<p><strong>Answer 2</strong>: Change to the test directory and then copy (assuming you started in your home directory):</p>
+<div class="environment_if" id="ifenv9">
+<pre><code class="sh">$ cd test
+$ cp /home/group/common/training/Intro_to_Unix/* .
+</code></pre>
+
+</div>
+<p>In the example above the '<em>.</em>' (dot) character refers to the current working directory. It should be 
+the test subdirectory of your home directory.</p>
+<p><strong>Answer 3</strong>: Change to the <span class="environment_env" id="env8">/home/group/common/training/Intro_to_Unix</span> directory and then copy:</p>
+<div class="environment_if" id="ifenv11">
+<pre><code class="sh">cd /home/group/common/training/Intro_to_Unix/
+cp * ~/test
+</code></pre>
+
+</div>
+<p>Remember that ~ is a shortcut reference to your home directory.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink74").click(function(e){
+            e.preventDefault();
+            $("#showable74").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="info"><b>Note</b>: This exercise assumes that the copy command from the previous exercise was successful.</div>
+
+<div class="showable-container quest showable-hidden" id="showable75">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle75"><span class="link-like" id="showablelink75">4.3) Check that the file size of <em>expectations.txt</em> is the same in both the directory that you copied 
+it from and the directory that you copied it to.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable76">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle76"><a href="" id="showablelink76">Hint</a></div>
+<div class="showable-body hint" id="showablebody76">
+<p>Remember <em>ls</em> can show you the file size (with one of its flags)</p>
+<div class="showable-container showable-hidden" id="showable77">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle77"><a href="" id="showablelink77">More</a></div>
+<div class="showable-body" id="showablebody77">
+<p><em>ls -l</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink77").click(function(e){
+            e.preventDefault();
+            $("#showable77").toggleClass("showable-hidden");
+            if ($("#showable77").hasClass("showable-hidden")) {
+                $("#showablelink77").text("More");
+            } else {
+                $("#showablelink77").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink76").click(function(e){
+            e.preventDefault();
+            $("#showable76").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable78">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle78"><a href="" id="showablelink78">Answer</a></div>
+<div class="showable-body answer" id="showablebody78">
+<p>Use <em>ls -l</em> to check the size of files.</p>
+<p>You could do this in many ways depending on the value of your working directory. We just show one possible 
+way for each file:</p>
+<div class="environment_if" id="ifenv13">
+<pre><code class="sh">$ ls -l /home/group/common/training/Intro_to_Unix/expectations.txt
+
+$ ls -l ~/test/expectations.txt
+</code></pre>
+
+</div>
+<p>From the output of the above commands you should be able to see the size of each file and check that they 
+are the same. </p>
+<p><strong>Answer</strong>: They should each be <em>1033773</em> bytes</p>
+<p><strong>Alternate</strong>: Sometimes it is useful to get file sizes reported in more "human friendly" units than bytes. If this is 
+true then try the <em>-h</em> option for ls:</p>
+<div class="environment_if" id="ifenv15">
+<pre><code class="sh">$ ls -lh /home/group/common/training/Intro_to_Unix/expectations.txt
+-rw-r--r-- 1 arobinson common 1010K Mar 26  2012 /home/group/common/training/Intro_to_Unix/expectations.txt
+</code></pre>
+
+</div>
+<p>In this case the size is reported in kilobytes as <em>1010K</em>. Larger files are reported in megabytes, gigabytes 
+etcetera.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink78").click(function(e){
+            e.preventDefault();
+            $("#showable78").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="info"><b>Note</b>: this exercise assumes your working directory is <em>~/test</em>; if not run <em>cd ~/test</em></div>
+
+<div class="showable-container quest showable-hidden" id="showable79">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle79"><span class="link-like" id="showablelink79">4.4) Check that the contents of expectations.txt are the same in both the directory that you copied 
+it from and the directory that you copied it to.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable80">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle80"><a href="" id="showablelink80">Hint</a></div>
+<div class="showable-body hint" id="showablebody80">
+<p>What is the opposite of <em>same</em>?</p>
+<div class="showable-container showable-hidden" id="showable81">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle81"><a href="" id="showablelink81">More</a></div>
+<div class="showable-body" id="showablebody81">
+<p><em>diff</em>erence</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink81").click(function(e){
+            e.preventDefault();
+            $("#showable81").toggleClass("showable-hidden");
+            if ($("#showable81").hasClass("showable-hidden")) {
+                $("#showablelink81").text("More");
+            } else {
+                $("#showablelink81").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink80").click(function(e){
+            e.preventDefault();
+            $("#showable80").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable82">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle82"><a href="" id="showablelink82">Answer</a></div>
+<div class="showable-body answer" id="showablebody82">
+<p>Use the <em>diff</em> command to compare the contents of two files.</p>
+<div class="environment_if" id="ifenv17">
+<pre><code class="sh">$ diff /home/group/common/training/Intro_to_Unix/expectations.txt expectations.txt
+</code></pre>
+
+</div>
+<p>If the two files are identical the <em>diff</em> command will NOT produce any output)</p>
+<p><strong>Answer</strong>: Yes, they are the same since no output was given.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink82").click(function(e){
+            e.preventDefault();
+            $("#showable82").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable83">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle83"><span class="link-like" id="showablelink83">4.5) How many lines, words and characters are in expectations.txt?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable84">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle84"><a href="" id="showablelink84">Hint</a></div>
+<div class="showable-body hint" id="showablebody84">
+<p>Initialisms are key</p>
+<div class="showable-container showable-hidden" id="showable85">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle85"><a href="" id="showablelink85">More</a></div>
+<div class="showable-body" id="showablebody85">
+<p><em>w</em>ord <em>c</em>ount</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink85").click(function(e){
+            e.preventDefault();
+            $("#showable85").toggleClass("showable-hidden");
+            if ($("#showable85").hasClass("showable-hidden")) {
+                $("#showablelink85").text("More");
+            } else {
+                $("#showablelink85").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink84").click(function(e){
+            e.preventDefault();
+            $("#showable84").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable86">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle86"><a href="" id="showablelink86">Answer</a></div>
+<div class="showable-body answer" id="showablebody86">
+<p>Use the <em>wc</em> (for "word count") to count the number of characters, lines and words in a file:</p>
+<pre><code class="sh">$ wc expectations.txt
+  20415  187465 1033773 expectations.txt
+</code></pre>
+
+<p><strong>Answer</strong>: There are <em>20415</em> lines, <em>187465</em> words and <em>1033773</em> characters in expectations.txt.</p>
+<p>To get just the line, word or character count:</p>
+<pre><code class="sh">$ wc -l expectations.txt
+20415 expectations.txt
+$ wc -w expectations.txt
+187465 expectations.txt
+$ wc -c expectations.txt
+1033773 expectations.txt
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink86").click(function(e){
+            e.preventDefault();
+            $("#showable86").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable87">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle87"><span class="link-like" id="showablelink87">4.6) Open <em>~/test/expectations.txt</em> in the <em>nano</em> text editor, delete the first line of text, and 
+save your changes to the file. Exit <em>nano</em>.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable88">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle88"><a href="" id="showablelink88">Hint</a></div>
+<div class="showable-body hint" id="showablebody88">
+<p><em>nano FILENAME</em></p>
+<p>Once <em>nano</em> is open it displays some command hints along the bottom of the screen.</p>
+<div class="showable-container showable-hidden" id="showable89">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle89"><a href="" id="showablelink89">More</a></div>
+<div class="showable-body" id="showablebody89">
+<p><em>^O</em> means hold the <em>Control</em> (or CTRL) key while pressing the <em>o</em>.  Dispite what it displays, you need to type 
+the lower-case letter that follows the <em>^</em> character.</p>
+<p>WriteOut is another name for Save.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink89").click(function(e){
+            e.preventDefault();
+            $("#showable89").toggleClass("showable-hidden");
+            if ($("#showable89").hasClass("showable-hidden")) {
+                $("#showablelink89").text("More");
+            } else {
+                $("#showablelink89").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink88").click(function(e){
+            e.preventDefault();
+            $("#showable88").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable90">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle90"><a href="" id="showablelink90">Answer</a></div>
+<div class="showable-body answer" id="showablebody90">
+<p>Take some time to play around with the <em>nano</em> text editor.</p>
+<p><em>Nano</em> is a very simple text editor which is easy to use but limited in features. More powerful 
+editors exist such as <em>vim</em> and <em>emacs</em>, however they take a substantial amount of time to learn.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink90").click(function(e){
+            e.preventDefault();
+            $("#showable90").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable91">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle91"><span class="link-like" id="showablelink91">4.7) Did the changes you made to <em>~/test/expectations.txt</em> have any effect on 
+<em> <span class="environment_env" id="env1">/home/group/common/training/Intro_to_Unix</span></em>? How can you tell if two files are the 
+same or different in their contents?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable92">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle92"><a href="" id="showablelink92">Hint</a></div>
+<div class="showable-body hint" id="showablebody92">
+<p>Remember exercise 4.4</p>
+<div class="showable-container showable-hidden" id="showable93">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle93"><a href="" id="showablelink93">More</a></div>
+<div class="showable-body" id="showablebody93">
+<p>Use <em>diff</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink93").click(function(e){
+            e.preventDefault();
+            $("#showable93").toggleClass("showable-hidden");
+            if ($("#showable93").hasClass("showable-hidden")) {
+                $("#showablelink93").text("More");
+            } else {
+                $("#showablelink93").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink92").click(function(e){
+            e.preventDefault();
+            $("#showable92").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable94">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle94"><a href="" id="showablelink94">Answer</a></div>
+<div class="showable-body answer" id="showablebody94">
+<p>Use <em>diff</em> to check that the two files are different after you have made the change to the copy of 
+<em>expectations.txt</em> in your <em>~/test</em> directory.</p>
+<div class="environment_if" id="ifenv19">
+<pre><code class="sh">diff ~/test/expectations.txt \
+/home/group/common/training/Intro_to_Unix/expectations.txt
+</code></pre>
+
+</div>
+<p>You could also use <em>ls</em> to check that the files have different sizes.</p>
+<p><strong>Answer</strong>: No, diff now shows 1 line different so they are independent files</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink94").click(function(e){
+            e.preventDefault();
+            $("#showable94").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable95">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle95"><span class="link-like" id="showablelink95">4.8) In your <em>test</em> subdirectory, rename <em>expectations.txt</em> to <em>foo.txt</em>.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable96">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle96"><a href="" id="showablelink96">Hint</a></div>
+<div class="showable-body hint" id="showablebody96">
+<p>Another way to think of it is <em>moving</em> it from <em>expectations.txt</em> to <em>foo.txt</em></p>
+<div class="showable-container showable-hidden" id="showable97">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle97"><a href="" id="showablelink97">More</a></div>
+<div class="showable-body" id="showablebody97">
+<p><em>mv</em></p>
+<p>Use <em>man mv</em> if you need to work out how to use it.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink97").click(function(e){
+            e.preventDefault();
+            $("#showable97").toggleClass("showable-hidden");
+            if ($("#showable97").hasClass("showable-hidden")) {
+                $("#showablelink97").text("More");
+            } else {
+                $("#showablelink97").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink96").click(function(e){
+            e.preventDefault();
+            $("#showable96").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable98">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle98"><a href="" id="showablelink98">Answer</a></div>
+<div class="showable-body answer" id="showablebody98">
+<p>Use the <em>mv</em> command to rename the file:</p>
+<pre><code class="sh">$ mv expectations.txt foo.txt
+$ ls
+foo.txt  hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink98").click(function(e){
+            e.preventDefault();
+            $("#showable98").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable99">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle99"><span class="link-like" id="showablelink99">4.9) Rename foo.txt back to expectations.txt.</span></div>
+</div>
+</div>
+<div class="showable-container answer showable-hidden" id="showable100">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle100"><a href="" id="showablelink100">Answer</a></div>
+<div class="showable-body answer" id="showablebody100">
+<p>Use the <em>mv</em> command to rename the file:</p>
+<pre><code class="sh">$ mv foo.txt expectations.txt
+$ ls
+expectations.txt  hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
+</code></pre>
+
+<p>Use <em>ls</em> to check that the file is in fact renamed.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink100").click(function(e){
+            e.preventDefault();
+            $("#showable100").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable101">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle101"><span class="link-like" id="showablelink101">4.10) Remove the file <em>expectations.txt</em> from your <em>test</em> directory.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable102">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle102"><a href="" id="showablelink102">Hint</a></div>
+<div class="showable-body hint" id="showablebody102">
+<p>We are trying to <em>remove</em> a file, check the commands at the top of this topic.</p>
+<div class="showable-container showable-hidden" id="showable103">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle103"><a href="" id="showablelink103">More</a></div>
+<div class="showable-body" id="showablebody103">
+<p><em>rm</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink103").click(function(e){
+            e.preventDefault();
+            $("#showable103").toggleClass("showable-hidden");
+            if ($("#showable103").hasClass("showable-hidden")) {
+                $("#showablelink103").text("More");
+            } else {
+                $("#showablelink103").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink102").click(function(e){
+            e.preventDefault();
+            $("#showable102").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable104">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle104"><a href="" id="showablelink104">Answer</a></div>
+<div class="showable-body answer" id="showablebody104">
+<p>Use the <em>rm</em> command to remove files (carefully):</p>
+<pre><code class="sh">$ rm expectations.txt
+$ ls
+hello.c  hi  jude.txt  moby.txt  sample_1.fastq  sleepy
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink104").click(function(e){
+            e.preventDefault();
+            $("#showable104").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable105">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle105"><span class="link-like" id="showablelink105">4.11) Remove the entire <em>test</em> directory and all the files within it.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable106">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle106"><a href="" id="showablelink106">Hint</a></div>
+<div class="showable-body hint" id="showablebody106">
+<p>We are trying to <em>remove a directory</em>.</p>
+<div class="showable-container showable-hidden" id="showable107">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle107"><a href="" id="showablelink107">More</a></div>
+<div class="showable-body" id="showablebody107">
+<p>You could use <em>rmdir</em> but there is an easier way using just <em>rm</em> and a flag.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink107").click(function(e){
+            e.preventDefault();
+            $("#showable107").toggleClass("showable-hidden");
+            if ($("#showable107").hasClass("showable-hidden")) {
+                $("#showablelink107").text("More");
+            } else {
+                $("#showablelink107").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink106").click(function(e){
+            e.preventDefault();
+            $("#showable106").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable108">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle108"><a href="" id="showablelink108">Answer</a></div>
+<div class="showable-body answer" id="showablebody108">
+<p>You could use the <em>rm</em> command to remove each file individually, and then use the <em>rmdir</em> command 
+to remove the directory. Note that <em>rmdir</em> will only remove directories that are empty (i.e. do not 
+contain files or subdirectories).</p>
+<p>A faster way is to pass the <em>-r</em> (for recursive) flag to <em>rm</em> to remove all the files and the 
+directory in one go:</p>
+<p><strong>Logical Answer</strong>:</p>
+<pre><code class="sh">cd ~
+rm test/*
+rmdir test
+</code></pre>
+
+<p><strong>Easier Answer</strong>:</p>
+<pre><code class="sh">cd ~
+rm -r test
+</code></pre>
+
+<div class="error"><b>Warning</b>: Be very careful with <em>rm -r</em>, it will remove all files 
+and all subdirectories underneath the specified directory. This could be catastrophic if you do it 
+in the wrong location! Now is a good moment to pause and think about file backup strategies.</div>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink108").click(function(e){
+            e.preventDefault();
+            $("#showable108").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable109">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle109"><span class="link-like" id="showablelink109">4.12) Recreate the test directory in your home directory and copy all the files from 
+<em><span class="environment_env" id="env0">/home/group/common/training/Intro_to_Unix</span></em> back into the test directory.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable110">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle110"><a href="" id="showablelink110">Hint</a></div>
+<div class="showable-body hint" id="showablebody110">
+<p>See exercises 4.1 and 4.2</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink110").click(function(e){
+            e.preventDefault();
+            $("#showable110").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable111">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle111"><a href="" id="showablelink111">Answer</a></div>
+<div class="showable-body answer" id="showablebody111">
+<p>Repeat exercises 4.1 and 4.2.</p>
+<div class="environment_if" id="ifenv21">
+<pre><code class="sh">$ cd ~
+$ mkdir test
+$ cp /home/group/common/training/Intro_to_Unix/* test
+</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink111").click(function(e){
+            e.preventDefault();
+            $("#showable111").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable112">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle112"><span class="link-like" id="showablelink112">4.13) Change directories to <em>~/test</em> and use the <em>cat</em> command to display the entire contents 
+of the file <em>hello.c</em></span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable113">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle113"><a href="" id="showablelink113">Hint</a></div>
+<div class="showable-body hint" id="showablebody113">
+<p>Use <em>man</em> if you can't guess how it might work.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink113").click(function(e){
+            e.preventDefault();
+            $("#showable113").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable114">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle114"><a href="" id="showablelink114">Answer</a></div>
+<div class="showable-body answer" id="showablebody114">
+<pre><code class="sh">$ cd ~/test
+$ cat hello.c
+#include &lt;stdio.h&gt;
+int main(void) {
+    printf (&quot;Hello World\n&quot;);
+    return 0;
+}
+</code></pre>
+
+<p><em>hello.c</em> contains the source code of a C program. The compiled executable version of this code 
+is in the file called <em>hi</em>, which you can run like so:</p>
+<pre><code class="sh">$ ./hi
+Hello World
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink114").click(function(e){
+            e.preventDefault();
+            $("#showable114").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable115">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle115"><span class="link-like" id="showablelink115">4.14) Use the <em>head</em> command to view the first <em>20</em> lines of the file <em>sample_1.fastq</em></span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable116">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle116"><a href="" id="showablelink116">Hint</a></div>
+<div class="showable-body hint" id="showablebody116">
+<p>Remember your <em>best</em> friend!</p>
+<div class="showable-container showable-hidden" id="showable117">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle117"><a href="" id="showablelink117">More</a></div>
+<div class="showable-body" id="showablebody117">
+<p>Use <em>man</em> to find out what option you need to add to display a given number of <em>lines</em>.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink117").click(function(e){
+            e.preventDefault();
+            $("#showable117").toggleClass("showable-hidden");
+            if ($("#showable117").hasClass("showable-hidden")) {
+                $("#showablelink117").text("More");
+            } else {
+                $("#showablelink117").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink116").click(function(e){
+            e.preventDefault();
+            $("#showable116").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable118">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle118"><a href="" id="showablelink118">Answer</a></div>
+<div class="showable-body answer" id="showablebody118">
+<pre><code class="sh">$ head -n 20 sample_1.fastq
+@IRIS:7:1:17:394#0/1
+GTCAGGACAAGAAAGACAANTCCAATTNACATTATG
++IRIS:7:1:17:394#0/1
+aaabaa`]baaaaa_aab]D^^`b`aYDW]abaa`^
+@IRIS:7:1:17:800#0/1
+GGAAACACTACTTAGGCTTATAAGATCNGGTTGCGG
++IRIS:7:1:17:800#0/1
+ababbaaabaaaaa`]`ba`]`aaaaYD\\_a``XT
+@IRIS:7:1:17:1757#0/1
+TTTTCTCGACGATTTCCACTCCTGGTCNACGAATCC
++IRIS:7:1:17:1757#0/1
+aaaaaa``aaa`aaaa_^a```]][Z[DY^XYV^_Y
+@IRIS:7:1:17:1479#0/1
+CATATTGTAGGGTGGATCTCGAAAGATATGAAAGAT
++IRIS:7:1:17:1479#0/1
+abaaaaa`a```^aaaaa`_]aaa`aaa__a_X]``
+@IRIS:7:1:17:150#0/1
+TGATGTACTATGCATATGAACTTGTATGCAAAGTGG
++IRIS:7:1:17:150#0/1
+abaabaa`aaaaaaa^ba_]]aaa^aaaaa_^][aa
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink118").click(function(e){
+            e.preventDefault();
+            $("#showable118").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable119">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle119"><span class="link-like" id="showablelink119">4.15) Use the <em>tail</em> command to view the last <em>8</em> lines of the file <em>sample_1.fastq</em></span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable120">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle120"><a href="" id="showablelink120">Hint</a></div>
+<div class="showable-body hint" id="showablebody120">
+<p>Its very much like <em>head</em>.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink120").click(function(e){
+            e.preventDefault();
+            $("#showable120").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable121">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle121"><a href="" id="showablelink121">Answer</a></div>
+<div class="showable-body answer" id="showablebody121">
+<pre><code class="sh">tail -n 8 sample_1.fastq
+@IRIS:7:32:731:717#0/1
+TAATAATTGGAGCCAAATCATGAATCAAAGGACATA
++IRIS:7:32:731:717#0/1
+ababbababbab]abbaa`babaaabbb`bbbabbb
+@IRIS:7:32:731:1228#0/1
+CTGATGCCGAGGCACGCCGTTAGGCGCGTGCTGCAG
++IRIS:7:32:731:1228#0/1
+`aaaaa``aaa`a``a`^a`a`a_[a_a`a`aa`__
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink121").click(function(e){
+            e.preventDefault();
+            $("#showable121").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable122">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle122"><span class="link-like" id="showablelink122">4.16) Use the <em>grep</em> command to find out all the lines in <em>moby.txt</em> that contain the word 
+"Ahab"</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable123">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle123"><a href="" id="showablelink123">Hint</a></div>
+<div class="showable-body hint" id="showablebody123">
+<p>One might say we are 'looking for the <em>pattern</em> "Ahab"'</p>
+<div class="showable-container showable-hidden" id="showable124">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle124"><a href="" id="showablelink124">More</a></div>
+<div class="showable-body" id="showablebody124">
+<pre><code class="sh">$ man grep
+...
+SYNOPSIS
+       grep [OPTIONS] PATTERN [FILE...]
+...
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink124").click(function(e){
+            e.preventDefault();
+            $("#showable124").toggleClass("showable-hidden");
+            if ($("#showable124").hasClass("showable-hidden")) {
+                $("#showablelink124").text("More");
+            } else {
+                $("#showablelink124").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink123").click(function(e){
+            e.preventDefault();
+            $("#showable123").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable125">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle125"><a href="" id="showablelink125">Answer</a></div>
+<div class="showable-body answer" id="showablebody125">
+<pre><code class="sh">$ grep Ahab moby.txt
+&quot;Want to see what whaling is, eh? Have ye clapped eye on Captain Ahab?&quot;
+&quot;Who is Captain Ahab, sir?&quot;
+&quot;Aye, aye, I thought so. Captain Ahab is the Captain of this ship.&quot;
+... AND MUCH MUCH MORE ...
+</code></pre>
+
+<p>If you want to know how many lines are in the output of the above command you can "pipe" it 
+into the <em>wc -l</em> command:</p>
+<pre><code class="sh">$ grep Ahab moby.txt | wc -l
+491
+</code></pre>
+
+<p>which shows that there are <em>491</em> lines in <em>moby.txt</em> that contain the word Ahab.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink125").click(function(e){
+            e.preventDefault();
+            $("#showable125").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable126">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle126"><span class="link-like" id="showablelink126">4.17) Use the <em>grep</em> command to find out all the lines in <em>expectations.txt</em> that contain the 
+word "the" with a case insensitive search (it should count "the" "The" "THE" "tHe" etcetera)
+.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable127">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle127"><a href="" id="showablelink127">Hint</a></div>
+<div class="showable-body hint" id="showablebody127">
+<p>One might say we are <em>ignoring case</em>.</p>
+<div class="showable-container showable-hidden" id="showable128">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle128"><a href="" id="showablelink128">More</a></div>
+<div class="showable-body" id="showablebody128">
+<pre><code class="sh">$ man grep
+...
+       -i, --ignore-case
+              Ignore case distinctions in both the PATTERN and the input files.  (-i is specified by POSIX.)
+...
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink128").click(function(e){
+            e.preventDefault();
+            $("#showable128").toggleClass("showable-hidden");
+            if ($("#showable128").hasClass("showable-hidden")) {
+                $("#showablelink128").text("More");
+            } else {
+                $("#showablelink128").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink127").click(function(e){
+            e.preventDefault();
+            $("#showable127").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable129">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle129"><a href="" id="showablelink129">Answer</a></div>
+<div class="showable-body answer" id="showablebody129">
+<p>Use the <em>-i</em> flag to <em>grep</em> to make it perform case insensitive search:</p>
+<pre><code class="sh">$ grep -i the expectations.txt
+The Project Gutenberg EBook of Great Expectations, by Charles Dickens
+This eBook is for the use of anyone anywhere at no cost and with
+re-use it under the terms of the Project Gutenberg License included
+[Project Gutenberg Editor's Note: There is also another version of
+... AND MUCH MUCH MORE ...
+</code></pre>
+
+<p>Again, "pipe" the output to <em>wc -l</em> to count the number of lines:</p>
+<pre><code class="sh">$ grep -i the expectations.txt  | wc -l
+8165
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink129").click(function(e){
+            e.preventDefault();
+            $("#showable129").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable130">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle130"><span class="link-like" id="showablelink130">4.18) Use the <em>gzip</em> command to compress the file <em>sample_1.fastq</em>. Use <em>gunzip</em> to decompress it 
+back to the original contents.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable131">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle131"><a href="" id="showablelink131">Hint</a></div>
+<div class="showable-body hint" id="showablebody131">
+<p>Use the above commands along with <em>man</em> and <em>ls</em> to see what happens to the file.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink131").click(function(e){
+            e.preventDefault();
+            $("#showable131").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable132">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle132"><a href="" id="showablelink132">Answer</a></div>
+<div class="showable-body answer" id="showablebody132">
+<p>Check the file size of sample_1.fastq before compressing it:</p>
+<pre><code class="sh"># check filesize
+$ ls -l sample_1.fastq
+-rw-r--r-- 1 training01 training 90849644 Jun 14 20:03 sample_1.fastq
+
+# compress it (takes a few seconds)
+$ gzip sample_1.fastq
+
+# check filesize (Note: its name changed)
+$ ls -l sample_1.fastq.gz
+-rw-r--r-- 1 training01 training 26997595 Jun 14 20:03 sample_1.fastq.gz
+
+# decompress it
+$ gunzip sample_1.fastq.gz
+
+$ ls -l sample_1.fastq
+-rw-r--r-- 1 training01 training 90849644 Jun 14 20:03 sample_1.fastq
+</code></pre>
+
+<p>You will see that when it was compressed it is <em>26997595</em> bytes in size, making it about <em>0.3</em> times the size of the 
+original file.</p>
+<p><strong>Note</strong>: in the above section the lines starting with <em>#</em> are comments so don't need to be copied but if you
+do then they won't do anything.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink132").click(function(e){
+            e.preventDefault();
+            $("#showable132").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="topic-5-pipes-output-redirection-and-shell-scripts">Topic 5: Pipes, output redirection and shell scripts</h2>
+<p>In this section we will cover a lot of the more advanced Unix concepts; it is here where you will start to see
+the power of Unix.  I say <em>start</em> because this is only the "tip of the iceberg".</p>
+<p><strong>Duration</strong>: 50 minutes. <!-- See "Processes" from the workshop notes. --></p>
+<p><strong>Relevant commands</strong>: <em>wc</em>, <em>paste</em>, <em>grep</em>, <em>sort</em>, <em>uniq</em>, <em>nano</em>, <em>cut</em>, <em>if</em>, <em>for</em></p>
+<div class="showable-container quest" id="showable133">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle133"><a href="" id="showablelink133">5.1) How many <em>reads</em> are contained in the file <em>sample_1.fastq</em>?</a></div>
+<div class="showable-body quest" id="showablebody133">
+<p>Those who are new-to or not-in the field of Genomics, a <em>read</em> is multi-line record obtained by reading 
+DNA or RNA with a sequencing machine.  It typically contains an ID, sequence and quality score.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink133").click(function(e){
+            e.preventDefault();
+            $("#showable133").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container hint showable-hidden" id="showable134">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle134"><a href="" id="showablelink134">Hint</a></div>
+<div class="showable-body hint" id="showablebody134">
+<p>Examine some of the file to work out how many lines each <em>read</em> takes up.</p>
+<div class="showable-container showable-hidden" id="showable135">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle135"><a href="" id="showablelink135">More</a></div>
+<div class="showable-body" id="showablebody135">
+<p>Count the number of lines</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink135").click(function(e){
+            e.preventDefault();
+            $("#showable135").toggleClass("showable-hidden");
+            if ($("#showable135").hasClass("showable-hidden")) {
+                $("#showablelink135").text("More");
+            } else {
+                $("#showablelink135").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink134").click(function(e){
+            e.preventDefault();
+            $("#showable134").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable136">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle136"><a href="" id="showablelink136">Answer</a></div>
+<div class="showable-body answer" id="showablebody136">
+<p>We can answer this question by counting the number of lines in the file and dividing by 4:</p>
+<pre><code class="sh">$ wc -l sample_1.fastq
+3000000
+</code></pre>
+
+<p><strong>Answer</strong>: There are <em>3000000</em> lines in the file representing <em>750000</em> reads.</p>
+<p>If you want to do simple arithmetic at the command line then you can use the "basic calculator" 
+called <em>bc</em>:</p>
+<pre><code class="sh">$ echo &quot;3000000 / 4&quot; | bc
+750000
+</code></pre>
+
+<div class="info"><b>Note</b>: that the vertical bar character "|" is the Unix pipe (and is often 
+called the "pipe symbol"). It is used for connecting the output of one command into the input of 
+another command. We'll see more examples soon.</div>
+
+<p><em>bc</em> is suitable for small calculations, but it becomes cumbersome for more complex examples. If 
+you want to do more sophisticated calculations then we recommend to use a more general purpose 
+programming language (such as Python etcetera).</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink136").click(function(e){
+            e.preventDefault();
+            $("#showable136").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable137">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle137"><span class="link-like" id="showablelink137">5.2) How many reads in <em>sample_1.fastq</em> contain the sequence <em>GATTACA</em>?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable138">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle138"><a href="" id="showablelink138">Hint</a></div>
+<div class="showable-body hint" id="showablebody138">
+<p>Check out exercise 4.16</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink138").click(function(e){
+            e.preventDefault();
+            $("#showable138").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable139">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle139"><a href="" id="showablelink139">Answer</a></div>
+<div class="showable-body answer" id="showablebody139">
+<p>Use <em>grep</em> to find all the lines that contain <em>GATTACA</em> and "pipe" the output to <em>wc -l</em> to count them:</p>
+<pre><code class="sh">$ grep GATTACA sample_1.fastq | wc -l
+1119
+</code></pre>
+
+<p><strong>Answer</strong>: <em>1119</em></p>
+<p>If you are unsure about the possibility of upper and lower case characters then consider using 
+the <em>-i</em> (ignore case option for grep).</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink139").click(function(e){
+            e.preventDefault();
+            $("#showable139").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable140">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle140"><span class="link-like" id="showablelink140">5.3) On what line numbers do the sequences containing <em>GATTACA</em> occur?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable141">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle141"><a href="" id="showablelink141">Hint</a></div>
+<div class="showable-body hint" id="showablebody141">
+<p>We are looking for the <em>line numbers</em>.</p>
+<div class="showable-container showable-hidden" id="showable142">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle142"><a href="" id="showablelink142">More</a></div>
+<div class="showable-body" id="showablebody142">
+<p>Check out the manpage for <em>grep</em> and/or <em>nl</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink142").click(function(e){
+            e.preventDefault();
+            $("#showable142").toggleClass("showable-hidden");
+            if ($("#showable142").hasClass("showable-hidden")) {
+                $("#showablelink142").text("More");
+            } else {
+                $("#showablelink142").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink141").click(function(e){
+            e.preventDefault();
+            $("#showable141").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable143">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle143"><a href="" id="showablelink143">Answer</a></div>
+<div class="showable-body answer" id="showablebody143">
+<p>You can use the <em>-n</em> flag to grep to make it prefix each line with a line number:</p>
+<p><strong>Answer 1</strong>: </p>
+<pre><code class="sh">$ grep -n GATTACA sample_1.fastq
+5078:AGGAAGATTACAACTCCAAGACACCAAACAAATTCC
+7170:AACTACAAAGGTCAGGATTACAAGCTCTTGCCCTTC
+8238:ATAGTTTTTTCGATTACATGGATTATATCTGTTTGC
+... AND MUCH MUCH MORE ...
+</code></pre>
+
+<p><strong>Answer 2</strong>: Or you can use the <em>nl</em> command to number each line of sample_1.fastq and then search for <em>GATTACA</em> 
+in the numbered lines:</p>
+<pre><code class="sh">$ nl sample_1.fastq | grep GATTACA
+  5078  AGGAAGATTACAACTCCAAGACACCAAACAAATTCC
+  7170  AACTACAAAGGTCAGGATTACAAGCTCTTGCCCTTC
+  8238  ATAGTTTTTTCGATTACATGGATTATATCTGTTTGC
+... AND MUCH MUCH MORE ...
+</code></pre>
+
+<p><strong>Just the line numbers</strong>:</p>
+<p>If you just want to see the line numbers then you can "pipe" the output of the above command into 
+<em>cut -f 1</em>:</p>
+<pre><code class="sh">$ nl sample_1.fastq | grep GATTACA | cut -f 1
+  5078
+  7170
+  8238
+... AND MUCH MUCH MORE ...
+</code></pre>
+
+<p><em>cut</em> will remove certain columns from the input; in this case it will remove all except column 1
+(a.k.a. field 1, hence the <em>-f 1</em> option)</p>
+<pre><code class="sh">$ grep -n GATTACA sample_1.fastq | cut -d: -f 1
+5078
+7170
+8238
+... AND MUCH MUCH MORE ...
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink143").click(function(e){
+            e.preventDefault();
+            $("#showable143").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable144">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle144"><span class="link-like" id="showablelink144">5.4) Use the <em>nl</em> command to print each line of <em>sample_1.fastq</em> with its corresponding line 
+number at the beginning.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable145">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle145"><a href="" id="showablelink145">Hint</a></div>
+<div class="showable-body hint" id="showablebody145">
+<p>Check answer to 5.3.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink145").click(function(e){
+            e.preventDefault();
+            $("#showable145").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable146">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle146"><a href="" id="showablelink146">Answer</a></div>
+<div class="showable-body answer" id="showablebody146">
+<pre><code class="sh">$ nl sample_1.fastq
+     1  @IRIS:7:1:17:394#0/1
+     2  GTCAGGACAAGAAAGACAANTCCAATTNACATTATG
+     3  +IRIS:7:1:17:394#0/1
+     4  aaabaa`]baaaaa_aab]D^^`b`aYDW]abaa`^
+     5  @IRIS:7:1:17:800#0/1
+     6  GGAAACACTACTTAGGCTTATAAGATCNGGTTGCGG
+     7  +IRIS:7:1:17:800#0/1
+     8  ababbaaabaaaaa`]`ba`]`aaaaYD\\_a``XT
+... AND MUCH MUCH MORE ...
+</code></pre>
+
+<p>There are a lot of lines in that file so this command might take a while to print all its output. 
+If you get tired of looking at the output you can kill the command with <em>control-c</em> (hold the 
+<em>control</em> key down and simultaneously press the "<em>c</em>" character).</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink146").click(function(e){
+            e.preventDefault();
+            $("#showable146").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable147">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle147"><span class="link-like" id="showablelink147">5.5) Redirect the output of the previous command to a file called <em>sample_1.fastq.nl</em>. Check 
+the first <em>20</em> lines of <em>sample_1.fastq.nl</em> with the <em>head</em> command. Use the <em>less</em> command to 
+interactively view the contents of <em>sample_1.fastq.nl</em> (use the arrow keys to navigate up and down, 
+<em>q</em> to quit and '<em>/</em>' to search). Use the search facility in less to find occurrences of 
+<em>GATTACA</em>.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable148">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle148"><a href="" id="showablelink148">Hint</a></div>
+<div class="showable-body hint" id="showablebody148">
+<p>Ok that one was tough, <em>&gt; FILENAME</em> is how you do it if you didn't break out an internet search for 
+"redirect the output in Unix"</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink148").click(function(e){
+            e.preventDefault();
+            $("#showable148").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable149">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle149"><a href="" id="showablelink149">Answer</a></div>
+<div class="showable-body answer" id="showablebody149">
+<pre><code class="sh">$ nl sample_1.fastq &gt; sample_1.fastq.nl
+</code></pre>
+
+<p>The greater-than sign "<em>&gt;</em>" is the file redirection operator. It causes the standard output of the 
+command on the left-hand-side to be written to the file on the right-hand-side.</p>
+<p>You should notice that the above command is much faster than printing the output to the screen. 
+This is because writing to disk can be performed much more quickly than rendering the output on 
+a terminal.</p>
+<p>To check that the first 20 lines of the file look reasonable you can use the <em>head</em> command like so:</p>
+<pre><code class="sh">$ head -n 20 sample_1.fastq.nl
+     1  @IRIS:7:1:17:394#0/1
+     2  GTCAGGACAAGAAAGACAANTCCAATTNACATTATG
+     3  +IRIS:7:1:17:394#0/1
+     4  aaabaa`]baaaaa_aab]D^^`b`aYDW]abaa`^
+     5  @IRIS:7:1:17:800#0/1
+     6  GGAAACACTACTTAGGCTTATAAGATCNGGTTGCGG
+     7  +IRIS:7:1:17:800#0/1
+     8  ababbaaabaaaaa`]`ba`]`aaaaYD\\_a``XT
+...
+</code></pre>
+
+<p>The <em>less</em> command allows you to interactively view a file. The arrow keys move the page up and 
+down. You can search using the '<em>/</em>' followed by the search term. You can quit by pressing "<em>q</em>". Note 
+that the <em>less</em> command is used by default to display man pages.</p>
+<pre><code class="sh">$ less sample_1.fastq.nl
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink149").click(function(e){
+            e.preventDefault();
+            $("#showable149").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest" id="showable150">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle150"><a href="" id="showablelink150">5.6) The four-lines-per-read format of FASTQ is cumbersome to deal with. Often it would be 
+preferable if we could convert it to tab-separated-value (TSV) format, such that each read appears 
+on a single line with each of its fields separated by tabs. Use the following command to convert 
+sample_1.fastq into TSV format:</a></div>
+<div class="showable-body quest" id="showablebody150">
+<pre><code class="sh">$ cat sample_1.fastq | paste - - - - &gt; sample_1.tsv
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink150").click(function(e){
+            e.preventDefault();
+            $("#showable150").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable151">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle151"><a href="" id="showablelink151">Answer</a></div>
+<div class="showable-body answer" id="showablebody151">
+<p>The <em>'-'</em> (dash) character has a special meaning when used in place of a file; it means use the standard
+input instead of a real file.  Note: while it is fairly common in most Unix programs, not all will support it.</p>
+<p>The <em>paste</em> command is useful for merging multiple files together line-by-line, such that the <em>Nth</em> 
+line from each file is joined together into one line in the output, separated by default with a 
+<em>tab</em> character. In the above example we give paste 4 copies of the contents of <em>sample_1.fastq</em>, 
+which causes it to join consecutive groups of 4 lines from the file into one line of output.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink151").click(function(e){
+            e.preventDefault();
+            $("#showable151").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest" id="showable152">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle152"><a href="" id="showablelink152">5.7) Do you expect the output of the following command to produce the same output as above? and why?</a></div>
+<div class="showable-body quest" id="showablebody152">
+<pre><code class="sh">$ paste sample_1.fastq sample_1.fastq sample_1.fastq sample_1.fastq &gt; sample_1b.tsv
+</code></pre>
+
+<p>Try it, see what ends up in sample_1b.tsv (maybe use <em>less</em>)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink152").click(function(e){
+            e.preventDefault();
+            $("#showable152").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container hint showable-hidden" id="showable153">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle153"><a href="" id="showablelink153">Hint</a></div>
+<div class="showable-body hint" id="showablebody153">
+<p>Use <em>less</em> to examine it.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink153").click(function(e){
+            e.preventDefault();
+            $("#showable153").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable154">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle154"><a href="" id="showablelink154">Answer</a></div>
+<div class="showable-body answer" id="showablebody154">
+<p><strong>Answer</strong>: No, in the second instance we get 4 copies of each line.</p>
+<p><strong>Why</strong>: In the first command <em>paste</em> will use the input file (standard input) 4 times since the <em>cat</em> 
+command will only give one copy of the file to <em>paste</em>, where as, in the second command <em>paste</em> will open 
+the file 4 times.  Note: this is quite confusing and is not necessory to remember; its just an interesting
+side point.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink154").click(function(e){
+            e.preventDefault();
+            $("#showable154").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable155">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle155"><span class="link-like" id="showablelink155">5.8) Check that <em>sample_1.tsv</em> has the correct number of lines. Use the <em>head</em> command to view 
+the first <em>20</em> lines of the file.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable156">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle156"><a href="" id="showablelink156">Hint</a></div>
+<div class="showable-body hint" id="showablebody156">
+<p>Remember the <em>wc</em> command.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink156").click(function(e){
+            e.preventDefault();
+            $("#showable156").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable157">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle157"><a href="" id="showablelink157">Answer</a></div>
+<div class="showable-body answer" id="showablebody157">
+<p>We can count the number of lines in <em>sample_1.tsv</em> using <em>wc</em>:</p>
+<pre><code class="sh">$ wc -l sample_1.tsv
+</code></pre>
+
+<p>The output should be <em>750000</em> as expected (1/4 of the number of lines in sample_1.fastq).</p>
+<p>To view the first <em>20</em> lines of <em>sample_1.tsv</em> use the <em>head</em> command:</p>
+<pre><code class="sh">$ head -20 sample_1.tsv
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink157").click(function(e){
+            e.preventDefault();
+            $("#showable157").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable158">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle158"><span class="link-like" id="showablelink158">5.9) Use the <em>cut</em> command to print out the second column of <em>sample_1.tsv</em>. Redirect the 
+output to a file called <em>sample_1.dna.txt</em>.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable159">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle159"><a href="" id="showablelink159">Hint</a></div>
+<div class="showable-body hint" id="showablebody159">
+<p>See exercise 5.3 (for cut) and 5.5 (redirection)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink159").click(function(e){
+            e.preventDefault();
+            $("#showable159").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable160">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle160"><a href="" id="showablelink160">Answer</a></div>
+<div class="showable-body answer" id="showablebody160">
+<p>The file sample_1.tsv is in column format. The cut command can be used to select certain columns 
+from the file. The DNA sequences appear in column 2, we select that column using the -f 2 flag 
+(the f stands for "field").</p>
+<pre><code class="sh">cut -f 2 sample_1.tsv &gt; sample_1.dna.txt
+</code></pre>
+
+<p>Check that the output file looks reasonable using <em>head</em> or <em>less</em>.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink160").click(function(e){
+            e.preventDefault();
+            $("#showable160").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable161">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle161"><span class="link-like" id="showablelink161">5.10) Use the <em>sort</em> command to sort the lines of <em>sample_1.dna.txt</em> and redirect the output to 
+<em>sample_1.dna.sorted.txt</em>. Use <em>head</em> to look at the first few lines of the output file. You should 
+see a lot of repeated sequences of As.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable162">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle162"><a href="" id="showablelink162">Hint</a></div>
+<div class="showable-body hint" id="showablebody162">
+<p>Use <em>man</em> (sort) and see exercise 5.5 (redirection)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink162").click(function(e){
+            e.preventDefault();
+            $("#showable162").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable163">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle163"><a href="" id="showablelink163">Answer</a></div>
+<div class="showable-body answer" id="showablebody163">
+<pre><code class="sh">$ sort sample_1.dna.txt &gt; sample_1.dna.sorted.txt
+</code></pre>
+
+<p>Running <em>head</em> on the output file reveals that there are duplicate DNA sequences in the input FASTQ 
+file.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink163").click(function(e){
+            e.preventDefault();
+            $("#showable163").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable164">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle164"><span class="link-like" id="showablelink164">5.11) Use the <em>uniq</em> command to remove duplicate consecutive lines from <em>sample_1.dna.sorted.txt</em>, 
+redirect the result to <em>sample_1.dna.uniq.txt</em>. Compare the number of lines in sample1_dna.txt to 
+the number of lines in <em>sample_1.dna.uniq.txt</em>.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable165">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle165"><a href="" id="showablelink165">Hint</a></div>
+<div class="showable-body hint" id="showablebody165">
+<p>I am pretty sure you have already used <em>man</em> (or just guessed how to use <em>uniq</em>).  You're also a gun at 
+redirection now.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink165").click(function(e){
+            e.preventDefault();
+            $("#showable165").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable166">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle166"><a href="" id="showablelink166">Answer</a></div>
+<div class="showable-body answer" id="showablebody166">
+<pre><code class="sh">$ uniq sample_1.dna.sorted.txt &gt; sample_1.dna.uniq.txt
+</code></pre>
+
+<p>Compare the outputs of:</p>
+<pre><code class="sh">$ wc -l sample_1.dna.sorted.txt
+750000
+$ wc -l sample_1.dna.uniq.txt
+614490
+</code></pre>
+
+<p>View the contents of <em>sample_1.dna.uniq.txt</em> to check that the duplicate DNA sequences have been 
+removed.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink166").click(function(e){
+            e.preventDefault();
+            $("#showable166").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable167">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle167"><span class="link-like" id="showablelink167">5.12) Can you modify the command from above to produce <em>only</em> those sequences of DNA which were 
+duplicated in <em>sample_1.dna.sorted.txt</em>?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable168">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle168"><a href="" id="showablelink168">Hint</a></div>
+<div class="showable-body hint" id="showablebody168">
+<p>Checkout the <em>uniq</em> manpage</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink168").click(function(e){
+            e.preventDefault();
+            $("#showable168").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container hint showable-hidden" id="showable169">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle169"><a href="" id="showablelink169">Hint</a></div>
+<div class="showable-body hint" id="showablebody169">
+<p>Look at the man page for uniq.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink169").click(function(e){
+            e.preventDefault();
+            $("#showable169").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable170">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle170"><a href="" id="showablelink170">Answer</a></div>
+<div class="showable-body answer" id="showablebody170">
+<p>Use the <em>-d</em> flag to <em>uniq</em> to print out only the duplicated lines from the file:</p>
+<pre><code class="sh">$ uniq -d sample_1.dna.sorted.txt &gt; sample_1.dna.dup.txt
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink170").click(function(e){
+            e.preventDefault();
+            $("#showable170").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable171">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle171"><span class="link-like" id="showablelink171">5.13) Write a <em>shell pipeline</em> which will print the number of duplicated DNA sequences in 
+sample_1.fastq.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable172">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle172"><a href="" id="showablelink172">Hint</a></div>
+<div class="showable-body hint" id="showablebody172">
+<p>That is, <em>piping</em> most of the commands you used above instead of redirecting to file</p>
+<div class="showable-container showable-hidden" id="showable173">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle173"><a href="" id="showablelink173">More</a></div>
+<div class="showable-body" id="showablebody173">
+<p>I.e. 6 commands (<em>cat</em>, <em>paste</em>, <em>cut</em>, <em>sort</em>, <em>uniq</em>, <em>wc</em>)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink173").click(function(e){
+            e.preventDefault();
+            $("#showable173").toggleClass("showable-hidden");
+            if ($("#showable173").hasClass("showable-hidden")) {
+                $("#showablelink173").text("More");
+            } else {
+                $("#showablelink173").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink172").click(function(e){
+            e.preventDefault();
+            $("#showable172").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable174">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle174"><a href="" id="showablelink174">Answer</a></div>
+<div class="showable-body answer" id="showablebody174">
+<p>Finally we can 'pipe' all the pieces together into a sophisticated pipeline which starts with a 
+FASTQ file and ends with a list of duplicated DNA sequences:</p>
+<p><strong>Answer</strong>:</p>
+<pre><code class="sh">$ cat sample_1.fastq | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
+56079
+</code></pre>
+
+<p>The output file should have <em>56079</em> lines.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink174").click(function(e){
+            e.preventDefault();
+            $("#showable174").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable175">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle175"><span class="link-like" id="showablelink175">5.14) (Advanced) Write a shell script called <em>sample_1_dups.sh</em> which will print the number of duplicated DNA sequences 
+in sample_1.fastq.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable176">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle176"><a href="" id="showablelink176">Hint</a></div>
+<div class="showable-body hint" id="showablebody176">
+<p>Check out the <em>sleepy</em> file (with <em>cat</em> or <em>nano</em>); there is a bit of magic on the first line that you will need. </p>
+<p>You also need to tell bash that this file can be executed (check out <em>chmod</em> command).</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink176").click(function(e){
+            e.preventDefault();
+            $("#showable176").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable177">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle177"><a href="" id="showablelink177">Answer</a></div>
+<div class="showable-body answer" id="showablebody177">
+<p>Put the answer to <em>5.13</em> into a file called <em>sample_1_dups.sh</em> (or whatever you want). Use <em>nano</em> to 
+create the file. </p>
+<p><strong>Answer</strong>: the contents of the file will look like this:</p>
+<pre><code class="sh">#!/bin/bash
+
+cat sample_1.fastq | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
+</code></pre>
+
+<div class="info"><b>Note</b>: the first line has special meaning.  If it starts with '<em>#!</em>' (Hash 
+then exclamation mark) then it tells bash this file is a script that can be interpreted.  The command 
+(including full path) used to intepret the script is placed right after the magic code.</div>
+
+<p>Give everyone execute permissions on the file with chmod:</p>
+<pre><code class="sh">$ chmod +x sample_1_dups.sh 
+</code></pre>
+
+<p>You can run the script like so:</p>
+<pre><code class="sh">$ ./sample_1_dups.sh
+</code></pre>
+
+<p>If all goes well the script should behave in exactly the same way as the answer to 5.13.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink177").click(function(e){
+            e.preventDefault();
+            $("#showable177").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable178">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle178"><span class="link-like" id="showablelink178">5.15) (Advanced) Modify your shell script so that it accepts the name of the input FASTQ file 
+as a command line parameter.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable179">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle179"><a href="" id="showablelink179">Hint</a></div>
+<div class="showable-body hint" id="showablebody179">
+<p>Shell scripts can refer to command line arguments by their position using special variables called 
+<em>$0</em>, <em>$1</em>, <em>$2</em> and so on. </p>
+<div class="showable-container showable-hidden" id="showable180">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle180"><a href="" id="showablelink180">More</a></div>
+<div class="showable-body" id="showablebody180">
+<p><em>$0</em> refers to the name of the script as it was called on the command line. 
+<em>$1</em> refers to the first command line argument, and so on.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink180").click(function(e){
+            e.preventDefault();
+            $("#showable180").toggleClass("showable-hidden");
+            if ($("#showable180").hasClass("showable-hidden")) {
+                $("#showablelink180").text("More");
+            } else {
+                $("#showablelink180").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink179").click(function(e){
+            e.preventDefault();
+            $("#showable179").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable181">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle181"><a href="" id="showablelink181">Answer</a></div>
+<div class="showable-body answer" id="showablebody181">
+<p>Copy the shell script from <em>5.14</em> into a new file:</p>
+<pre><code class="sh">$ cp sample_1_dups.sh fastq_dups.sh
+</code></pre>
+
+<p>Edit the new shell script file and change it to use the command line parameters:</p>
+<pre><code class="sh">#!/bin/bash
+
+cat $1 | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
+</code></pre>
+
+<p>You can run the new script like so:</p>
+<pre><code class="sh">$ ./fastq_dups.sh sample_1.fastq
+</code></pre>
+
+<p>In the above example the script takes <em>sample_1.fastq</em> as input and prints the number of duplicated 
+sequences as output.</p>
+<p><strong>A better Answer</strong>:</p>
+<p>Ideally we would write our shell script to be more robust. At the moment it just assumes there 
+will be at least one command line argument. However, it would be better to check and produce an 
+error message if insufficient arguments were given:</p>
+<pre><code class="sh">#!/bin/bash
+if [ $# -eq 1 ]; then
+    cat $1 | paste - - - - | cut -f 2 | sort | uniq -d | wc -l
+else
+    echo &quot;Usage: $0 &lt;fastq_filename&gt;&quot;
+    exit 1
+fi
+</code></pre>
+
+<p>The '<em>if ...; then</em>' line means: do the following line(s) ONLY if the <em>...</em> (called condition) bit is true.</p>
+<p>The '<em>else</em>' line means: otherwise do the following line(s) instead.  Note: it is optional.</p>
+<p>The '<em>fi</em>' line means: this marks the end of the current <em>if</em> or <em>else</em> section.</p>
+<p>The '<em>[ $# -eq 1 ]</em>' part is the condition:</p>
+<ul>
+<li><em>$#</em>: is a special shell variable that indicates how many command line arguments were given. </li>
+<li><em>-eq</em>: checks if the numbers on either side of it are equal.</li>
+<li><em>1</em>: is a number one</li>
+</ul>
+<div class="warning"><b>Spaces in conditions</b>:
+Bash is VERY picky about the spaces within the conditions; if you get it wrong it will just behave strangely 
+(without warning).  You MUST put a space near the share brackets and between each part of the condition!</div>
+
+<p>So in words our script is saying "if user provided 1 filename, then count the duplicates, otherwise print an error".</p>
+<div class="info"><b>Exit-status</b>:
+It is a Unix standard that when the user provides incorrect commandline arguments we print a usage message 
+and return a *non-zero* exit status.  The *exit status* is a standard way for other programs to know if
+our program ran correctly; 0 means everything went as expected, any other number is an error.  If you don't
+provide an *exit ..* line then it automatically returns a 0 for you.</div>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink181").click(function(e){
+            e.preventDefault();
+            $("#showable181").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable182">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle182"><span class="link-like" id="showablelink182">5.16) (Advanced) Modify your shell script so that it accepts zero or more FASTQ files on the 
+command line argument and outputs the number of duplicated DNA sequences in each file.</span></div>
+</div>
+</div>
+<div class="showable-container answer showable-hidden" id="showable183">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle183"><a href="" id="showablelink183">Answer</a></div>
+<div class="showable-body answer" id="showablebody183">
+<p>We can add a loop to our script to accept multiple input FASTQ files:</p>
+<pre><code class="sh">#!/bin/bash
+for file in $@; do
+    dups=$(cat $file | paste - - - - | cut -f 2 | sort | uniq -d | wc -l)
+    echo &quot;$file $dups&quot;
+done
+</code></pre>
+
+<p>There's a lot going on in this script.</p>
+<p>The <em>$@</em> is a sequence of all command line arguments.</p>
+<p>The '<em>for ...; do</em>' (a.k.a. for loop) iterates over that sequence one argument at a time, assigning the current argument in 
+the sequence to the variable called <em>file</em>.</p>
+<p>The <em>$(...)</em> allow us to capture the output of another command (in-place of the <em>...</em>).  In this 
+case we capture the output of the pipeline and save it to the variable called <em>dups</em>.</p>
+<p>If you had multiple FASTQ files available you could run the script like so:</p>
+<pre><code class="sh">./fastq_dups.sh sample_1.fastq sample_2.fastq sample_3.fastq
+</code></pre>
+
+<p>And it would produce output like:</p>
+<pre><code class="text">sample_1.fastq 56079
+sample_2.fastq XXXXX
+sample_3.fastq YYYYY
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink183").click(function(e){
+            e.preventDefault();
+            $("#showable183").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="finished">Finished</h2>
+<p>Well done, you learnt a lot over the last 5 topics and you should be proud of your achievement; it 
+was a lot to take in.</p>
+<p>From here you should be comfortable around the Unix command line and ready to take on the HPC 
+Workshop.</p>
+<p>You will no-doubt forget a lot of what you learnt here so I encourage you to save a link to this 
+workshop for later reference.</p>
+<p>Thank you for your attendance, please don't forget to complete the training survey and give it
+back to the workshop facilitators.</p>
+			</div>
+		</div>
+
+		<div class="footer">
+			<hr/>
+			<div class="footer-text">Developed by <a href="http://www.latrobe.edu.au">La Trobe University</a> and <a href="http://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a></div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="../../assets/ltu.js"></script>
+	<script src="../../includes/media/delayed-jquery.js"></script>
+	<script src="../../includes/media/mdx_showable.js"></script>
+	<script src="../../search/require.js"></script>
+	<script src="../../search/search.js"></script>
+</body>
+</html>

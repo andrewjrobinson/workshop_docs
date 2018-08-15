@@ -1,0 +1,2971 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Introduction to HPC - Bioinformatics Documentation</title>
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://www.latrobe.edu.au/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://www.latrobe.edu.au/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://www.latrobe.edu.au/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://www.latrobe.edu.au/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://www.latrobe.edu.au/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://www.latrobe.edu.au/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://www.latrobe.edu.au/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://www.latrobe.edu.au/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://www.latrobe.edu.au/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://www.latrobe.edu.au/favicon-16x16.png" sizes="16x16">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../assets/ltu.css"/>
+	<link rel="stylesheet" href="../../includes/media/mdx_showable.css"/>
+	<link rel="stylesheet" href="../../includes/media/mdx_showable_user.css"/>
+	<link rel="stylesheet" href="../../includes/media/tute.css"/>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+		            <li class="">
+		                <a href="../..">Home</a>
+		            </li>
+		            <li role="presentation" class="dropdown">
+		            	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tutorials <span class="caret"></span></a>
+		                <ul class="dropdown-menu">
+		                    <li class="current">
+		                        <a href="./">Introduction to HPC</a>
+		                    </li>
+		                    <li class="">
+		                        <a href="../unix/">Introduction to Unix</a>
+		                    </li>
+		                </ul>
+		            </li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<!-- TOC -->
+			<div class="col-md-3">
+				<ul class="nav nav-sidebar">
+					<li><a href="#high-performance-computing">High-Performance Computing</a></li> 
+					<li><a href="#introduction">Introduction</a></li> 
+					<li><a href="#how-to-use-this-workshop">How to use this workshop</a></li> 
+					<li><a href="#topic-1-exploring-an-hpc">Topic 1: Exploring an HPC</a></li> 
+					<li><a href="#topic-2-software-modules">Topic 2: Software Modules</a></li> 
+					<li><a href="#topic-3-job-submission">Topic 3: Job Submission</a></li> 
+					<li><a href="#topic-4-job-monitoring">Topic 4: Job Monitoring</a></li> 
+					<li><a href="#topic-5-all-together">Topic 5: All Together</a></li> 
+					<li><a href="#finished">Finished</a></li>  
+				</ul>
+			</div>
+			
+			<!-- Content -->
+			<div class="col-md-9">
+				<div class="row header-icons">
+					<div class="col-sm-6 ltu-logo"><img class="ltu" src="http://www.latrobe.edu.au/_media/la-trobe-api/v5/img/logo.svg" /></div>
+				</div>
+				
+<style src="../../media/tute.css" ></style>
+
+<style>em {font-style: normal; font-family: courier new;}</style>
+
+<h1 id="high-performance-computing">High-Performance Computing</h1>
+<p>A hands-on-workshop covering High-Performance Computing (HPC).</p>
+<p>This workshop assumes you have a basic understanding of the Unix Operating System.  If not, then you should take
+a look at the <a href="./../unix">Hands-on Unix Workshop</a></p>
+<div class="environment_if" id="ifenv1">
+<h2 id="introduction">Introduction</h2>
+<p>Before we commence the hands-on part of this workshop we will first give a short 30 minute talk to introduce the High Performance Computing concepts. 
+The <a href="./slides.html">slides</a> are available if you would like.  Additionally the following reference material is available for later
+use.</p>
+<div class="showable-container information showable-hidden" id="showable0">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle0"><a href="" id="showablelink0">Reference Material</a></div>
+<div class="showable-body information" id="showablebody0">
+<h3 id="what-is-an-hpc">What is an HPC?</h3>
+<p>An HPC is simply a large collection of server-grade computers working together to solve large problems.</p>
+<ul>
+<li><strong>Big</strong>: HPCs typically have lots of CPUs and Memory and consequently large jobs.</li>
+<li><strong>Shared</strong>: There are usually lots of users making use of it at one time</li>
+<li><strong>Coordinated</strong>: There is a coordinator program to ensure fair-use between its users</li>
+<li><strong>Compute Collection</strong>: HPCs use a number of computers at once to solve lots of large jobs</li>
+</ul>
+<p><img src="media/drawing1.png" title="HPC Structure" alt="HPC Structure" width="300px" /></p>
+<p><strong>Figure</strong>: The user (face at top) interacts with their local PC/Laptop through the keyboard and screen.  The PC/Laptop will 
+connect to the Head/Login node of the HPC interactively.  The Head/Login node will send the jobs off to the Compute Nodes when
+one is available. </p>
+<h3 id="why-use-hpcs">Why use HPCs?</h3>
+<p>The main reason we use HPCs is because they are quite big.  Given their size, they are usually very expensive, however through 
+sharing the resources the per user/job cost can be kept low.</p>
+<ul>
+<li><strong>Many CPUs</strong>: HPCs typically have 100's to 10000's of CPUs.  Compare this with the 4 or 8 that your PC/Laptop might have.</li>
+<li><strong>Large Memory</strong>: 100's of GBs to multiple TBs of RAM are typical for each node.</li>
+<li><strong>Efficient use</strong>: through sharing the resources each user can have access to a very large computer for a period and hand 
+it back for others to use later.</li>
+</ul>
+<h3 id="software-modules">Software Modules</h3>
+<p>There are typically 100's to 1000's of software packages installed on an HPC.  Given that each can have its own special 
+requirements and multiple versions will be made, Software on the HPC will most commonly be packaged and only made available 
+to you when you request it.</p>
+<ul>
+<li><strong>Packaged</strong>: to avoid conflicts between software, each is packaged up into a module and only used on demand.</li>
+<li><strong>Loadable</strong>: before using a software module you need to load it.</li>
+<li><strong>Versions</strong>: given not all users want to use the same version of software (and to compare new results with old you might 
+   need the same version)    each version is made into its own software module so you have ultimate control.</li>
+</ul>
+<h3 id="job-submission">Job Submission</h3>
+<p>Job Submission is the process of instructing the HPC to perform a task for you.  Depending on the HPC software installed on 
+your HPC, the process of doing so might be different.</p>
+<ul>
+<li><strong>SLURM</strong>: this workshop uses an HPC that uses the SLURM HPC software.  Some common alternatives (not covered) are PBS or 
+   SGE/OGE</li>
+<li><strong>Queues (Partition)</strong>: when a job is submitted it is added to a work queue; in SLURM this is called a Partition.</li>
+<li><strong>Batch</strong>: HPC jobs are not 'interactive'.  By this we mean, you can't type input into your job's programs and you won't 
+   immediately see the output that your program prints on the screen. </li>
+</ul>
+<h4 id="resources">Resources</h4>
+<p>So that SLURM knows how to schedule and fit jobs around each other, you need to specify what resources your job will use.
+That is, you need to tell it how many CPUs, RAM, Nodes (servers), and Time you need.</p>
+<ol>
+<li><strong>CPUs</strong>: most software is limited using 1 CPU by default but many can use more than one (or you can run multiple copies at once).
+   The number of CPUs you specify needs to match how many things your software can do at once.</li>
+<li><strong>Memory</strong>: you need to estimate (or guess) how much memory (RAM) your program needs.</li>
+<li><strong>Nodes</strong>: most software will only use one of the HPC's Nodes (i.e. One server) however some software can make use of more than
+   one to solve the problem sooner.</li>
+<li><strong>Time</strong>: like when you are scheduling meetings, SLURM needs to know how long each job will take (maximum) so it can organise
+   other jobs afterwards.</li>
+</ol>
+<h4 id="job-types">Job Types</h4>
+<p>There are two types of jobs that you can submit:</p>
+<ol>
+<li><strong>Shared</strong>: a shared job (as the name suggests) is one that shares a node with other jobs.  This is the default and preferred method.</li>
+<li><strong>Exclusive</strong>: an exclusive job gets a single (or multiple) nodes to itself.  Given this exclusivity, this type of job must know how 
+   to use multiple CPUs as most HPCs will have at least 16 CPUs per node.</li>
+</ol>
+</div>
+</div>
+</div>
+<script>//<![CDATA[<!--
+(function(w,d,u){if(!w.$){w._delayed=true;console.info("Delaying JQuery calls");w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}}})(window,document)
+//-->]]></script>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink0").click(function(e){
+            e.preventDefault();
+            $("#showable0").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+</div>
+<div class="environment_if" id="ifenv2">
+<h2 id="how-to-use-this-workshop">How to use this workshop</h2>
+<p>The workshop is broken up into a number of <em>Topics</em> each focusing on a particular aspect of HPCs.  You should take a short break between 
+each to refresh and relax before tackling the next.</p>
+<p><em>Topic</em>s may start with some background followed by a number of <em>exercises</em>.  Each <em>exercise</em> begins with a <em>question</em>, then 
+sometimes a <em>hint</em> (or two) and finishes with the suggested <em>answer</em>.</p>
+<h3 id="question">Question</h3>
+<p>An example question looks like:</p>
+<div class="showable-container quest showable-hidden" id="showable1">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle1"><span class="link-like" id="showablelink1">What is the Answer to Life?</span></div>
+</div>
+</div>
+<h3 id="hint">Hint</h3>
+<p>Depending on how much of a challenge you like, you may choose to use hints.  Even if you work out the answer without hints, its a good 
+idea to read the hints afterwards because they contain extra information that is good to know.</p>
+<p>Note: <em>hint</em>s may be staged, that is, there may be a <em>more</em> section within a hint for further hints</p>
+<div class="showable-container hint showable-hidden" id="showable2">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle2"><a href="" id="showablelink2">Hint</a> &lt;- click here to reveal hint</div>
+<div class="showable-body hint" id="showablebody2">
+<p>What is the answer to everything?</p>
+<p>As featured in <em>"The Hitchhiker's Guide to the Galaxy"</em></p>
+<div class="showable-container showable-hidden" id="showable3">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle3"><a href="" id="showablelink3">More</a> &lt;- and here to show more</div>
+<div class="showable-body" id="showablebody3">
+<p>It is probably a two digit number</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink3").click(function(e){
+            e.preventDefault();
+            $("#showable3").toggleClass("showable-hidden");
+            if ($("#showable3").hasClass("showable-hidden")) {
+                $("#showablelink3").text("More");
+            } else {
+                $("#showablelink3").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink2").click(function(e){
+            e.preventDefault();
+            $("#showable2").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h3 id="answer">Answer</h3>
+<p>Once you have worked out the answer to the question expand the Answer section to check if you got it correct.</p>
+<div class="showable-container answer showable-hidden" id="showable4">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle4"><a href="" id="showablelink4">Answer</a> &lt;- click here to reveal answer</div>
+<div class="showable-body answer" id="showablebody4">
+<p><strong>Answer</strong>: 42</p>
+<p>Ref: <a href="http://en.wikipedia.org/wiki/42_%28number%29">Number 42 (Wikipedia)</a></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink4").click(function(e){
+            e.preventDefault();
+            $("#showable4").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h3 id="usage-style">Usage Style</h3>
+<p>This workshop attempts to cater for two usage styles:</p>
+<ol>
+<li><strong>Problem solver</strong>: for those who like a challenge and learn best be trying to solve the problems by-them-selves (hints optional):<ul>
+<li>Attempt to answer the question by yourself.</li>
+<li>Use hints when you get stuck.</li>
+<li>Once solved, reveal the answer and read through our suggested solution.</li>
+<li>Its a good idea to read the hints and answer description as they often contain extra useful information.</li>
+</ul>
+</li>
+<li><strong>By example</strong>:  for those who learn by following examples:  <a href="?exp">Expand</a> all sections<ul>
+<li>Expand the Answer section at the start of each question and follow along with the commands that are shown and check you get the
+  same (or similar) answers.</li>
+<li>Its a good idea to read the hints and answer description as they often contain extra useful information.</li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="connecting-to-hpc">Connecting to HPC</h3>
+<p>To begin this workshop you will need to connect to an HPC.  Today we will use the <span class="environment_env" id="env0">LIMS-HPC</span>.  The computer called<br />
+<em><span class="environment_env" id="env1">lims-hpc-m.latrobe.edu.au</span></em> (m is for master which is another name for head node) is the 
+one that coordinates all the HPCs tasks.</p>
+<p><strong>Server details</strong>:</p>
+<ul>
+<li><strong>host</strong>: <span class="environment_env" id="env35">lims-hpc-m.latrobe.edu.au</span></li>
+<li><strong>port</strong>: <span class="environment_env" id="env36">6022</span> </li>
+<li><strong>username</strong>: <span class="environment_env" id="env37">trainingXX</span></li>
+<li><strong>password</strong>: <span class="environment_env" id="env38">(provided at workshop)</span></li>
+</ul>
+<p><strong>Connection instructions</strong>:</p>
+<div class="showable-container information showable-hidden" id="showable5">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle5"><a href="" id="showablelink5">Mac OS X / Linux</a></div>
+<div class="showable-body information" id="showablebody5">
+<p>Both Mac OS X and Linux come with a version of ssh (called OpenSSH) that can be used from the command line.  To use OpenSSH you must 
+first start a terminal program on your computer.  On OS X the standard terminal is called Terminal, and it is installed by default. 
+On Linux there are many popular terminal programs including: xterm, gnome-terminal, konsole (if you aren't sure, then xterm is a good 
+default).  When you've started the terminal you should see a command prompt.  To log into <span class="environment_env" id="env30">LIMS-HPC</span>, for example, type this command at 
+the prompt and press return (where the word username is replaced with your <span class="environment_env" id="env31">LIMS-HPC</span> username):</p>
+<p><em>$ ssh -p <span class="environment_env" id="env32">6022</span> <span class="environment_env" id="env33">trainingXX</span>@<span class="environment_env" id="env34">lims-hpc-m.latrobe.edu.au</span></em></p>
+<p>The same procedure works for any other machine where you have an account except that if your Unix computer uses a port other than 22 you will
+need to specify the port by adding the option <em>-p PORT</em> with PORT substituted with the port number.</p>
+<p>You may be presented with a message along the lines of:</p>
+<pre><code class="text">The authenticity of host 'lims-hpc-m.latrobe.edu.au (131.172.24.10)' can't be  established.
+...
+Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+
+<p>Although you should never ignore a warning, this particular one is nothing to be concerned about; type <strong>yes</strong> and then <strong>press enter</strong>. 
+If all goes well you will be asked to enter your password.  Assuming you type the correct username and password the system should 
+then display a welcome message, and then present you with a Unix prompt.  If you get this far then you are ready to start entering 
+Unix commands and thus begin using the remote computer.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink5").click(function(e){
+            e.preventDefault();
+            $("#showable5").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container information showable-hidden" id="showable6">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle6"><a href="" id="showablelink6">Windows</a></div>
+<div class="showable-body information" id="showablebody6">
+<p>On Microsoft Windows (Vista, 7, 8, 10) we recommend that you use the PuTTY ssh client.  PuTTY (putty.exe) can be downloaded 
+from this web page:</p>
+<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a></p>
+<p>Documentation for using PuTTY is here:</p>
+<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html</a></p>
+<p>When you start PuTTY you should see a window which looks something like this:</p>
+<p><img src="../../includes/media/putty1.png" title="Putty Connection Dialog" alt="Putty Connection Dialog" width="400px" /></p>
+<p>To connect to <span class="environment_env" id="env26">LIMS-HPC</span> you should enter <em><span class="environment_env" id="env27">lims-hpc-m.latrobe.edu.au</span></em> into the box entitled "Host Name (or IP address)" 
+and <em><span class="environment_env" id="env28">6022</span></em> in the port, 
+then click on the Open button. All of the settings should remain the same as they were when PuTTY started (which should be the 
+same as they are in the picture above).</p>
+<p>In some circumstances you will be presented with a window entitled PuTTY Security Alert. It will say something along the lines 
+of <em>"The server's host key is not cached in the registry"</em>. This is nothing to worry about, and you should agree to continue (by 
+clicking on Yes). You usually see this message the first time you try to connect to a particular remote computer.</p>
+<p>If all goes well, a terminal window will open, showing a prompt with the text <em>"login as:"</em>. An example terminal window is shown 
+below. You should type your <span class="environment_env" id="env29">LIMS-HPC</span> username and press enter. After entering your username you will be prompted for your 
+password. Assuming you type the correct username and password the system should then display a welcome message, and then 
+present you with a Unix prompt. If you get this far then you are ready to start entering Unix commands and thus begin using 
+the remote computer.</p>
+<p><img src="../../includes/media/putty2.png" title="Putty login screen" alt="Putty login screen" width="400px" /></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink6").click(function(e){
+            e.preventDefault();
+            $("#showable6").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="topic-1-exploring-an-hpc">Topic 1: Exploring an HPC</h2>
+<p>An HPC (short for 'High Performance Computer') is simply a collection of Server Grade computers that work together to solve large problems.</p>
+<p><img src="media/drawing1.png" title="HPC Structure" alt="HPC Structure" width="245px" /></p>
+<p><strong>Figure</strong>: Overview of the computers involved when using an HPC.  Computer systems are shown in rectangles and arrows represent interactions.</p>
+<h3 id="exercises">Exercises</h3>
+<div class="showable-container quest showable-hidden" id="showable7">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle7"><span class="link-like" id="showablelink7">1.1) What is the contact email for your HPC's System Administrator?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable8">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle8"><a href="" id="showablelink8">Hint</a></div>
+<div class="showable-body hint" id="showablebody8">
+<p>When you login, you will be presented with a message; this is called the <em>Message Of The Day</em> and usually includes lots of useful 
+information.  On <span class="environment_env" id="env25">LIMS-HPC</span> this includes a list of useful commands, the last login details for your account and 
+the contact email of the system administrator</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink8").click(function(e){
+            e.preventDefault();
+            $("#showable8").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable9">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle9"><a href="" id="showablelink9">Answer</a></div>
+<div class="showable-body answer" id="showablebody9">
+<p>Depending on which computer you are working:</p>
+<ul>
+<li>SNOWY &amp; BARCOO: help@vlsci.unimelb.edu.au</li>
+<li>LIMS-HPC: genomics@latrobe.edu.au</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink9").click(function(e){
+            e.preventDefault();
+            $("#showable9").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable10">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle10"><span class="link-like" id="showablelink10">1.2) Run the <em>sinfo</em> command.  How many nodes are there in this hpc?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable11">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle11"><a href="" id="showablelink11">Hint</a></div>
+<div class="showable-body hint" id="showablebody11">
+<p>The <em><span class="environment_env" id="env18">lims-hpc-</span>[2-4]</em> is shorthand for <em><span class="environment_env" id="env19">lims-hpc-</span>2 <span class="environment_env" id="env20">lims-hpc-</span>3 and <span class="environment_env" id="env21">lims-hpc-</span>4</em> and <em><span class="environment_env" id="env22">lims-hpc-</span>[1,5]</em> is shorthand for
+<em><span class="environment_env" id="env23">lims-hpc-</span>1</em> and <em><span class="environment_env" id="env24">lims-hpc-</span>5</em></p>
+<div class="showable-container showable-hidden" id="showable12">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle12"><a href="" id="showablelink12">more</a></div>
+<div class="showable-body" id="showablebody12">
+<p>Have a look at the NODELIST column.  Only count each node once.</p>
+<pre><code class="sh">$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+compute*     up 200-00:00:      3    mix lims-hpc-[2-4]
+compute*     up 200-00:00:      2   idle lims-hpc-[1,5]
+bigmem       up 200-00:00:      1   idle lims-hpc-1
+8hour        up   08:00:00      3    mix lims-hpc-[2-4]
+8hour        up   08:00:00      3   idle lims-hpc-[1,5],lims-hpc-m
+</code></pre>
+
+<p>NOTE: the above list will vary depending on the HPC setup.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink12").click(function(e){
+            e.preventDefault();
+            $("#showable12").toggleClass("showable-hidden");
+            if ($("#showable12").hasClass("showable-hidden")) {
+                $("#showablelink12").text("more");
+            } else {
+                $("#showablelink12").text("less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink11").click(function(e){
+            e.preventDefault();
+            $("#showable11").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable13">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle13"><a href="" id="showablelink13">Answer</a></div>
+<div class="showable-body answer" id="showablebody13">
+<p>The <em>sinfo</em> command lists all available partitions and the status of each node within them.  If you count up the names of nodes 
+(uniquely) you will get the total nodes in this cluster.  </p>
+<ul>
+<li>BARCOO: <strong>70</strong> (<em>barcoo001</em> through <em>barcoo070</em>)</li>
+<li>SNOWY: <strong>43</strong> (<em>snowy001</em> through <em>snowy043</em>)</li>
+<li>LIMS-HPC: <strong>6</strong> (<em>lims-hpc-m</em> and <em>lims-hpc-1</em> through <em>lims-hpc-5</em>)</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink13").click(function(e){
+            e.preventDefault();
+            $("#showable13").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container indent showable-hidden" id="showable14">
+<div class="showable-inner">
+<div class="showable-header indent" id="showabletitle14"><a href="" id="showablelink14">Alternate Method</a></div>
+<div class="showable-body indent" id="showablebody14">
+<p>An automatic (though more complex) way would have been running the following command:</p>
+<pre><code class="sh">$ scontrol show node | grep NodeName | wc -l
+</code></pre>
+
+<p>Where:</p>
+<ul>
+<li><em>scontrol show node</em>: lists details of all nodes (over multiple lines)</li>
+<li><em>grep NodeName</em>: only shows the NodeName line</li>
+<li><em>wc -l</em>: counts the number of lines</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink14").click(function(e){
+            e.preventDefault();
+            $("#showable14").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="topic-2-software-modules">Topic 2: Software Modules</h2>
+<p>Up to this point we have been using only standard Unix software packages which are included with Linux/Unix computers.
+Large computing systems such as HPCs often use a system of modules to load specific software packages (and versions)
+when needed for the user.</p>
+<p>In this topic we will discover what science software modules (tools) are available and load them ready for analysis.</p>
+<p>This topic uses the <em>man</em> and <em>module</em> commands heavily</p>
+<h3 id="exercises_1">Exercises</h3>
+<div class="showable-container quest showable-hidden" id="showable15">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle15"><span class="link-like" id="showablelink15">2.1) What happens if you run the <em>module</em> command without any options / arguments?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable16">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle16"><a href="" id="showablelink16">Hint</a></div>
+<div class="showable-body hint" id="showablebody16">
+<p>Literally type <em>module</em> and press <em>ENTER</em> key.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink16").click(function(e){
+            e.preventDefault();
+            $("#showable16").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable17">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle17"><a href="" id="showablelink17">Answer</a></div>
+<div class="showable-body answer" id="showablebody17">
+<p><strong>Answer</strong>: It prints an error followed by a list of available options / flags</p>
+<pre><code class="text">$ module
+cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
+
+  Modules Release 3.2.10 2012-12-21 (Copyright GNU GPL v2 1991):
+
+  Usage: module [ switches ] [ subcommand ] [subcommand-args ]
+
+Switches:
+    -H|--help       this usage info
+    -V|--version        modules version &amp; configuration options
+    -f|--force      force active dependency resolution
+    -t|--terse      terse    format avail and list format
+    -l|--long       long     format avail and list format
+    -h|--human      readable format avail and list format
+    -v|--verbose        enable  verbose messages
+    -s|--silent     disable verbose messages
+    -c|--create     create caches for avail and apropos
+    -i|--icase      case insensitive
+    -u|--userlvl &lt;lvl&gt;  set user level to (nov[ice],exp[ert],adv[anced])
+  Available SubCommands and Args:
+    + add|load      modulefile [modulefile ...]
+    + rm|unload     modulefile [modulefile ...]
+    + switch|swap       [modulefile1] modulefile2
+    + display|show      modulefile [modulefile ...]
+    + avail         [modulefile [modulefile ...]]
+    + use [-a|--append] dir [dir ...]
+    + unuse         dir [dir ...]
+    + update
+    + refresh
+    + purge
+    + list
+    + clear
+    + help          [modulefile [modulefile ...]]
+    + whatis        [modulefile [modulefile ...]]
+    + apropos|keyword   string
+    + initadd       modulefile [modulefile ...]
+    + initprepend       modulefile [modulefile ...]
+    + initrm        modulefile [modulefile ...]
+    + initswitch        modulefile1 modulefile2
+    + initlist
+    + initclear
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink17").click(function(e){
+            e.preventDefault();
+            $("#showable17").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable18">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle18"><span class="link-like" id="showablelink18">2.2) How do you find a list of <em>available</em> software?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable19">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle19"><a href="" id="showablelink19">Hint</a></div>
+<div class="showable-body hint" id="showablebody19">
+<p>Try the <em>module</em> command.  Don't forget the <em>man</em> command to get help for a command</p>
+<div class="showable-container showable-hidden" id="showable20">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle20"><a href="" id="showablelink20">More</a></div>
+<div class="showable-body" id="showablebody20">
+<p>Run the command <em>man module</em></p>
+<p>Use a search to find out about the <em>avail</em> subcommand (e.g. /avail&lt;enter&gt;)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink20").click(function(e){
+            e.preventDefault();
+            $("#showable20").toggleClass("showable-hidden");
+            if ($("#showable20").hasClass("showable-hidden")) {
+                $("#showablelink20").text("More");
+            } else {
+                $("#showablelink20").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink19").click(function(e){
+            e.preventDefault();
+            $("#showable19").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable21">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle21"><a href="" id="showablelink21">Answer</a></div>
+<div class="showable-body answer" id="showablebody21">
+<p>The module command is used to show details of software modules (tools).</p>
+<p><strong>Answer</strong>:</p>
+<pre><code class="sh">$ module avail
+
+------------------- /usr/share/Modules/modulefiles --------------------
+dot         module-git  module-info modules     null        use.own
+
+------------------- /usr/local/Modules/modulefiles --------------------
+acana/1.60                         mafft-gcc/7.215
+aftrrad/4.1.20150201               malt/0.1.0
+arlequin/3.5.1.3                   matplotlib-gcc/1.3.1
+...
+</code></pre>
+
+<p>The modules list has been shortened because it is very long.  The modules after the <em>/usr/local/Modules/modulefiles</em> line
+are the science software; before this are a few built-in ones that you can ignore.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink21").click(function(e){
+            e.preventDefault();
+            $("#showable21").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable22">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle22"><span class="link-like" id="showablelink22">2.3) How many modules are there starting with '<em>f</em>'?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable23">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle23"><a href="" id="showablelink23">Hint</a></div>
+<div class="showable-body hint" id="showablebody23">
+<p>Run the command <em>man module</em></p>
+<p>Use a search to find out about the <em>avail</em> subcommand (e.g. /avail&lt;enter&gt;).  You may have to press 'n' a few times
+to reach the section where the it describes the <em>avail</em> subcommand.</p>
+<div class="showable-container showable-hidden" id="showable24">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle24"><a href="" id="showablelink24">More</a></div>
+<div class="showable-body" id="showablebody24">
+<blockquote>
+<p>If an argument is given, then each directory in the MODULEPATH is searched for modulefiles
+whose pathname match the argument</p>
+</blockquote>
+<p>This is a quote from the manual page for the module command explaining the avail subcommand.  It uses rather technical 
+language but basically it's saying you can put search terms after the avail subcommand when entering the command.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink24").click(function(e){
+            e.preventDefault();
+            $("#showable24").toggleClass("showable-hidden");
+            if ($("#showable24").hasClass("showable-hidden")) {
+                $("#showablelink24").text("More");
+            } else {
+                $("#showablelink24").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink23").click(function(e){
+            e.preventDefault();
+            $("#showable23").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable25">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle25"><a href="" id="showablelink25">Answer</a></div>
+<div class="showable-body answer" id="showablebody25">
+<p>The man page told us that we could put a search term after <em>module avail</em>.</p>
+<pre><code class="sh">$ module avail f
+------------------- /usr/local/Modules/modulefiles -------------------
+fasta-gcc/35.4.12            flex-gcc/2.5.39
+fastqc/0.10.1                fontconfig-gcc/2.11.93
+fastStructure-gcc/2013.11.07 freebayes-gcc/20140603
+fastStructure-gcc/20150320   freetype-gcc/2.5.3
+fastx_toolkit-gcc/0.0.14
+</code></pre>
+
+<div class="environment_if" id="ifenv5">
+<p><strong>Answer</strong>: 9 modules</p>
+</div>
+<p>NOTE: this was correct at time of writing this workshop and might increase over time so don't be alarmed if you got more</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink25").click(function(e){
+            e.preventDefault();
+            $("#showable25").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container indent showable-hidden" id="showable26">
+<div class="showable-inner">
+<div class="showable-header indent" id="showabletitle26"><a href="" id="showablelink26">Alternate Method</a></div>
+<div class="showable-body indent" id="showablebody26">
+<p>To get a fully automated solution your could do the following command:</p>
+<pre><code class="sh">$ module -l avail 2&gt;&amp;1 | grep &quot;^f&quot; | wc -l
+</code></pre>
+
+<p>Where:</p>
+<ul>
+<li><em>module -l avail</em>: lists all modules (in long format, i.e. one per line)</li>
+<li><em>2&gt;&amp;1</em>: merges output from <em>standard error</em> to the <em>standard output</em> so it can be feed into grep.  For some reason the
+developers of the <em>module</em> command thought it was a good idea to output the module names on the <em>error</em> stream rather than
+the logical <em>output</em> stream.</li>
+<li><em>grep "^f"</em>: only shows lines beginning with <em>f</em></li>
+<li><em>wc -l</em>: counts the number of lines</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink26").click(function(e){
+            e.preventDefault();
+            $("#showable26").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable27">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle27"><span class="link-like" id="showablelink27">2.4) Run the <em>pear</em> command (without loading it), does it work?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable28">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle28"><a href="" id="showablelink28">Hint</a></div>
+<div class="showable-body hint" id="showablebody28">
+<p>This question is very literal</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink28").click(function(e){
+            e.preventDefault();
+            $("#showable28").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable29">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle29"><a href="" id="showablelink29">Answer</a></div>
+<div class="showable-body answer" id="showablebody29">
+<pre><code class="sh">$ pear
+-bash: pear: command not found
+</code></pre>
+
+<p>The error you see is from BASH, it is complaining that it doesn't know anything about a command called 'pear'</p>
+<p><strong>Answer</strong>: No, command not found</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink29").click(function(e){
+            e.preventDefault();
+            $("#showable29").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable30">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle30"><span class="link-like" id="showablelink30">2.5) How would we <em>load</em> the <em>pear</em> module?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable31">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle31"><a href="" id="showablelink31">Hint</a></div>
+<div class="showable-body hint" id="showablebody31">
+<p>Check the man page for <em>module</em> again and look for a subcommand that might load modules; it is quite literal as well.</p>
+<div class="showable-container showable-hidden" id="showable32">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle32"><a href="" id="showablelink32">More</a></div>
+<div class="showable-body" id="showablebody32">
+<p>Run the command <em>man module</em></p>
+<p>Use a search to find out about the <em>load</em> subcommand (e.g. /load&lt;enter&gt;)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink32").click(function(e){
+            e.preventDefault();
+            $("#showable32").toggleClass("showable-hidden");
+            if ($("#showable32").hasClass("showable-hidden")) {
+                $("#showablelink32").text("More");
+            } else {
+                $("#showablelink32").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink31").click(function(e){
+            e.preventDefault();
+            $("#showable31").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable33">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle33"><a href="" id="showablelink33">Answer</a></div>
+<div class="showable-body answer" id="showablebody33">
+<pre><code class="sh">$ module load pear-gcc/0.9.4
+</code></pre>
+
+<div class="info"><b>-gcc | -intel</b>: Lots of modules will have either <i>-gcc</i> or <i>-intel</i> after the software name.  This refers to the compiler that
+was used to make the software.  If you have a choice then usually the <i>-intel</i> one will be faster.</div>
+
+<div class="info"><b>VERSIONS</b>: <u>module load pear-gcc</u> would have been sufficient to load the module however it is best-practice (in science) to specify the 
+version number so that the answer you get today will be the answer you get in 1 year time.  Some software will produce different results with different versions
+of the software.</div>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink33").click(function(e){
+            e.preventDefault();
+            $("#showable33").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable34">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle34"><span class="link-like" id="showablelink34">2.6) Now it's <em>load</em>ed, run pear again, what does it do?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable35">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle35"><a href="" id="showablelink35">Hint</a></div>
+<div class="showable-body hint" id="showablebody35">
+<p>The paper citation gives a clue.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink35").click(function(e){
+            e.preventDefault();
+            $("#showable35").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable36">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle36"><a href="" id="showablelink36">Answer</a></div>
+<div class="showable-body answer" id="showablebody36">
+<pre><code class="sh">$ module load pear-gcc/0.9.4
+[15:59:19] training21@lims-hpc-m ~ $ pear
+ ____  _____    _    ____ 
+|  _ \| ____|  / \  |  _ \
+| |_) |  _|   / _ \ | |_) |
+|  __/| |___ / ___ \|  _ &lt;
+|_|   |_____/_/   \_\_| \_\
+PEAR v0.9.4 [August 8, 2014]  - [+bzlib]
+
+Citation - PEAR: a fast and accurate Illumina Paired-End reAd mergeR
+Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/btt593
+
+... REST REMOVED ...
+</code></pre>
+
+<p><strong>Answer</strong>: "PEAR: a fast and accurate Illumina Paired-End reAd mergeR" (i.e. merges paired dna reads into a single read when they overlap)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink36").click(function(e){
+            e.preventDefault();
+            $("#showable36").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable37">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle37"><span class="link-like" id="showablelink37">2.7) <em>List</em> all the loaded modules. How many are there? Where did all the others come from?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable38">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle38"><a href="" id="showablelink38">Hint</a></div>
+<div class="showable-body hint" id="showablebody38">
+<p>Use man to find a subcommand that will list currently loaded modules.</p>
+<p>We are not really expecting you to be able to answer the 2nd question however if you do get it correct then well-done, that was very tough.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink38").click(function(e){
+            e.preventDefault();
+            $("#showable38").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable39">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle39"><a href="" id="showablelink39">Answer</a></div>
+<div class="showable-body answer" id="showablebody39">
+<p><strong> <em>List</em> all the loaded modules. How many are there?</strong></p>
+<pre><code class="sh">$ module list
+Currently Loaded Modulefiles:
+  1) gmp/5.1.3         3) mpc/1.0.2         5) bzip2-gcc/1.0.6
+  2) mpfr/3.1.2        4) gcc/4.8.2         6) pear-gcc/0.9.4
+</code></pre>
+
+<p><strong>Answer</strong>: 6</p>
+<p><strong>Where did all the others come from?</strong></p>
+<p>You may have noticed when we loaded <em>pear-gcc</em> the module called <em>gcc</em> was also loaded; this gives a hint as to where the others come from.</p>
+<p><strong>Answer</strong>: They are <em>dependencies</em>; that is, they are supporting software that is used by the module we loaded.  Additionally, some HPC's 
+automatically load some modules for you when you login.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink39").click(function(e){
+            e.preventDefault();
+            $("#showable39").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable40">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle40"><span class="link-like" id="showablelink40">2.8) How do you undo the loading of the <em>pear</em> module?  List the loaded modules again, did they all disappear?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable41">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle41"><a href="" id="showablelink41">Hint</a></div>
+<div class="showable-body hint" id="showablebody41">
+<p>Computer Scientists are not always inventive with naming commands, try something starting with <em>un</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink41").click(function(e){
+            e.preventDefault();
+            $("#showable41").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable42">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle42"><a href="" id="showablelink42">Answer</a></div>
+<div class="showable-body answer" id="showablebody42">
+<p><strong>How do you undo the loading of the <em>pear</em> module?</strong></p>
+<pre><code class="sh">$ module unload pear-gcc
+</code></pre>
+
+<p><strong>Answer</strong>: the <em>unload</em> sub-command removes the named module from our current SSH session.</p>
+<p><strong>List the loaded modules again, did they all disapear?</strong></p>
+<p><strong>Answer</strong>: Unfortunately not, the module command is not smart enough to determine if any of the other modules that were loaded are still
+needed or not so we will need to do it manually (or see next question) </p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink42").click(function(e){
+            e.preventDefault();
+            $("#showable42").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable43">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle43"><span class="link-like" id="showablelink43">2.9) How do you clear ALL loaded modules?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable44">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle44"><a href="" id="showablelink44">Hint</a></div>
+<div class="showable-body hint" id="showablebody44">
+<p>It's easier than running <em>unload</em> for all modules</p>
+<p>This one isn't that straight forward; try a <a href="https://www.google.com.au/search?q=rid+synonym">synonym</a> of <em>rid</em>.</p>
+<div class="showable-container showable-hidden" id="showable45">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle45"><a href="" id="showablelink45">More</a></div>
+<div class="showable-body" id="showablebody45">
+<p>We will <em>purge</em> the list of loaded modules.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink45").click(function(e){
+            e.preventDefault();
+            $("#showable45").toggleClass("showable-hidden");
+            if ($("#showable45").hasClass("showable-hidden")) {
+                $("#showablelink45").text("More");
+            } else {
+                $("#showablelink45").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink44").click(function(e){
+            e.preventDefault();
+            $("#showable44").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable46">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle46"><a href="" id="showablelink46">Answer</a></div>
+<div class="showable-body answer" id="showablebody46">
+<pre><code class="sh">$ module purge 
+</code></pre>
+
+<p><strong>Answer</strong>: running the <em>purge</em> sub-command will unload all modules you loaded (and all dependencies).</p>
+<p><strong>Alternative</strong>: if you close your SSH connection and re-open it the new session will be blank as well.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink46").click(function(e){
+            e.preventDefault();
+            $("#showable46").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="environment_if" id="ifenv8">
+<p><strong>LIMS-HPC Specific</strong>: </p>
+<p>The following questions use the <em>moduleinfo</em> command; this is only available on LIMS-HPC so if you are using
+another HPC then you will need to skip ahead to topic 3. </p>
+<div class="showable-container quest showable-hidden" id="showable47">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle47"><span class="link-like" id="showablelink47">2.10) What does the <em>moduleinfo</em> command do?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable48">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle48"><a href="" id="showablelink48">Hint</a></div>
+<div class="showable-body hint" id="showablebody48">
+<p>Try running it (with <em>no</em> or only <em>-h</em> option)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink48").click(function(e){
+            e.preventDefault();
+            $("#showable48").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable49">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle49"><a href="" id="showablelink49">Answer</a></div>
+<div class="showable-body answer" id="showablebody49">
+<pre><code class="text">$ moduleinfo -h
+moduleinfo: support application for environment modules to provide 
+            licence and citation information about each module
+...
+</code></pre>
+
+<p><strong>Answer</strong>: provides information about modules</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink49").click(function(e){
+            e.preventDefault();
+            $("#showable49").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable50">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle50"><span class="link-like" id="showablelink50">2.11) Find a <em>description</em> of the <em>biostreamtools</em> module</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable51">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle51"><a href="" id="showablelink51">Hint</a></div>
+<div class="showable-body hint" id="showablebody51">
+<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a description.</p>
+<p>Use the <em>module</em> command to find the full name for the <em>biostreamtools</em> module</p>
+<div class="showable-container showable-hidden" id="showable52">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle52"><a href="" id="showablelink52">More</a></div>
+<div class="showable-body" id="showablebody52">
+<p><em>Function</em>: desc</p>
+<p><em>Module</em>: biostreamtools-gcc/0.4.0</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink52").click(function(e){
+            e.preventDefault();
+            $("#showable52").toggleClass("showable-hidden");
+            if ($("#showable52").hasClass("showable-hidden")) {
+                $("#showablelink52").text("More");
+            } else {
+                $("#showablelink52").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink51").click(function(e){
+            e.preventDefault();
+            $("#showable51").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable53">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle53"><a href="" id="showablelink53">Answer</a></div>
+<div class="showable-body answer" id="showablebody53">
+<pre><code class="text">$ moduleinfo desc biostreamtools-gcc/0.4.0
+biostreamtools-gcc/0.4.0: A collection of fast generic bioinformatics 
+                          tools implemented in C++
+</code></pre>
+
+<p><strong>Answer</strong>: A collection of fast generic bioinformatics tools implemented in C++.</p>
+<p><em>Disclaimer</em>: you may find that the author of this software also created this workshop :-P</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink53").click(function(e){
+            e.preventDefault();
+            $("#showable53").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable54">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle54"><span class="link-like" id="showablelink54">2.12) How would you <em>cite</em> all currently loaded modules?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable55">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle55"><a href="" id="showablelink55">Hint</a></div>
+<div class="showable-body hint" id="showablebody55">
+<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a citation.</p>
+<div class="showable-container showable-hidden" id="showable56">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle56"><a href="" id="showablelink56">More</a></div>
+<div class="showable-body" id="showablebody56">
+<p><em>Function</em>: cite</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink56").click(function(e){
+            e.preventDefault();
+            $("#showable56").toggleClass("showable-hidden");
+            if ($("#showable56").hasClass("showable-hidden")) {
+                $("#showablelink56").text("More");
+            } else {
+                $("#showablelink56").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink55").click(function(e){
+            e.preventDefault();
+            $("#showable55").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable57">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle57"><a href="" id="showablelink57">Answer</a></div>
+<div class="showable-body answer" id="showablebody57">
+<p>Assuming we had the pear module loaded</p>
+<pre><code class="text">$ moduleinfo cite
+gmp/5.1.3:                No information recorded
+mpfr/3.1.2:               No information recorded
+mpc/1.0.2:                No information recorded
+gcc/4.8.2:                No information recorded
+bzip2-gcc/1.0.6:          No information recorded
+pear-gcc/0.9.4:           J. Zhang, K. Kobert, T. Flouri, A. Stamatakis. 
+                          PEAR: A fast and accurate Illimuna Paired-End 
+                          reAd mergeR
+</code></pre>
+
+<p><strong>Answer</strong>: using the moduleinfo cite function with no module specified will display info for currently loaded modules.</p>
+<p><strong>Note</strong>: When you see <em>"No information recorded"</em> it means that there is no moduleinfo record for that module.
+<em>"nil"</em> it means none was requested (at time software was installed, you should check software's website for updates since).<br />
+<em>"No record"</em> means nothing could be found for this record/module</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink57").click(function(e){
+            e.preventDefault();
+            $("#showable57").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable58">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle58"><span class="link-like" id="showablelink58">2.13) The malt module requires a special licence, how can you find out details of this?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable59">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle59"><a href="" id="showablelink59">Hint</a></div>
+<div class="showable-body hint" id="showablebody59">
+<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a description.</p>
+<p>Use the <em>module</em> command to find the full name for the <em>malt</em> module.</p>
+<div class="showable-container showable-hidden" id="showable60">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle60"><a href="" id="showablelink60">More</a></div>
+<div class="showable-body" id="showablebody60">
+<p>Verbose flag tells moduleinfo to give more information if it is available</p>
+<p><em>Function</em>: licence</p>
+<p><em>Module</em>: malt/0.1.0</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink60").click(function(e){
+            e.preventDefault();
+            $("#showable60").toggleClass("showable-hidden");
+            if ($("#showable60").hasClass("showable-hidden")) {
+                $("#showablelink60").text("More");
+            } else {
+                $("#showablelink60").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink59").click(function(e){
+            e.preventDefault();
+            $("#showable59").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable61">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle61"><a href="" id="showablelink61">Answer</a></div>
+<div class="showable-body answer" id="showablebody61">
+<pre><code class="text">$ moduleinfo -v licence malt/0.1.0
+[[malt/0.1.0]]
+-----[licence]-----
+
+Custom Academic:
+
+1) You need to complete this form (which will send you an email):
+   http://www-ab2.informatik.uni-tuebingen.de/software/megan5/register/index.php
+
+2) Save the emailed licence details to a text file (suggested name:
+   '~/megan-license.txt') on the LIMS-HPC.  NOTE: you need to copy the 
+   text from the email starting at line &quot;User: ...&quot; and ending with line
+   &quot;Signature: ...&quot;
+
+3) When running the malt-* commands you need to specify this file. (Even 
+   for the --help option!!!).  e.g. malt-build -L ~/megan-license.txt ...
+</code></pre>
+
+<p><strong>Answer</strong>: issuing the command <em>moduleinfo -v licence malt/0.1.0</em> will display details on how to obtain the special
+licence for malt.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink61").click(function(e){
+            e.preventDefault();
+            $("#showable61").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+</div>
+<h2 id="topic-3-job-submission">Topic 3: Job Submission</h2>
+<p>Up to this point in the workshop (and the previous Unix workshop) we have only used the head-node of the HPC.  While this is ok for small jobs 
+ on small HPCs like LIMS-HPC, it's unworkable for most jobs.  In this topic we will start to learn how to make use of the rest of the HPCs immense compute power</p>
+<h3 id="background">Background</h3>
+<p>On conventional Unix computers (such as the HPC headnode) we enter the commands we want to run at the terminal and see the results directly output
+in front of us.  On an HPC this type of computation will only make use of one node, namely, the <em>Head Node</em>.  To make use of the remaining (<em>compute</em>) nodes
+we need to use the SLURM software package (called an HPC Scheduler).  The purpose of SLURM is to manage all user jobs and distribute the available resources
+(i.e. time on the compute nodes) to each job in a fair manner.  You can think of the SLURM software as like an electronic <em>calendar</em> and the user jobs like 
+<em>meetings</em>.  Users <em>say</em> to SLURM "I want XX CPUS for YY hours" and SLURM will look at its current bookings and find the next available time it can fit the job.</p>
+<p><strong>Terminology</strong>:</p>
+<ul>
+<li><strong>Node</strong>: a server grade computer which is part of an HPC</li>
+<li><strong>Batch Job</strong>: a group of one or more related Unix commands that need to be run (executed) for a user.  e.g. run fastqc on all my samples</li>
+<li><strong>Partition (or Queue)</strong>: a list of jobs that need to be run.  There is often more than one partition on an HPC which usually have specific requirements 
+for the jobs that can be added to them.  e.g. <em>8hour</em> will accept jobs less than or equal to 8hours long</li>
+<li><strong>Runtime</strong>: the amount of time a job is expected (or actually) runs</li>
+<li><strong>Resources</strong>: computation resources that can be given to our jobs in order to run them.  e.g. CPU Cores, Memory, and Time.</li>
+<li><strong>Job Script</strong>: a special BASH script that SLURM uses to run a job on our behalf once resources become available.  Job scripts contain details of the 
+resources that our commands need to run.</li>
+<li><strong>Output (or Results) file</strong>: When SLURM runs our batch job it will save the results that would normally be output on the terminal (screen) to a file; this file 
+is called the output file.</li>
+<li><strong>Reservation</strong>: much like a reservation for a resturant holds a table for you, the administrator can give you an HPC reservation which holds various resources
+for a period of time exclusively for you. </li>
+</ul>
+<h3 id="exercises_2">Exercises</h3>
+<p><strong>Useful Commands</strong>: <em>man, sinfo, cat, sbatch, squeue, cp, module, prime</em></p>
+<div class="showable-container quest showable-hidden" id="showable62">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle62"><span class="link-like" id="showablelink62">3.1) Which nodes could a '<span class="environment_env" id="env2">training</span>' job go on?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable63">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle63"><a href="" id="showablelink63">Hint</a></div>
+<div class="showable-body hint" id="showablebody63">
+<p>Try the <em>sinfo</em> command</p>
+<div class="showable-container showable-hidden" id="showable64">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle64"><a href="" id="showablelink64">more</a></div>
+<div class="showable-body" id="showablebody64">
+<p>Have a look at the PARTITION and NODELIST columns.  The <em><span class="environment_env" id="env14">lims-hpc-</span>[2-4]</em> is shorthand for <em><span class="environment_env" id="env15">lims-hpc-</span>2 <span class="environment_env" id="env16">lims-hpc-</span>3 
+and <span class="environment_env" id="env17">lims-hpc-</span>4</em></p>
+<pre><code class="sh">$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+compute*     up 200-00:00:      3    mix lims-hpc-[2-4]
+compute*     up 200-00:00:      2   idle lims-hpc-[1,5]
+bigmem       up 200-00:00:      1   idle lims-hpc-1
+8hour        up   08:00:00      3    mix lims-hpc-[2-4]
+8hour        up   08:00:00      3   idle lims-hpc-[1,5],lims-hpc-m
+</code></pre>
+
+<p>Note: the output to the sinfo command will look different depending on which HPC you are using and it's current usage levels</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink64").click(function(e){
+            e.preventDefault();
+            $("#showable64").toggleClass("showable-hidden");
+            if ($("#showable64").hasClass("showable-hidden")) {
+                $("#showablelink64").text("more");
+            } else {
+                $("#showablelink64").text("less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink63").click(function(e){
+            e.preventDefault();
+            $("#showable63").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable65">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle65"><a href="" id="showablelink65">Answer</a></div>
+<div class="showable-body answer" id="showablebody65">
+<p>The <em>sinfo</em> command will list the <em>partitions</em>.  It summaries the nodes by their current status so there may be more 
+than one line with <em><span class="environment_env" id="env8">training</span></em> in the partition column.  It lists the nodes in shorthand i.e. <span class="environment_env" id="env9">lims-hpc-</span>[1,3-5] means 
+<span class="environment_env" id="env10">lims-hpc-</span>1, <span class="environment_env" id="env11">lims-hpc-</span>3, <span class="environment_env" id="env12">lims-hpc-</span>4, <span class="environment_env" id="env13">lims-hpc-</span>5.</p>
+<div class="environment_if" id="ifenv10">
+<p><strong>Answer</strong>: lims-hpc-1, lims-hpc-2, lims-hpc-3, lims-hpc-4, lims-hpc-5</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink65").click(function(e){
+            e.preventDefault();
+            $("#showable65").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="environment_if" id="ifenv12">
+<div class="showable-container quest showable-hidden" id="showable66">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle66"><span class="link-like" id="showablelink66">3.2) What about an ‘<span class="environment_env" id="env1">8hour</span>’ job?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable67">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle67"><a href="" id="showablelink67">Hint</a></div>
+<div class="showable-body hint" id="showablebody67">
+<p>Use <em>sinfo</em> again but look at the <em><span class="environment_env" id="env0">8hour</span></em> rows</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink67").click(function(e){
+            e.preventDefault();
+            $("#showable67").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable68">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle68"><a href="" id="showablelink68">Answer</a></div>
+<div class="showable-body answer" id="showablebody68">
+<p><strong>Answer</strong>: <span class="environment_env" id="env7">lims-hpc-</span>??</p>
+<p>This is dependant on what the HPC Sys Admin gave us.  You are probably correct but check with the workshop facilitators if you wish.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink68").click(function(e){
+            e.preventDefault();
+            $("#showable68").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+</div>
+<hr />
+<p>Use the <em>cat</em> command to view the contents of <em>task01</em>, <em>task02</em> and <em>task03</em> job script</p>
+<div class="showable-container quest showable-hidden" id="showable69">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle69"><span class="link-like" id="showablelink69">3.3) How many <em>cpu cores</em> will each ask for?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable70">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle70"><a href="" id="showablelink70">Hint</a></div>
+<div class="showable-body hint" id="showablebody70">
+<p>Lookup the man page for <em>sbatch</em> command.  <em>sbatch</em>'s options match up with the <em>#SBATCH</em> comments at the top of each job 
+script.  Some will be affected by more than one option</p>
+<div class="showable-container showable-hidden" id="showable71">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle71"><a href="" id="showablelink71">More</a></div>
+<div class="showable-body" id="showablebody71">
+<p><strong>Non-exclusive (shared) jobs</strong>:</p>
+<p>It is <em>--cpus-per-task x --ntasks</em> but if <em>--ntasks</em> is not present it defaults to 1 so its <em>--cpus-per-task x 1</em></p>
+<p><strong>Exclusive jobs</strong>:</p>
+<p>The <em>--nodes</em> options tells us how many nodes we ask for and the <em>--exclusive</em> option says give us all it has.  This
+one is a bit tricky as we don't really know until it runs.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink71").click(function(e){
+            e.preventDefault();
+            $("#showable71").toggleClass("showable-hidden");
+            if ($("#showable71").hasClass("showable-hidden")) {
+                $("#showablelink71").text("More");
+            } else {
+                $("#showablelink71").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink70").click(function(e){
+            e.preventDefault();
+            $("#showable70").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable72">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle72"><a href="" id="showablelink72">Answer</a></div>
+<div class="showable-body answer" id="showablebody72">
+<p><strong>Answer</strong>:</p>
+<ul>
+<li>task01: <strong>1 cpu core</strong></li>
+<li>task02: <strong>6 cpu cores</strong></li>
+<li>task03: <strong>at least 1</strong> as this has requested all cpu cores on the node its running on (<em>--exclusive</em>).<br />
+However, since we know that all nodes on <span class="environment_env" id="env6">LIMS-HPC</span> have 16, we know it will get 16.</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink72").click(function(e){
+            e.preventDefault();
+            $("#showable72").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable73">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle73"><span class="link-like" id="showablelink73">3.4) What about total memory?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable74">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle74"><a href="" id="showablelink74">Hint</a></div>
+<div class="showable-body hint" id="showablebody74">
+<p>Lookup the man page for <em>sbatch</em> command.  <em>sbatch</em>'s options match up with the <em>#SBATCH</em> comments at the top of each job 
+script.  Some will be affected by more than one option</p>
+<div class="showable-container showable-hidden" id="showable75">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle75"><a href="" id="showablelink75">More</a></div>
+<div class="showable-body" id="showablebody75">
+<p>The <em>--mem-per-cpu</em> OR <em>--mem</em> options are holding the answer to total memory.</p>
+<p>For task01 and task02 the calculation is <em>--mem-per-cpu x --cpus-per-task x --ntasks</em></p>
+<p>For task03, like with the cpus cores question, we get all the memory available on the node we get allocated</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink75").click(function(e){
+            e.preventDefault();
+            $("#showable75").toggleClass("showable-hidden");
+            if ($("#showable75").hasClass("showable-hidden")) {
+                $("#showablelink75").text("More");
+            } else {
+                $("#showablelink75").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink74").click(function(e){
+            e.preventDefault();
+            $("#showable74").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable76">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle76"><a href="" id="showablelink76">Answer</a></div>
+<div class="showable-body answer" id="showablebody76">
+<p>The <em>--mem-per-cpu</em> OR <em>--mem</em> options are holding the answer to total memory.</p>
+<p>For task01 and task02 the calculation is <em>--mem-per-cpu x --ntasks x --cpus-per-task</em></p>
+<p>For task03, like with the cpus cores question, we get all the memory available on the node we get allocated</p>
+<div class="warning"><b>NOTE</b>: it might be tempting to use the <em>--mem</em> option on non-exclusive (i.e. <em>--share</em>) jobs 
+however this will <b>NOT</b> work since the meaning of <em>--mem</em> is <em>"go on a node with at least X MB of memory"</em>; it does 
+not actually allocate any of it to you so your job will get terminated once it tries to use any memory.</div>
+
+<p><strong>Answer</strong>:</p>
+<div class="environment_if" id="ifenv14">
+<ul>
+<li>task01: <strong>1024MB</strong> (1GB) i.e. 1024 x 1 x 1</li>
+<li>task02: <strong>12288MB</strong> (12GB) i.e. 2048 x 3 x 2</li>
+<li>task03: <strong>at least 1024MB</strong> (1GB).  The actual amount could be 128GB (nodes 2 to 5) or 256GB (node 1)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink76").click(function(e){
+            e.preventDefault();
+            $("#showable76").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable77">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle77"><span class="link-like" id="showablelink77">3.5) How long can each run for?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable78">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle78"><a href="" id="showablelink78">Hint</a></div>
+<div class="showable-body hint" id="showablebody78">
+<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
+<em>/--time</em> and press enter)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink78").click(function(e){
+            e.preventDefault();
+            $("#showable78").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable79">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle79"><a href="" id="showablelink79">Answer</a></div>
+<div class="showable-body answer" id="showablebody79">
+<p>The <em>--time</em> option is what tells slurm how long your job will run for.</p>
+<p><strong>Answer</strong>:</p>
+<ul>
+<li>task01: requests <strong>30:00 (30mins 0secs)</strong>, uses ~30secs</li>
+<li>task02: requests <strong>5:00 (5mins 0secs)</strong>, uses ~5secs</li>
+<li>task03: requests <strong>1:00 (1min 0secs)</strong>, uses ~30secs</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink79").click(function(e){
+            e.preventDefault();
+            $("#showable79").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable80">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle80"><span class="link-like" id="showablelink80">3.6) Is this maximum, minimum or both runtime?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable81">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle81"><a href="" id="showablelink81">Hint</a></div>
+<div class="showable-body hint" id="showablebody81">
+<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
+<em>/--time</em> and press enter)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink81").click(function(e){
+            e.preventDefault();
+            $("#showable81").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable82">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle82"><a href="" id="showablelink82">Answer</a></div>
+<div class="showable-body answer" id="showablebody82">
+<p>This is a maximum time.  Your job may finish early, at which point it hands back the resources for the next job.  However if it 
+tries to run longer the HPC will terminate the job.
+<div class="info"><b>HINT</b>: when selecting a time for your job its best to estimate your job runtime to be close to 
+what it actually uses as it can help the HPC scheduler 'fit' your job in between other jobs though be careful to allow enough 
+time.  If you think your job may not complete in time you can ask the system administrator of your HPC to add more time.</div></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink82").click(function(e){
+            e.preventDefault();
+            $("#showable82").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest" id="showable83">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle83"><a href="" id="showablelink83">3.7) Calculate the <em>--time</em> specification for the following runtimes:</a></div>
+<div class="showable-body quest" id="showablebody83">
+<ol>
+<li><span class="fix150">1h30m:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
+<li><span class="fix150">1m20s:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
+<li><span class="fix150">1.5days:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
+<li><span class="fix150">30m:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
+</ol>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink83").click(function(e){
+            e.preventDefault();
+            $("#showable83").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container hint showable-hidden" id="showable84">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle84"><a href="" id="showablelink84">Hint</a></div>
+<div class="showable-body hint" id="showablebody84">
+<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
+<em>/--time</em> and press enter)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink84").click(function(e){
+            e.preventDefault();
+            $("#showable84").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable85">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle85"><a href="" id="showablelink85">Answer</a></div>
+<div class="showable-body answer" id="showablebody85">
+<ol>
+<li><span class="fix150">1h30m:</span><span class="fix60">--time=01:30:00 (alternatively: 0-01:30)</span></li>
+<li><span class="fix150">1m20s:</span><span class="fix60">--time=01:20</span></li>
+<li><span class="fix150">1.5days:</span><span class="fix60">--time=1-12</span></li>
+<li><span class="fix150">30m:</span><span class="fix60">--time=30</span></li>
+</ol>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink85").click(function(e){
+            e.preventDefault();
+            $("#showable85").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest" id="showable86">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle86"><a href="" id="showablelink86">3.8) What do the following --time specifications mean?</a></div>
+<div class="showable-body quest" id="showablebody86">
+<ol>
+<li><span class="fix150">--time=12-00:20</span><span class="fix60"></span><span class="answer100"></span></li>
+<li><span class="fix150">--time=45</span><span class="fix60"></span><span class="answer100"></span></li>
+<li><span class="fix150">--time=00:30</span><span class="fix60"></span><span class="answer100"></span></li>
+</ol>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink86").click(function(e){
+            e.preventDefault();
+            $("#showable86").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container hint showable-hidden" id="showable87">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle87"><a href="" id="showablelink87">Hint</a></div>
+<div class="showable-body hint" id="showablebody87">
+<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
+<em>/--time</em> and press enter)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink87").click(function(e){
+            e.preventDefault();
+            $("#showable87").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable88">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle88"><a href="" id="showablelink88">Answer</a></div>
+<div class="showable-body answer" id="showablebody88">
+<ol>
+<li><span class="fix150">--time=12-00:20</span><span class="fix60">12 days and 20 minutes</span></li>
+<li><span class="fix150">--time=45</span><span class="fix60">45 minutes</span></li>
+<li><span class="fix150">--time=00:30</span><span class="fix60">30 seconds</span></li>
+</ol>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink88").click(function(e){
+            e.preventDefault();
+            $("#showable88").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<p>Now use sbatch to submit the <em>task01</em> job:</p>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable89">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle89"><span class="link-like" id="showablelink89">3.9) What job id was your job given?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable90">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle90"><a href="" id="showablelink90">Hint</a></div>
+<div class="showable-body hint" id="showablebody90">
+<p>Use the man page for the sbatch command.  The <em>Synopsis</em> at the top will give you an idea how to run it.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink90").click(function(e){
+            e.preventDefault();
+            $("#showable90").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable91">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle91"><a href="" id="showablelink91">Answer</a></div>
+<div class="showable-body answer" id="showablebody91">
+<pre><code class="sh">$ sbatch task01 
+Submitted batch job 9998
+</code></pre>
+
+<p><strong>Answer</strong>: it's unique for each job; in the above example mine was <em>9998</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink91").click(function(e){
+            e.preventDefault();
+            $("#showable91").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable92">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle92"><span class="link-like" id="showablelink92">3.10) Which node did your job go on?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable93">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle93"><a href="" id="showablelink93">Hint</a></div>
+<div class="showable-body hint" id="showablebody93">
+<p>The <em>squeue</em> command shows you the currently running jobs.  If it's been longer than 30 seconds since you submitted it you might have to resubmit it.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink93").click(function(e){
+            e.preventDefault();
+            $("#showable93").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable94">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle94"><a href="" id="showablelink94">Answer</a></div>
+<div class="showable-body answer" id="showablebody94">
+<p>Use the <em>squeue</em> command to show all jobs.  Search for your <em>jobid</em> and look in the <em>NODELIST</em> column.</p>
+<div class="info"><b>NOTE</b>: if there are lots of jobs you can use <b>squeue -u YOUR_USERNAME</b> to only show your jobs, where 
+YOUR_USERNAME is replaced with your actual username.</div>
+
+<pre><code class="sh">$ sbatch task01
+Submitted batch job 9999
+$ squeue -u training01
+ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+  9999   compute   task01 training  R       0:05      1 lims-hpc-2
+</code></pre>
+
+<p><strong>Answer</strong>: it's dependent on node availability at time; in the above example mine was <em>lims-hpc-2</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink94").click(function(e){
+            e.preventDefault();
+            $("#showable94").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h3 id="advanced">Advanced</h3>
+<div class="showable-container quest showable-hidden" id="showable95">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle95"><span class="link-like" id="showablelink95">3.11) Make a copy of <em>task01</em> and call it <em>prime_numbers</em>.  Make it load the training module and use the <em>prime</em> command to calculate prime 
+numbers for 20 seconds.</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable96">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle96"><a href="" id="showablelink96">Hint</a></div>
+<div class="showable-body hint" id="showablebody96">
+<p>You can find the <em>prime</em> command in the <em>training-gcc/1.0</em> module</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink96").click(function(e){
+            e.preventDefault();
+            $("#showable96").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable97">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle97"><a href="" id="showablelink97">Answer</a></div>
+<div class="showable-body answer" id="showablebody97">
+<p>The key points to change in the task01 script are:</p>
+<ol>
+<li>adding the <em>module load training-gcc/1.0</em></li>
+<li>replacing the <em>sleep</em> (and <em>echo</em>) statements with a call to <em>prime 20</em>.</li>
+</ol>
+<div class="environment_if" id="ifenv17">
+<pre><code class="bash">#!/bin/bash
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=1024
+#SBATCH --partition=PARTITION
+#SBATCH --time=30:00
+
+module load training-gcc/1.0
+
+echo &quot;Starting at: $(date)&quot;
+prime 20
+echo &quot;Finished at: $(date)&quot;
+</code></pre>
+
+<p>Where <em>PARTITION</em> is replaced with <em><span class="environment_env" id="env5">training</span></em></p>
+</div>
+<div class="info"><b>Repeatable Science</b>: It's good scientific practice to include the version number of the module when loading it as this will 
+ensure that the same version is loaded next time you run this script which will mean you get the same results.</div>
+
+<div class="info"><b>Date your work</b>: It's also good practice to include the date command in the output so you have a permanent record 
+of when this job was run.  If you have one before and after your main program you will get a record of how long it ran for as well.</div>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink97").click(function(e){
+            e.preventDefault();
+            $("#showable97").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable98">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle98"><span class="link-like" id="showablelink98">3.12) Submit the job.  What was the <em>largest</em> prime number it found in 20 seconds?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable99">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle99"><a href="" id="showablelink99">Hint</a></div>
+<div class="showable-body hint" id="showablebody99">
+<p>The output from the program will provide the results that we are after.  For HPC jobs this will be placed in the <em>SLURM output file</em>; this is called
+<em>slurm-JOBID.out</em> where JOBID is replaced by the actual job id.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink99").click(function(e){
+            e.preventDefault();
+            $("#showable99").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable100">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle100"><a href="" id="showablelink100">Answer</a></div>
+<div class="showable-body answer" id="showablebody100">
+<p>You should get results similar to below however the actual numbers will vary as amount of computations performed will be affected by 
+the amount of other jobs running on the HPC</p>
+<pre><code class="bash">$ sbatch prime_numbers
+Submitted batch job 9304
+$ cat slurm-9304.out 
+Starting at: Fri May  8 16:11:07 AEST 2015
+
+Primes:        710119
+Last trial:    10733927
+Largest prime: 10733873
+Runtime:       20 seconds
+Finished at: Fri May  8 16:11:27 AEST 2015
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink100").click(function(e){
+            e.preventDefault();
+            $("#showable100").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest" id="showable101">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle101"><a href="" id="showablelink101">3.13) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again</a></div>
+<div class="showable-body quest" id="showablebody101">
+<ul>
+<li><strong>Did it start immediately or have some delay?</strong></li>
+<li><strong>How long did it actually run for?</strong></li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink101").click(function(e){
+            e.preventDefault();
+            $("#showable101").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container hint showable-hidden" id="showable102">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle102"><a href="" id="showablelink102">Hint</a></div>
+<div class="showable-body hint" id="showablebody102">
+<p>There are two options that you will need to set.  See sbatch manpage for details.</p>
+<div class="showable-container showable-hidden" id="showable103">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle103"><a href="" id="showablelink103">More</a></div>
+<div class="showable-body" id="showablebody103">
+<p>Both start with <em>--mail</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink103").click(function(e){
+            e.preventDefault();
+            $("#showable103").toggleClass("showable-hidden");
+            if ($("#showable103").hasClass("showable-hidden")) {
+                $("#showablelink103").text("More");
+            } else {
+                $("#showablelink103").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink102").click(function(e){
+            e.preventDefault();
+            $("#showable102").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable104">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle104"><a href="" id="showablelink104">Answer</a></div>
+<div class="showable-body answer" id="showablebody104">
+<div class="environment_if" id="ifenv19">
+<pre><code class="bash">#!/bin/bash
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=1024
+#SBATCH --partition=TRAINING
+#SBATCH --time=30:00
+#SBATCH --mail-user=name@email.address
+#SBATCH --mail-type=ALL
+
+module load training/1.0
+
+echo &quot;Starting at: $(date)&quot;
+prime 20
+echo &quot;Finished at: $(date)&quot;
+</code></pre>
+
+<p>Where <em>PARTITION</em> is replaced with <em><span class="environment_env" id="env4">training</span></em> and <em>name@email.address</em> by your email address</p>
+</div>
+<p><strong>Answers</strong>:</p>
+<ul>
+<li><strong>Did it start immediately or have some delay?</strong> The <em>Queued time</em> value in the subject of start email will tell you how long it waited.</li>
+<li><strong>How long did it actually run for?</strong> The <em>Run time</em> value in the subject of the end email will tell you how long it ran for which should 
+be ~20 seconds.</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink104").click(function(e){
+            e.preventDefault();
+            $("#showable104").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<h2 id="topic-4-job-monitoring">Topic 4: Job Monitoring</h2>
+<p>It is often difficult to predict how a software tool may utilise HPC System Resources (CPU/Memory) as it can vary quite widely based 
+on a number of factors (data set, number of CPU's, processing step etc.).</p>
+<p>In this topic we will cover some of the tools that are available that enable you to <em>watch</em> what is happening so we can make better predictions
+in the future.</p>
+<h3 id="exercises_3">Exercises</h3>
+<div class="showable-container quest showable-hidden" id="showable105">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle105"><span class="link-like" id="showablelink105">4.1) What does the <em>top</em> command show?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable106">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle106"><a href="" id="showablelink106">Hint</a></div>
+<div class="showable-body hint" id="showablebody106">
+<p>When all else fails, try <em>man</em>; specifically, the description section</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink106").click(function(e){
+            e.preventDefault();
+            $("#showable106").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable107">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle107"><a href="" id="showablelink107">Answer</a></div>
+<div class="showable-body answer" id="showablebody107">
+<pre><code class="sh">$ man top
+...
+DESCRIPTION
+       The top program provides a dynamic real-time view of a running system.
+...
+</code></pre>
+
+<p><strong>Answer</strong>: in lay-person terms <em>"Continually updating CPU and Memory usage"</em> </p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink107").click(function(e){
+            e.preventDefault();
+            $("#showable107").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<p>Run the <em>top</em> command.  Above the black line it shows some <em>system-wide statistics</em> and below are statistics specific to a single 
+process (a.k.a, tasks OR software applications).</p>
+<div class="showable-container quest showable-hidden" id="showable108">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle108"><span class="link-like" id="showablelink108">4.2) How much total memory does this HPC (head-node) have?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable109">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle109"><a href="" id="showablelink109">Hint</a></div>
+<div class="showable-body hint" id="showablebody109">
+<p>This would be a system-wide statistic.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink109").click(function(e){
+            e.preventDefault();
+            $("#showable109").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable110">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle110"><a href="" id="showablelink110">Answer</a></div>
+<div class="showable-body answer" id="showablebody110">
+<p><strong>Answer</strong>: If you look at the first value on the <em>Mem</em> line (line 4) it will tell you the total memory on this computer (node).</p>
+<ul>
+<li><strong>BARCOO</strong>: 65942760k or ~64 GigaBytes</li>
+<li><strong>SNOWY</strong>: 132035040k or ~128 GigaBytes</li>
+<li><strong>LIMS-HPC</strong>: 132085396k or ~128 GigaBytes</li>
+</ul>
+<p>To transfer from kB to MB you divide by 1024 and MB to GB by 1024 again.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink110").click(function(e){
+            e.preventDefault();
+            $("#showable110").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable111">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle111"><span class="link-like" id="showablelink111">4.3) What is the current total CPU usage?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable112">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle112"><a href="" id="showablelink112">Hint</a></div>
+<div class="showable-body hint" id="showablebody112">
+<p>This might be easier to work out what is not used and subtract it from 100%</p>
+<div class="showable-container showable-hidden" id="showable113">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle113"><a href="" id="showablelink113">More</a></div>
+<div class="showable-body" id="showablebody113">
+<p><em>Idle</em> is another term for not used (or <em>id</em> for short)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink113").click(function(e){
+            e.preventDefault();
+            $("#showable113").toggleClass("showable-hidden");
+            if ($("#showable113").hasClass("showable-hidden")) {
+                $("#showablelink113").text("More");
+            } else {
+                $("#showablelink113").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink112").click(function(e){
+            e.preventDefault();
+            $("#showable112").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable114">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle114"><a href="" id="showablelink114">Answer</a></div>
+<div class="showable-body answer" id="showablebody114">
+<p><strong>Answer</strong>: If you subtract the <em>%id</em> value (4th value on Cpu(s) line) from 100% you will get the total CPU Usage</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink114").click(function(e){
+            e.preventDefault();
+            $("#showable114").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable115">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle115"><span class="link-like" id="showablelink115">4.4) What column does it appear to be sorting the processes by? Is this <em>low-to-high</em> OR <em>high-to-low</em>?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable116">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle116"><a href="" id="showablelink116">Hint</a></div>
+<div class="showable-body hint" id="showablebody116">
+<p>It's not PID but from time to time it might be ordered sequentially.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink116").click(function(e){
+            e.preventDefault();
+            $("#showable116").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable117">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle117"><a href="" id="showablelink117">Answer</a></div>
+<div class="showable-body answer" id="showablebody117">
+<p><strong>Answer</strong>: <em>%CPU</em> which gives you an indication of how much CPU time each process uses and sorted high-to-low.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink117").click(function(e){
+            e.preventDefault();
+            $("#showable117").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<p>Add up the top few CPU usages of processes and compare this to the system-wide CPU usage at that time.  NOTE: you may need to quit 
+<em>top</em> (by pressing q) so you can compare before it updates.</p>
+<div class="showable-container quest showable-hidden" id="showable118">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle118"><span class="link-like" id="showablelink118">4.5) Why might the numbers disagree?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable119">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle119"><a href="" id="showablelink119">Hint</a></div>
+<div class="showable-body hint" id="showablebody119">
+<p>It might have something to do with the total number of CPU Cores on the system.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink119").click(function(e){
+            e.preventDefault();
+            $("#showable119").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable120">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle120"><a href="" id="showablelink120">Answer</a></div>
+<div class="showable-body answer" id="showablebody120">
+<p><strong>Answer</strong>: <em>%CPU</em> column gives you an indication of how much this process uses of 1 CPU Core, where as the system-wide values at the top 
+are exactly that, how much the entire system is utilised.  i.e. if you could see all processes in <em>top</em> (excluding round errors) 
+they would add up 100% x the number of cpu cores available; on LIMS-HPC this would be 0-1600% in the individual processes and 0-100% 
+on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for individual processes.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink120").click(function(e){
+            e.preventDefault();
+            $("#showable120").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest" id="showable121">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle121"><a href="" id="showablelink121">4.6) What command-line flag instructs <em>top</em> to sort results by <em>%MEM</em>?</a></div>
+<div class="showable-body quest" id="showablebody121">
+<p>Can you think of a reason that this might be useful?</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink121").click(function(e){
+            e.preventDefault();
+            $("#showable121").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container hint showable-hidden" id="showable122">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle122"><a href="" id="showablelink122">Hint</a></div>
+<div class="showable-body hint" id="showablebody122">
+<p>Use the <em>top</em> manpage.</p>
+<div class="showable-container showable-hidden" id="showable123">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle123"><a href="" id="showablelink123">More</a></div>
+<div class="showable-body" id="showablebody123">
+<p><em>"a is for allocated memory!"</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink123").click(function(e){
+            e.preventDefault();
+            $("#showable123").toggleClass("showable-hidden");
+            if ($("#showable123").hasClass("showable-hidden")) {
+                $("#showablelink123").text("More");
+            } else {
+                $("#showablelink123").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink122").click(function(e){
+            e.preventDefault();
+            $("#showable122").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable124">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle124"><a href="" id="showablelink124">Answer</a></div>
+<div class="showable-body answer" id="showablebody124">
+<p><strong>Answer</strong>: <em>top -a</em> will cause <em>top</em> to sort the processes by memory usage.  a.k.a. allocated memory</p>
+<p><strong>Can you think of a reason that this might be useful?</strong></p>
+<p>Your program might be using a lot of memory and you want to know how much; by sorting by memory will cause your program to stay at the top.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink124").click(function(e){
+            e.preventDefault();
+            $("#showable124").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable125">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle125"><span class="link-like" id="showablelink125">4.7) Run <em>"top -c"</em>.  What does it do?  How might this be helpful?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable126">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle126"><a href="" id="showablelink126">Hint</a></div>
+<div class="showable-body hint" id="showablebody126">
+<p>Use the <em>top</em> manpage.</p>
+<div class="showable-container showable-hidden" id="showable127">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle127"><a href="" id="showablelink127">More</a></div>
+<div class="showable-body" id="showablebody127">
+<p><em>"c is for complete!"</em></p>
+<p><em>"c is also for command!"</em> which is another name for program</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink127").click(function(e){
+            e.preventDefault();
+            $("#showable127").toggleClass("showable-hidden");
+            if ($("#showable127").hasClass("showable-hidden")) {
+                $("#showablelink127").text("More");
+            } else {
+                $("#showablelink127").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink126").click(function(e){
+            e.preventDefault();
+            $("#showable126").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable128">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle128"><a href="" id="showablelink128">Answer</a></div>
+<div class="showable-body answer" id="showablebody128">
+<p><strong>What does it do?</strong><br />
+It changes the COMMAND column (right most) to show the complete command (or as much that fits) including the flags and options.</p>
+<p><strong>How might this be helpful?</strong><br />
+Sometimes you might be running a lot of commands with the same name that only differ by the command-line options.  In this case it is hard 
+to tell which ones are still running unless you use the <em>-c</em> flag to show the complete command.</p>
+<p><strong>NOTE</strong>:<br />
+If <em>top</em> is running you can press the <em>c</em> key to toggle show/hide complete command</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink128").click(function(e){
+            e.preventDefault();
+            $("#showable128").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable129">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle129"><span class="link-like" id="showablelink129">4.8) How can you get <em>top</em> to only show your processes?  Why might this be useful?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable130">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle130"><a href="" id="showablelink130">Hint</a></div>
+<div class="showable-body hint" id="showablebody130">
+<p>Use the <em>top</em> manpage.</p>
+<div class="showable-container showable-hidden" id="showable131">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle131"><a href="" id="showablelink131">More</a></div>
+<div class="showable-body" id="showablebody131">
+<p><em>"u is for user[name]!"</em></p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink131").click(function(e){
+            e.preventDefault();
+            $("#showable131").toggleClass("showable-hidden");
+            if ($("#showable131").hasClass("showable-hidden")) {
+                $("#showablelink131").text("More");
+            } else {
+                $("#showablelink131").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink130").click(function(e){
+            e.preventDefault();
+            $("#showable130").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable132">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle132"><a href="" id="showablelink132">Answer</a></div>
+<div class="showable-body answer" id="showablebody132">
+<p><strong>How can you get <em>top</em> to only show your processes?</strong><br />
+<strong>Answer 1</strong>: <em>top -u YOURUSERNAME</em><br />
+<strong>Answer 2</strong>: while running <em>top</em> press the <em>u</em> key, type YOURUSERNAME and press <ENTER> key </p>
+<p><strong>Why might this be useful?</strong><br />
+When you are looking to see how much CPU or Memory you are using on a node that has other user jobs running it can be hard
+to quickly identify yours.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink132").click(function(e){
+            e.preventDefault();
+            $("#showable132").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="environment_if" id="ifenv21">
+<h4 id="lims-hpc-specific">LIMS-HPC Specific</h4>
+<p>LIMS-HPC has an extra monitoring and graphing tool called Munin.</p>
+<p>Open the munin webpage and have a look at the graphs</p>
+<p><strong>Munin</strong>: <a href="http://munin-lims.latrobe.edu.au/lims-hpc.html">http://munin-lims.latrobe.edu.au/lims-hpc.html</a></p>
+<div class="showable-container quest showable-hidden" id="showable133">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle133"><span class="link-like" id="showablelink133">4.9) What are the graphs showing?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable134">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle134"><a href="" id="showablelink134">Hint</a></div>
+<div class="showable-body hint" id="showablebody134">
+<p>Take a look at the title on the graphs.  Then the style of graphs.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink134").click(function(e){
+            e.preventDefault();
+            $("#showable134").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable135">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle135"><a href="" id="showablelink135">Answer</a></div>
+<div class="showable-body answer" id="showablebody135">
+<p><strong>Answer</strong>: CPU usage (stacked by type of usage)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink135").click(function(e){
+            e.preventDefault();
+            $("#showable135").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable136">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle136"><span class="link-like" id="showablelink136">4.10) How much is the Compute Node 5 being used currently?</span></div>
+</div>
+</div>
+<div class="showable-container answer showable-hidden" id="showable137">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle137"><a href="" id="showablelink137">Answer</a></div>
+<div class="showable-body answer" id="showablebody137">
+<p>You can either:</p>
+<ol>
+<li>estimate this off the right most position on the graph (everything except mid-yellow is the CPU doing something) or </li>
+<li>look at the <em>cur</em> value for <em>idle</em> and subtract it from 1600 (the maximum value for a 16 core server)</li>
+</ol>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink137").click(function(e){
+            e.preventDefault();
+            $("#showable137").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable138">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle138"><span class="link-like" id="showablelink138">4.11) And at midday yesterday?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable139">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle139"><a href="" id="showablelink139">Hint</a></div>
+<div class="showable-body hint" id="showablebody139">
+<p>It's easiest to think in reverse (i.e. What is not being used?)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink139").click(function(e){
+            e.preventDefault();
+            $("#showable139").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable140">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle140"><a href="" id="showablelink140">Answer</a></div>
+<div class="showable-body answer" id="showablebody140">
+<p>You have to estimate system idle at the point on the graph indicating 12:00 (yesterday).</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink140").click(function(e){
+            e.preventDefault();
+            $("#showable140").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+</div>
+<h2 id="topic-5-all-together">Topic 5: All Together</h2>
+<p>This topic will allow you to put all the skills that you learnt in this workshop to the test.  You might need to refer back to
+the earlier topics if you have forgotten how to do these tasks.</p>
+<p><strong>Overview</strong>:</p>
+<ul>
+<li>Write jobscript</li>
+<li>Load/use software module</li>
+<li>Submit job</li>
+<li>Monitor job</li>
+</ul>
+<div class="environment_if" id="ifenv22">
+<div class="info">
+<b>NOTE (for later)</b>: to complete this topic from your regular LIMS-HPC account you will need to:
+<ul>
+<li>first setup node logins.  This has already been done for your *training* account so no need to do this today
+<a href="https://docs.google.com/document/d/1pv_ovxs9xoGtQfXFlbM632RLW2X75aGcXJZ5DFSr6QE">LIMS-HPC Node Login Setup</a>
+</li>
+<li>use the *compute* partition instead of *training*
+</li>
+</ul>
+</div>
+
+</div>
+<h3 id="task-1-write-a-job-script">Task 1: Write a job script</h3>
+<p>Write a job script that requests the following resources:</p>
+<ul>
+<li><strong>Filename</strong>: monINITIALS.slurm<ul>
+<li>where INITIALS is replaced with your initials.  e.g. for me it would be monAR.slurm</li>
+</ul>
+</li>
+<li><strong>Tasks</strong>: 1 </li>
+<li><strong>CPUs</strong>: 1</li>
+<li><strong>Partition</strong>: <span class="environment_env" id="env3">training</span> </li>
+<li><strong>Time</strong>: 5 mins </li>
+<li><strong>Memory</strong>: 1 GB (remember to specify it in MB)</li>
+</ul>
+<h3 id="task-2-loaduse-software-module">Task 2: Load/use software module</h3>
+<p>Edit your job script so that it: </p>
+<ul>
+<li>Loads the <em><span class="environment_env" id="env2">training-gcc</span></em> module</li>
+<li>Runs the <em>fakejob</em> command with your name as the first parameter.  <ul>
+<li>FYI: <em>fakejob</em> is a command that was made to demonstrate what real commands
+  might do in terms of CPU and Memory usage.  It does not perform any useful task; if you must know, it just calculates prime numbers for 5 minutes 
+  and consumes some memory</li>
+</ul>
+</li>
+</ul>
+<div class="info">
+<b>NOTE</b>: remember good practice here and add the date commands to print the date/time in your output.  You can copy them from the *task01* script.
+</div>
+
+<h3 id="task-3-submit-job">Task 3: Submit job</h3>
+<div class="warning">
+<b>NOTE</b>: Task 4 is time dependent on task 3; you need to do it within 2 or 3 minutes of running step 3.1 so it might be a good idea to
+read ahead before hand.  Don't stress if you don't complete it in time, you can simply run 3.1 again.
+</div>
+
+<ol>
+<li>Use <em>sbatch</em> to submit the job to the HPC.</li>
+<li>Note down the job id it was given (for later).</li>
+<li>Use squeue (or qs) to check that is started ok.</li>
+<li>When it starts check which compute node it is running on (for the next task).</li>
+</ol>
+<h3 id="task-4-monitor-the-job">Task 4: Monitor the job</h3>
+<p>Use the <em>top</em> command to check how much CPU and Memory the job is using.  Given that SLURM is running the job on your behalf on one of the compute 
+nodes, <em>top</em> won't be able to see the job.  To be able to use top, you will first need to login to the compute node that is running your job.</p>
+<p>To login:</p>
+<div class="environment_if" id="ifenv24">
+<pre><code class="sh">$ ssh lims-hpc-X
+</code></pre>
+
+<p>Where X is the actual node number you were allocated (See task 3.4).</p>
+<p>You are now connected from your computer to lims-hpc-m which is connected to lims-hpc-X.</p>
+<pre><code class="text">+---------------+            +------------+            +------------+
+| YOUR COMPUTER | -- SSH --&gt; | LIMS-HPC-M | -- SSH --&gt; | LIMS-HPC-X |
++---------------+            +------------+            +------------+
+</code></pre>
+
+<p>You can tell which node you are on by the text in the prompt</p>
+<pre><code class="sh">[10:00:06] USERNAME@lims-hpc-m ~ $ 
+
+Changes to:
+
+[10:06:05] USERNAME@lims-hpc-1 ~ $
+</code></pre>
+
+</div>
+<p>Once logged in to the relevent compute node you can run <em>top</em> to view your job.  Remember the <em>u</em> and <em>c</em> options we learnt earlier; they will be helpful 
+here when everyone is running the same jobs.</p>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable141">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle141"><span class="link-like" id="showablelink141">How does the CPU and Memory usage change over time?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable142">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle142"><a href="" id="showablelink142">Hint</a></div>
+<div class="showable-body hint" id="showablebody142">
+<p>It should vary (within the limits you set in the job script)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink142").click(function(e){
+            e.preventDefault();
+            $("#showable142").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable143">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle143"><a href="" id="showablelink143">Answer</a></div>
+<div class="showable-body answer" id="showablebody143">
+<p>The <em>fakejob</em> program should vary its CPU usage between 50 and 100% CPU and 500 and 1000MB of memory.  The percentage that it shows is based on the total 
+memory of the node that runs your job; check Topic 4, Question 4.2 to remember how to find the total memory.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink143").click(function(e){
+            e.preventDefault();
+            $("#showable143").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<h2 id="finished">Finished</h2>
+<p>Well done, you learnt a lot over the last 5 topics and you should be proud of your achievement; it 
+was a lot to take in.</p>
+<p>From here you should be comfortable to begin submitting real jobs to the HPC (in your real account, 
+not the training one).</p>
+<p>You will no-doubt forget a lot of what you learnt here so I encourage you to save a link to this 
+workshop for later reference.</p>
+<p>Thank you for your attendance, please don't forget to complete the training survey and give it
+back to the workshop facilitators.</p>
+			</div>
+		</div>
+
+		<div class="footer">
+			<hr/>
+			<div class="footer-text">Developed by <a href="http://www.latrobe.edu.au">La Trobe University</a> and <a href="http://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a></div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="../../assets/ltu.js"></script>
+	<script src="../../includes/media/delayed-jquery.js"></script>
+	<script src="../../includes/media/mdx_showable.js"></script>
+	<script src="../../search/require.js"></script>
+	<script src="../../search/search.js"></script>
+</body>
+</html>
