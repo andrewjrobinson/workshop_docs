@@ -278,10 +278,10 @@ idea to read the hints afterwards because they contain extra information that is
 one that coordinates all the HPCs tasks.</p>
 <p><strong>Server details</strong>:</p>
 <ul>
-<li><strong>host</strong>: <span class="environment_env" id="env35">lims-hpc-m.latrobe.edu.au</span></li>
-<li><strong>port</strong>: <span class="environment_env" id="env36">6022</span> </li>
-<li><strong>username</strong>: <span class="environment_env" id="env37">trainingXX</span></li>
-<li><strong>password</strong>: <span class="environment_env" id="env38">(provided at workshop)</span></li>
+<li><strong>host</strong>: <span class="environment_env" id="env34">lims-hpc-m.latrobe.edu.au</span></li>
+<li><strong>port</strong>: <span class="environment_env" id="env35">6022</span> </li>
+<li><strong>username</strong>: <span class="environment_env" id="env36">trainingXX</span></li>
+<li><strong>password</strong>: <span class="environment_env" id="env37">(provided at workshop)</span></li>
 </ul>
 <p><strong>Connection instructions</strong>:</p>
 <div class="showable-container information showable-hidden" id="showable5">
@@ -291,9 +291,9 @@ one that coordinates all the HPCs tasks.</p>
 <p>Both Mac OS X and Linux come with a version of ssh (called OpenSSH) that can be used from the command line.  To use OpenSSH you must 
 first start a terminal program on your computer.  On OS X the standard terminal is called Terminal, and it is installed by default. 
 On Linux there are many popular terminal programs including: xterm, gnome-terminal, konsole (if you aren't sure, then xterm is a good 
-default).  When you've started the terminal you should see a command prompt.  To log into <span class="environment_env" id="env30">LIMS-HPC</span>, for example, type this command at 
-the prompt and press return (where the word username is replaced with your <span class="environment_env" id="env31">LIMS-HPC</span> username):</p>
-<p><em>$ ssh -p <span class="environment_env" id="env32">6022</span> <span class="environment_env" id="env33">trainingXX</span>@<span class="environment_env" id="env34">lims-hpc-m.latrobe.edu.au</span></em></p>
+default).  When you've started the terminal you should see a command prompt.  To log into <span class="environment_env" id="env29">LIMS-HPC</span>, for example, type this command at 
+the prompt and press return (where the word username is replaced with your <span class="environment_env" id="env30">LIMS-HPC</span> username):</p>
+<p><em>$ ssh -p <span class="environment_env" id="env31">6022</span> <span class="environment_env" id="env32">trainingXX</span>@<span class="environment_env" id="env33">lims-hpc-m.latrobe.edu.au</span></em></p>
 <p>The same procedure works for any other machine where you have an account except that if your Unix computer uses a port other than 22 you will
 need to specify the port by adding the option <em>-p PORT</em> with PORT substituted with the port number.</p>
 <p>You may be presented with a message along the lines of:</p>
@@ -329,15 +329,15 @@ from this web page:</p>
 <p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html</a></p>
 <p>When you start PuTTY you should see a window which looks something like this:</p>
 <p><img src="../../includes/media/putty1.png" title="Putty Connection Dialog" alt="Putty Connection Dialog" width="400px" /></p>
-<p>To connect to <span class="environment_env" id="env26">LIMS-HPC</span> you should enter <em><span class="environment_env" id="env27">lims-hpc-m.latrobe.edu.au</span></em> into the box entitled "Host Name (or IP address)" 
-and <em><span class="environment_env" id="env28">6022</span></em> in the port, 
+<p>To connect to <span class="environment_env" id="env25">LIMS-HPC</span> you should enter <em><span class="environment_env" id="env26">lims-hpc-m.latrobe.edu.au</span></em> into the box entitled "Host Name (or IP address)" 
+and <em><span class="environment_env" id="env27">6022</span></em> in the port, 
 then click on the Open button. All of the settings should remain the same as they were when PuTTY started (which should be the 
 same as they are in the picture above).</p>
 <p>In some circumstances you will be presented with a window entitled PuTTY Security Alert. It will say something along the lines 
 of <em>"The server's host key is not cached in the registry"</em>. This is nothing to worry about, and you should agree to continue (by 
 clicking on Yes). You usually see this message the first time you try to connect to a particular remote computer.</p>
 <p>If all goes well, a terminal window will open, showing a prompt with the text <em>"login as:"</em>. An example terminal window is shown 
-below. You should type your <span class="environment_env" id="env29">LIMS-HPC</span> username and press enter. After entering your username you will be prompted for your 
+below. You should type your <span class="environment_env" id="env28">LIMS-HPC</span> username and press enter. After entering your username you will be prompted for your 
 password. Assuming you type the correct username and password the system should then display a welcome message, and then 
 present you with a Unix prompt. If you get this far then you are ready to start entering Unix commands and thus begin using 
 the remote computer.</p>
@@ -369,7 +369,7 @@ the remote computer.</p>
 <div class="showable-header hint" id="showabletitle8"><a href="" id="showablelink8">Hint</a></div>
 <div class="showable-body hint" id="showablebody8">
 <p>When you login, you will be presented with a message; this is called the <em>Message Of The Day</em> and usually includes lots of useful 
-information.  On <span class="environment_env" id="env25">LIMS-HPC</span> this includes a list of useful commands, the last login details for your account and 
+information.  On <span class="environment_env" id="env24">LIMS-HPC</span> this includes a list of useful commands, the last login details for your account and 
 the contact email of the system administrator</p>
 </div>
 </div>
@@ -387,10 +387,8 @@ the contact email of the system administrator</p>
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle9"><a href="" id="showablelink9">Answer</a></div>
 <div class="showable-body answer" id="showablebody9">
-<p>Depending on which computer you are working:</p>
 <ul>
-<li>SNOWY &amp; BARCOO: help@vlsci.unimelb.edu.au</li>
-<li>LIMS-HPC: genomics@latrobe.edu.au</li>
+<li>LIMS-HPC: andrew.robinson@latrobe.edu.au</li>
 </ul>
 </div>
 </div>
@@ -414,8 +412,8 @@ the contact email of the system administrator</p>
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle11"><a href="" id="showablelink11">Hint</a></div>
 <div class="showable-body hint" id="showablebody11">
-<p>The <em><span class="environment_env" id="env18">lims-hpc-</span>[2-4]</em> is shorthand for <em><span class="environment_env" id="env19">lims-hpc-</span>2 <span class="environment_env" id="env20">lims-hpc-</span>3 and <span class="environment_env" id="env21">lims-hpc-</span>4</em> and <em><span class="environment_env" id="env22">lims-hpc-</span>[1,5]</em> is shorthand for
-<em><span class="environment_env" id="env23">lims-hpc-</span>1</em> and <em><span class="environment_env" id="env24">lims-hpc-</span>5</em></p>
+<p>The <em><span class="environment_env" id="env17">lims-hpc-</span>[2-4]</em> is shorthand for <em><span class="environment_env" id="env18">lims-hpc-</span>2 <span class="environment_env" id="env19">lims-hpc-</span>3 and <span class="environment_env" id="env20">lims-hpc-</span>4</em> and <em><span class="environment_env" id="env21">lims-hpc-</span>[1,5]</em> is shorthand for
+<em><span class="environment_env" id="env22">lims-hpc-</span>1</em> and <em><span class="environment_env" id="env23">lims-hpc-</span>5</em></p>
 <div class="showable-container showable-hidden" id="showable12">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle12"><a href="" id="showablelink12">more</a></div>
@@ -469,7 +467,7 @@ bigmem       up 200-00:00:      1   idle lims-hpc-1
 <ul>
 <li>BARCOO: <strong>70</strong> (<em>barcoo001</em> through <em>barcoo070</em>)</li>
 <li>SNOWY: <strong>43</strong> (<em>snowy001</em> through <em>snowy043</em>)</li>
-<li>LIMS-HPC: <strong>6</strong> (<em>lims-hpc-m</em> and <em>lims-hpc-1</em> through <em>lims-hpc-5</em>)</li>
+<li>LIMS-HPC: <strong>7</strong> (<em>lims-hpc-m</em> and <em>lims-hpc-1</em> through <em>lims-hpc-7</em>)</li>
 </ul>
 </div>
 </div>
@@ -734,16 +732,19 @@ language but basically it's saying you can put search terms after the avail subc
 <div class="showable-body answer" id="showablebody25">
 <p>The man page told us that we could put a search term after <em>module avail</em>.</p>
 <pre><code class="sh">$ module avail f
-------------------- /usr/local/Modules/modulefiles -------------------
-fasta-gcc/35.4.12            flex-gcc/2.5.39
-fastqc/0.10.1                fontconfig-gcc/2.11.93
-fastStructure-gcc/2013.11.07 freebayes-gcc/20140603
-fastStructure-gcc/20150320   freetype-gcc/2.5.3
-fastx_toolkit-gcc/0.0.14
+------------------ /usr/local/Modules/modulefiles -------------------
+fasta-gcc/35.4.12                fineradstructure-gcc/20160608
+fastqc/0.10.1                    flex-gcc/2.5.39
+fastqc/0.11.5                    fontconfig-gcc/2.11.93
+fastqc/0.11.6                    fqgrep-gcc/0.4.4
+fastStructure-gcc/2013.11.07     freebayes-gcc/0.9.14-17-g7696787
+fastStructure-gcc/20150320       freebayes-gcc/1.0.2(default)
+fasttree/2.1.10                  freebayes-gcc/20140603
+fastx_toolkit-gcc/0.0.14         freetype-gcc/2.5.3
 </code></pre>
 
 <div class="environment_if" id="ifenv5">
-<p><strong>Answer</strong>: 9 modules</p>
+<p><strong>Answer</strong>: 16 modules</p>
 </div>
 <p>NOTE: this was correct at time of writing this workshop and might increase over time so don't be alarmed if you got more</p>
 </div>
@@ -762,7 +763,7 @@ fastx_toolkit-gcc/0.0.14
 <div class="showable-inner">
 <div class="showable-header indent" id="showabletitle26"><a href="" id="showablelink26">Alternate Method</a></div>
 <div class="showable-body indent" id="showablebody26">
-<p>To get a fully automated solution your could do the following command:</p>
+<p>To get a fully automated solution your could run the following command:</p>
 <pre><code class="sh">$ module -l avail 2&gt;&amp;1 | grep &quot;^f&quot; | wc -l
 </code></pre>
 
@@ -932,7 +933,7 @@ of the software.</div>
 <div class="showable-header answer" id="showabletitle36"><a href="" id="showablelink36">Answer</a></div>
 <div class="showable-body answer" id="showablebody36">
 <pre><code class="sh">$ module load pear-gcc/0.9.4
-[15:59:19] training21@lims-hpc-m ~ $ pear
+$ pear
  ____  _____    _    ____ 
 |  _ \| ____|  / \  |  _ \
 | |_) |  _|   / _ \ | |_) |
@@ -1447,15 +1448,17 @@ for a period of time exclusively for you. </li>
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle64"><a href="" id="showablelink64">more</a></div>
 <div class="showable-body" id="showablebody64">
-<p>Have a look at the PARTITION and NODELIST columns.  The <em><span class="environment_env" id="env14">lims-hpc-</span>[2-4]</em> is shorthand for <em><span class="environment_env" id="env15">lims-hpc-</span>2 <span class="environment_env" id="env16">lims-hpc-</span>3 
-and <span class="environment_env" id="env17">lims-hpc-</span>4</em></p>
+<p>Have a look at the PARTITION and NODELIST columns.  The <em><span class="environment_env" id="env13">lims-hpc-</span>[2-4]</em> is shorthand for <em><span class="environment_env" id="env14">lims-hpc-</span>2 <span class="environment_env" id="env15">lims-hpc-</span>3 
+and <span class="environment_env" id="env16">lims-hpc-</span>4</em></p>
 <pre><code class="sh">$ sinfo
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 compute*     up 200-00:00:      3    mix lims-hpc-[2-4]
 compute*     up 200-00:00:      2   idle lims-hpc-[1,5]
 bigmem       up 200-00:00:      1   idle lims-hpc-1
 8hour        up   08:00:00      3    mix lims-hpc-[2-4]
-8hour        up   08:00:00      3   idle lims-hpc-[1,5],lims-hpc-m
+8hour        up   08:00:00      3   idle lims-hpc-[1,5-6],lims-hpc-m
+training     up    1:00:00      4    mix lims-hpc-[1-2,4-5]
+training     up    1:00:00      2   idle lims-hpc-3,lims-hpc-m
 </code></pre>
 
 <p>Note: the output to the sinfo command will look different depending on which HPC you are using and it's current usage levels</p>
@@ -1493,8 +1496,8 @@ bigmem       up 200-00:00:      1   idle lims-hpc-1
 <div class="showable-header answer" id="showabletitle65"><a href="" id="showablelink65">Answer</a></div>
 <div class="showable-body answer" id="showablebody65">
 <p>The <em>sinfo</em> command will list the <em>partitions</em>.  It summaries the nodes by their current status so there may be more 
-than one line with <em><span class="environment_env" id="env8">training</span></em> in the partition column.  It lists the nodes in shorthand i.e. <span class="environment_env" id="env9">lims-hpc-</span>[1,3-5] means 
-<span class="environment_env" id="env10">lims-hpc-</span>1, <span class="environment_env" id="env11">lims-hpc-</span>3, <span class="environment_env" id="env12">lims-hpc-</span>4, <span class="environment_env" id="env13">lims-hpc-</span>5.</p>
+than one line with <em><span class="environment_env" id="env7">training</span></em> in the partition column.  It lists the nodes in shorthand i.e. <span class="environment_env" id="env8">lims-hpc-</span>[1,3-5] means 
+<span class="environment_env" id="env9">lims-hpc-</span>1, <span class="environment_env" id="env10">lims-hpc-</span>3, <span class="environment_env" id="env11">lims-hpc-</span>4, <span class="environment_env" id="env12">lims-hpc-</span>5.</p>
 <div class="environment_if" id="ifenv10">
 <p><strong>Answer</strong>: lims-hpc-1, lims-hpc-2, lims-hpc-3, lims-hpc-4, lims-hpc-5</p>
 </div>
@@ -1538,8 +1541,8 @@ than one line with <em><span class="environment_env" id="env8">training</span></
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle68"><a href="" id="showablelink68">Answer</a></div>
 <div class="showable-body answer" id="showablebody68">
-<p><strong>Answer</strong>: <span class="environment_env" id="env7">lims-hpc-</span>??</p>
-<p>This is dependant on what the HPC Sys Admin gave us.  You are probably correct but check with the workshop facilitators if you wish.</p>
+<p><strong>Answer</strong>: lims-hpc-1, lims-hpc-2, lims-hpc-3, lims-hpc-4, lims-hpc-5, lims-hpc-6</p>
+<p>This is dependent on what the HPC Sys Admin gave us.  You are probably correct but check with the workshop facilitators if you wish.</p>
 </div>
 </div>
 </div>
@@ -1691,7 +1694,7 @@ not actually allocate any of it to you so your job will get terminated once it t
 <ul>
 <li>task01: <strong>1024MB</strong> (1GB) i.e. 1024 x 1 x 1</li>
 <li>task02: <strong>12288MB</strong> (12GB) i.e. 2048 x 3 x 2</li>
-<li>task03: <strong>at least 1024MB</strong> (1GB).  The actual amount could be 128GB (nodes 2 to 5) or 256GB (node 1)</li>
+<li>task03: <strong>at least 1024MB</strong> (1GB).  The actual amount could be 128GB (nodes 2 to 5), 256GB (node 1), or 64GB (node 6)</li>
 </ul>
 </div>
 </div>
@@ -2208,7 +2211,7 @@ Finished at: Fri May  8 16:11:27 AEST 2015
 <pre><code class="bash">#!/bin/bash
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=1024
-#SBATCH --partition=TRAINING
+#SBATCH --partition=PARTITION
 #SBATCH --time=30:00
 #SBATCH --mail-user=name@email.address
 #SBATCH --mail-type=ALL
@@ -2272,6 +2275,7 @@ in the future.</p>
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle107"><a href="" id="showablelink107">Answer</a></div>
 <div class="showable-body answer" id="showablebody107">
+<h4 id="top">Top</h4>
 <pre><code class="sh">$ man top
 ...
 DESCRIPTION
@@ -2699,21 +2703,44 @@ to quickly identify yours.</p>
         });
     }); //-->]]>
     </script>
-<div class="environment_if" id="ifenv21">
-<h4 id="lims-hpc-specific">LIMS-HPC Specific</h4>
-<p>LIMS-HPC has an extra monitoring and graphing tool called Munin.</p>
-<p>Open the munin webpage and have a look at the graphs</p>
-<p><strong>Munin</strong>: <a href="http://munin-lims.latrobe.edu.au/lims-hpc.html">http://munin-lims.latrobe.edu.au/lims-hpc.html</a></p>
+<hr />
+<h4 id="sacct-slurm-accounting">Sacct (Slurm Accounting)</h4>
+<p>If you need some statistics about your job after it has completed you can use the sacct command to find out some summary 
+statistics.  Unfortunately <em>sacct</em> needs to be instructed to show memory usage and cannot show maximum CPU usage.</p>
+<hr />
 <div class="showable-container quest showable-hidden" id="showable133">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle133"><span class="link-like" id="showablelink133">4.9) What are the graphs showing?</span></div>
+<div class="showable-header quest" id="showabletitle133"><span class="link-like" id="showablelink133">4.9) How can you get <em>sacct</em> to show the <em>maximum</em> memory usage?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable134">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle134"><a href="" id="showablelink134">Hint</a></div>
 <div class="showable-body hint" id="showablebody134">
-<p>Take a look at the title on the graphs.  Then the style of graphs.</p>
+<p>Use the <em>sacct</em>'s man page to find out which option alters the <em>output</em> columns.  The command <em>sacct -e</em> can list all 
+the available columns but it is tricky to work out which one to use</p>
+<div class="showable-container showable-hidden" id="showable135">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle135"><a href="" id="showablelink135">More</a></div>
+<div class="showable-body" id="showablebody135">
+<p>This one is quite hard; the maximum memory column is MaxRSS.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink135").click(function(e){
+            e.preventDefault();
+            $("#showable135").toggleClass("showable-hidden");
+            if ($("#showable135").hasClass("showable-hidden")) {
+                $("#showablelink135").text("More");
+            } else {
+                $("#showablelink135").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
 </div>
 </div>
 </div>
@@ -2726,10 +2753,152 @@ to quickly identify yours.</p>
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable135">
+<div class="showable-container answer showable-hidden" id="showable136">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle135"><a href="" id="showablelink135">Answer</a></div>
-<div class="showable-body answer" id="showablebody135">
+<div class="showable-header answer" id="showabletitle136"><a href="" id="showablelink136">Answer</a></div>
+<div class="showable-body answer" id="showablebody136">
+<p><strong>Minimal Answer</strong>: <em>sacct -o JobID,MaxRSS</em></p>
+<p><strong>Useful Command</strong>:</p>
+<p>A good command for checking your requested vs actual usage:</p>
+<pre><code class="sh">$ sacct -o JobID,JobName,ReqMem,ReqCPUS,MaxRSS,Timelimit,Elapsed
+
+       JobID    JobName     ReqMem  ReqCPUS     MaxRSS  Timelimit    Elapsed
+------------ ---------- ---------- -------- ---------- ---------- ----------
+144341       monAR.slu+     1024Mc        1              00:06:00   00:05:00
+144341.batch      batch     1024Mc        1   1043104K              00:05:00
+144346       monAR.slu+     1024Mc        2              00:06:00   00:05:00
+144346.batch      batch     1024Mc        1   1043100K              00:05:00
+</code></pre>
+
+<p>For job# 144341 above, we requested 1024MB memory for 6 minutes and used 1043104K (~1019MB) for 5 minutes</p>
+<p>For job# 144346 above, we requested 2048MB memory (2x 1024MB) for 6 minutes and used 1043104K (~1019MB) for 5 minutes</p>
+<p>There will be (at least) two lines resulting for your job once it is complete.  The '.batch' one is useful for overall job 
+statistics.</p>
+<ul>
+<li><strong>JobID</strong>: Slurm alocated job number</li>
+<li><strong>JobName</strong>: the name you gave your job (or filename)</li>
+<li><strong>ReqMem</strong>: the amount of memory requested.  If it ends with 'c' then it is memory per CPU so you need to multiply it by ReqCPUS to get total requested memory</li>
+<li><strong>ReqCPUS</strong>: Number of CPUS the job requested</li>
+<li><strong>MaxRSS</strong>: Maximum memory used by the job</li>
+<li><strong>Timelimit</strong>: Maximum amount of time requested</li>
+<li><strong>Elapsed</strong>: Amount actually used</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink136").click(function(e){
+            e.preventDefault();
+            $("#showable136").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container quest showable-hidden" id="showable137">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle137"><span class="link-like" id="showablelink137">4.10) Modify the more useful command in the previous question to show jobs from all users which completed yesterday.  Who has the closest requested time limit to elapsed?  What about Requested Memory to Max used memory?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable138">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle138"><a href="" id="showablelink138">Hint</a></div>
+<div class="showable-body hint" id="showablebody138">
+<p>Use the <em>sacct</em>'s man page to find out which options you need add.</p>
+<div class="showable-container showable-hidden" id="showable139">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle139"><a href="" id="showablelink139">More</a></div>
+<div class="showable-body" id="showablebody139">
+<p>In other words, you need flags/options to do:</p>
+<ul>
+<li>show <em>all users</em> jobs</li>
+<li><em>state</em> <em>completed</em></li>
+<li>completed <em>start</em>ing yesterday <em>00:00:00</em></li>
+<li>completed <em>end</em>ing yesterday <em>23:59:59</em></li>
+<li>add User column to output format </li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink139").click(function(e){
+            e.preventDefault();
+            $("#showable139").toggleClass("showable-hidden");
+            if ($("#showable139").hasClass("showable-hidden")) {
+                $("#showablelink139").text("More");
+            } else {
+                $("#showablelink139").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink138").click(function(e){
+            e.preventDefault();
+            $("#showable138").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable140">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle140"><a href="" id="showablelink140">Answer</a></div>
+<div class="showable-body answer" id="showablebody140">
+<p><strong>Answer</strong>: <em>sacct -o JobID,JobName,ReqMem,ReqCPUS,MaxRSS,Timelimit,Elapsed,User --allusers --state completed --starttime YYYY-MM-DDT00:00:00 --endtime YYYY-MM-DDT23:59:59</em>  (Where <em>YYYY-MM-DD</em> is replaced with the date corresponding to yesterday)</p>
+<p><strong>Who has the closest requested time limit to elapsed?</strong></p>
+<p>Compare the <em>Timelimit</em> to <em>Elapsed</em> columns to see which is the closest; check with the facilitator to see if you are correct.</p>
+<p><strong>What about Requested Memory to Max used memory?</strong></p>
+<p>If <em>ReqMem</em> ends in <em>c</em>: <em>ReqMem</em> x <em>ReqCPUS</em> vs <em>MaxRSS</em></p>
+<p>If <em>ReqMem</em> ends in <em>n</em>: <em>ReqMem</em> vs <em>MaxRSS</em> </p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink140").click(function(e){
+            e.preventDefault();
+            $("#showable140").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="environment_if" id="ifenv21">
+<h4 id="lims-hpc-specific">LIMS-HPC Specific</h4>
+<p>LIMS-HPC has an extra monitoring and graphing tool called Munin.</p>
+<p>Open the munin webpage and have a look at the graphs</p>
+<p><strong>Munin</strong>: <a href="http://munin-lims.latrobe.edu.au/lims-hpc.html">http://munin-lims.latrobe.edu.au/lims-hpc.html</a></p>
+<div class="showable-container quest showable-hidden" id="showable141">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle141"><span class="link-like" id="showablelink141">4.11) What are the graphs showing?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable142">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle142"><a href="" id="showablelink142">Hint</a></div>
+<div class="showable-body hint" id="showablebody142">
+<p>Take a look at the title on the graphs.  Then the style of graphs.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink142").click(function(e){
+            e.preventDefault();
+            $("#showable142").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable143">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle143"><a href="" id="showablelink143">Answer</a></div>
+<div class="showable-body answer" id="showablebody143">
 <p><strong>Answer</strong>: CPU usage (stacked by type of usage)</p>
 </div>
 </div>
@@ -2737,22 +2906,22 @@ to quickly identify yours.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink135").click(function(e){
+        $("#showablelink143").click(function(e){
             e.preventDefault();
-            $("#showable135").toggleClass("showable-hidden");
+            $("#showable143").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable136">
+<div class="showable-container quest showable-hidden" id="showable144">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle136"><span class="link-like" id="showablelink136">4.10) How much is the Compute Node 5 being used currently?</span></div>
+<div class="showable-header quest" id="showabletitle144"><span class="link-like" id="showablelink144">4.12) How much is the Compute Node 5 being used currently?</span></div>
 </div>
 </div>
-<div class="showable-container answer showable-hidden" id="showable137">
+<div class="showable-container answer showable-hidden" id="showable145">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle137"><a href="" id="showablelink137">Answer</a></div>
-<div class="showable-body answer" id="showablebody137">
+<div class="showable-header answer" id="showabletitle145"><a href="" id="showablelink145">Answer</a></div>
+<div class="showable-body answer" id="showablebody145">
 <p>You can either:</p>
 <ol>
 <li>estimate this off the right most position on the graph (everything except mid-yellow is the CPU doing something) or </li>
@@ -2764,22 +2933,22 @@ to quickly identify yours.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink137").click(function(e){
+        $("#showablelink145").click(function(e){
             e.preventDefault();
-            $("#showable137").toggleClass("showable-hidden");
+            $("#showable145").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable138">
+<div class="showable-container quest showable-hidden" id="showable146">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle138"><span class="link-like" id="showablelink138">4.11) And at midday yesterday?</span></div>
+<div class="showable-header quest" id="showabletitle146"><span class="link-like" id="showablelink146">4.13) And at midday yesterday?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable139">
+<div class="showable-container hint showable-hidden" id="showable147">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle139"><a href="" id="showablelink139">Hint</a></div>
-<div class="showable-body hint" id="showablebody139">
+<div class="showable-header hint" id="showabletitle147"><a href="" id="showablelink147">Hint</a></div>
+<div class="showable-body hint" id="showablebody147">
 <p>It's easiest to think in reverse (i.e. What is not being used?)</p>
 </div>
 </div>
@@ -2787,16 +2956,16 @@ to quickly identify yours.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink139").click(function(e){
+        $("#showablelink147").click(function(e){
             e.preventDefault();
-            $("#showable139").toggleClass("showable-hidden");
+            $("#showable147").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable140">
+<div class="showable-container answer showable-hidden" id="showable148">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle140"><a href="" id="showablelink140">Answer</a></div>
-<div class="showable-body answer" id="showablebody140">
+<div class="showable-header answer" id="showabletitle148"><a href="" id="showablelink148">Answer</a></div>
+<div class="showable-body answer" id="showablebody148">
 <p>You have to estimate system idle at the point on the graph indicating 12:00 (yesterday).</p>
 </div>
 </div>
@@ -2804,9 +2973,9 @@ to quickly identify yours.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink140").click(function(e){
+        $("#showablelink148").click(function(e){
             e.preventDefault();
-            $("#showable140").toggleClass("showable-hidden");
+            $("#showable148").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -2844,7 +3013,7 @@ the earlier topics if you have forgotten how to do these tasks.</p>
 <li><strong>Tasks</strong>: 1 </li>
 <li><strong>CPUs</strong>: 1</li>
 <li><strong>Partition</strong>: <span class="environment_env" id="env3">training</span> </li>
-<li><strong>Time</strong>: 5 mins </li>
+<li><strong>Time</strong>: 6 mins </li>
 <li><strong>Memory</strong>: 1 GB (remember to specify it in MB)</li>
 </ul>
 <h3 id="task-2-loaduse-software-module">Task 2: Load/use software module</h3>
@@ -2898,18 +3067,18 @@ Changes to:
 </code></pre>
 
 </div>
-<p>Once logged in to the relevent compute node you can run <em>top</em> to view your job.  Remember the <em>u</em> and <em>c</em> options we learnt earlier; they will be helpful 
-here when everyone is running the same jobs.</p>
+<p>Once logged in to the relevant compute node you can run <em>top</em> to view your job.  Remember the <em>u</em> and <em>c</em> options we learnt 
+earlier; they will be helpful here when everyone is running the same jobs.</p>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable141">
+<div class="showable-container quest showable-hidden" id="showable149">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle141"><span class="link-like" id="showablelink141">How does the CPU and Memory usage change over time?</span></div>
+<div class="showable-header quest" id="showabletitle149"><span class="link-like" id="showablelink149">How does the CPU and Memory usage change over time?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable142">
+<div class="showable-container hint showable-hidden" id="showable150">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle142"><a href="" id="showablelink142">Hint</a></div>
-<div class="showable-body hint" id="showablebody142">
+<div class="showable-header hint" id="showabletitle150"><a href="" id="showablelink150">Hint</a></div>
+<div class="showable-body hint" id="showablebody150">
 <p>It should vary (within the limits you set in the job script)</p>
 </div>
 </div>
@@ -2917,16 +3086,16 @@ here when everyone is running the same jobs.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink142").click(function(e){
+        $("#showablelink150").click(function(e){
             e.preventDefault();
-            $("#showable142").toggleClass("showable-hidden");
+            $("#showable150").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable143">
+<div class="showable-container answer showable-hidden" id="showable151">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle143"><a href="" id="showablelink143">Answer</a></div>
-<div class="showable-body answer" id="showablebody143">
+<div class="showable-header answer" id="showabletitle151"><a href="" id="showablelink151">Answer</a></div>
+<div class="showable-body answer" id="showablebody151">
 <p>The <em>fakejob</em> program should vary its CPU usage between 50 and 100% CPU and 500 and 1000MB of memory.  The percentage that it shows is based on the total 
 memory of the node that runs your job; check Topic 4, Question 4.2 to remember how to find the total memory.</p>
 </div>
@@ -2935,15 +3104,88 @@ memory of the node that runs your job; check Topic 4, Question 4.2 to remember h
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink143").click(function(e){
+        $("#showablelink151").click(function(e){
             e.preventDefault();
-            $("#showable143").toggleClass("showable-hidden");
+            $("#showable151").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<p>Wait for the job to complete.</p>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable152">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle152"><span class="link-like" id="showablelink152">Does the maximum memory observed agree with <em>sacct</em>?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable153">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle153"><a href="" id="showablelink153">Hint</a></div>
+<div class="showable-body hint" id="showablebody153">
+<p>See Topic 4, Question 4.9 and 4.10 to remember how to use sacct.  Don't forget to add column MaxRSS.</p>
+<div class="showable-container showable-hidden" id="showable154">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle154"><a href="" id="showablelink154">More</a></div>
+<div class="showable-body" id="showablebody154">
+<pre><code class="sh">$ sacct -u $USER -o JobID,MaxRSS,Elapsed
+</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink154").click(function(e){
+            e.preventDefault();
+            $("#showable154").toggleClass("showable-hidden");
+            if ($("#showable154").hasClass("showable-hidden")) {
+                $("#showablelink154").text("More");
+            } else {
+                $("#showablelink154").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink153").click(function(e){
+            e.preventDefault();
+            $("#showable153").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable155">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle155"><a href="" id="showablelink155">Answer</a></div>
+<div class="showable-body answer" id="showablebody155">
+<pre><code class="sh">$ sacct -u $USER -o JobID,MaxRSS,Elapsed
+       JobID     MaxRSS    Elapsed
+------------ ---------- ----------
+144341                    00:05:00
+144341.batch   1043104K   00:05:00
+</code></pre>
+
+<p><strong>Answer</strong>: Yes, it should approximately agree with the highest value seen with top</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink155").click(function(e){
+            e.preventDefault();
+            $("#showable155").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
 <h2 id="finished">Finished</h2>
-<p>Well done, you learnt a lot over the last 5 topics and you should be proud of your achievement; it 
+<p>Well done, you learnt a lot over the workshop and you should be proud of your achievement; it 
 was a lot to take in.</p>
 <p>From here you should be comfortable to begin submitting real jobs to the HPC (in your real account, 
 not the training one).</p>
