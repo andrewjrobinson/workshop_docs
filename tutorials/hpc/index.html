@@ -68,7 +68,6 @@
 				<ul class="nav nav-sidebar">
 					<li><a href="#high-performance-computing">High-Performance Computing</a></li> 
 					<li><a href="#introduction">Introduction</a></li> 
-					<li><a href="#how-to-use-this-workshop">How to use this workshop</a></li> 
 					<li><a href="#topic-1-exploring-an-hpc">Topic 1: Exploring an HPC</a></li> 
 					<li><a href="#topic-2-software-modules">Topic 2: Software Modules</a></li> 
 					<li><a href="#topic-3-job-submission">Topic 3: Job Submission</a></li> 
@@ -177,101 +176,6 @@ That is, you need to tell it how many CPUs, RAM, Nodes (servers), and Time you n
     }); //-->]]>
     </script>
 </div>
-<div class="environment_if" id="ifenv2">
-<h2 id="how-to-use-this-workshop">How to use this workshop</h2>
-<p>The workshop is broken up into a number of <em>Topics</em> each focusing on a particular aspect of HPCs.  You should take a short break between 
-each to refresh and relax before tackling the next.</p>
-<p><em>Topic</em>s may start with some background followed by a number of <em>exercises</em>.  Each <em>exercise</em> begins with a <em>question</em>, then 
-sometimes a <em>hint</em> (or two) and finishes with the suggested <em>answer</em>.</p>
-<h3 id="question">Question</h3>
-<p>An example question looks like:</p>
-<div class="showable-container quest showable-hidden" id="showable1">
-<div class="showable-inner">
-<div class="showable-header quest" id="showabletitle1"><span class="link-like" id="showablelink1">What is the Answer to Life?</span></div>
-</div>
-</div>
-<h3 id="hint">Hint</h3>
-<p>Depending on how much of a challenge you like, you may choose to use hints.  Even if you work out the answer without hints, its a good 
-idea to read the hints afterwards because they contain extra information that is good to know.</p>
-<p>Note: <em>hint</em>s may be staged, that is, there may be a <em>more</em> section within a hint for further hints</p>
-<div class="showable-container hint showable-hidden" id="showable2">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle2"><a href="" id="showablelink2">Hint</a> &lt;- click here to reveal hint</div>
-<div class="showable-body hint" id="showablebody2">
-<p>What is the answer to everything?</p>
-<p>As featured in <em>"The Hitchhiker's Guide to the Galaxy"</em></p>
-<div class="showable-container showable-hidden" id="showable3">
-<div class="showable-inner">
-<div class="showable-header" id="showabletitle3"><a href="" id="showablelink3">More</a> &lt;- and here to show more</div>
-<div class="showable-body" id="showablebody3">
-<p>It is probably a two digit number</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink3").click(function(e){
-            e.preventDefault();
-            $("#showable3").toggleClass("showable-hidden");
-            if ($("#showable3").hasClass("showable-hidden")) {
-                $("#showablelink3").text("More");
-            } else {
-                $("#showablelink3").text("Less");
-            }
-        });
-    }); //-->]]>
-    </script>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink2").click(function(e){
-            e.preventDefault();
-            $("#showable2").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<h3 id="answer">Answer</h3>
-<p>Once you have worked out the answer to the question expand the Answer section to check if you got it correct.</p>
-<div class="showable-container answer showable-hidden" id="showable4">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle4"><a href="" id="showablelink4">Answer</a> &lt;- click here to reveal answer</div>
-<div class="showable-body answer" id="showablebody4">
-<p><strong>Answer</strong>: 42</p>
-<p>Ref: <a href="http://en.wikipedia.org/wiki/42_%28number%29">Number 42 (Wikipedia)</a></p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink4").click(function(e){
-            e.preventDefault();
-            $("#showable4").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<h3 id="usage-style">Usage Style</h3>
-<p>This workshop attempts to cater for two usage styles:</p>
-<ol>
-<li><strong>Problem solver</strong>: for those who like a challenge and learn best be trying to solve the problems by-them-selves (hints optional):<ul>
-<li>Attempt to answer the question by yourself.</li>
-<li>Use hints when you get stuck.</li>
-<li>Once solved, reveal the answer and read through our suggested solution.</li>
-<li>Its a good idea to read the hints and answer description as they often contain extra useful information.</li>
-</ul>
-</li>
-<li><strong>By example</strong>:  for those who learn by following examples:  <a href="?exp">Expand</a> all sections<ul>
-<li>Expand the Answer section at the start of each question and follow along with the commands that are shown and check you get the
-  same (or similar) answers.</li>
-<li>Its a good idea to read the hints and answer description as they often contain extra useful information.</li>
-</ul>
-</li>
-</ol>
-</div>
 <h3 id="connecting-to-hpc">Connecting to HPC</h3>
 <p>To begin this workshop you will need to connect to an HPC.  Today we will use the <span class="environment_env" id="env0">LIMS-HPC</span>.  The computer called<br />
 <em><span class="environment_env" id="env1">lims-hpc-m.latrobe.edu.au</span></em> (m is for master which is another name for head node) is the 
@@ -284,10 +188,10 @@ one that coordinates all the HPCs tasks.</p>
 <li><strong>password</strong>: <span class="environment_env" id="env37">(provided at workshop)</span></li>
 </ul>
 <p><strong>Connection instructions</strong>:</p>
-<div class="showable-container information showable-hidden" id="showable5">
+<div class="showable-container information showable-hidden" id="showable1">
 <div class="showable-inner">
-<div class="showable-header information" id="showabletitle5"><a href="" id="showablelink5">Mac OS X / Linux</a></div>
-<div class="showable-body information" id="showablebody5">
+<div class="showable-header information" id="showabletitle1"><a href="" id="showablelink1">Mac OS X / Linux</a></div>
+<div class="showable-body information" id="showablebody1">
 <p>Both Mac OS X and Linux come with a version of ssh (called OpenSSH) that can be used from the command line.  To use OpenSSH you must 
 first start a terminal program on your computer.  On OS X the standard terminal is called Terminal, and it is installed by default. 
 On Linux there are many popular terminal programs including: xterm, gnome-terminal, konsole (if you aren't sure, then xterm is a good 
@@ -312,16 +216,16 @@ Unix commands and thus begin using the remote computer.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink5").click(function(e){
+        $("#showablelink1").click(function(e){
             e.preventDefault();
-            $("#showable5").toggleClass("showable-hidden");
+            $("#showable1").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container information showable-hidden" id="showable6">
+<div class="showable-container information showable-hidden" id="showable2">
 <div class="showable-inner">
-<div class="showable-header information" id="showabletitle6"><a href="" id="showablelink6">Windows</a></div>
-<div class="showable-body information" id="showablebody6">
+<div class="showable-header information" id="showabletitle2"><a href="" id="showablelink2">Windows</a></div>
+<div class="showable-body information" id="showablebody2">
 <p>On Microsoft Windows (Vista, 7, 8, 10) we recommend that you use the PuTTY ssh client.  PuTTY (putty.exe) can be downloaded 
 from this web page:</p>
 <p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a></p>
@@ -348,9 +252,9 @@ the remote computer.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink6").click(function(e){
+        $("#showablelink2").click(function(e){
             e.preventDefault();
-            $("#showable6").toggleClass("showable-hidden");
+            $("#showable2").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -359,15 +263,15 @@ the remote computer.</p>
 <p><img src="media/drawing1.png" title="HPC Structure" alt="HPC Structure" width="245px" /></p>
 <p><strong>Figure</strong>: Overview of the computers involved when using an HPC.  Computer systems are shown in rectangles and arrows represent interactions.</p>
 <h3 id="exercises">Exercises</h3>
-<div class="showable-container quest showable-hidden" id="showable7">
+<div class="showable-container quest showable-hidden" id="showable3">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle7"><span class="link-like" id="showablelink7">1.1) What is the contact email for your HPC's System Administrator?</span></div>
+<div class="showable-header quest" id="showabletitle3"><span class="link-like" id="showablelink3">1.1) What is the contact email for your HPC's System Administrator?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable8">
+<div class="showable-container hint showable-hidden" id="showable4">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle8"><a href="" id="showablelink8">Hint</a></div>
-<div class="showable-body hint" id="showablebody8">
+<div class="showable-header hint" id="showabletitle4"><a href="" id="showablelink4">Hint</a></div>
+<div class="showable-body hint" id="showablebody4">
 <p>When you login, you will be presented with a message; this is called the <em>Message Of The Day</em> and usually includes lots of useful 
 information.  On <span class="environment_env" id="env24">LIMS-HPC</span> this includes a list of useful commands, the last login details for your account and 
 the contact email of the system administrator</p>
@@ -377,16 +281,16 @@ the contact email of the system administrator</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink8").click(function(e){
+        $("#showablelink4").click(function(e){
             e.preventDefault();
-            $("#showable8").toggleClass("showable-hidden");
+            $("#showable4").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable9">
+<div class="showable-container answer showable-hidden" id="showable5">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle9"><a href="" id="showablelink9">Answer</a></div>
-<div class="showable-body answer" id="showablebody9">
+<div class="showable-header answer" id="showabletitle5"><a href="" id="showablelink5">Answer</a></div>
+<div class="showable-body answer" id="showablebody5">
 <ul>
 <li>LIMS-HPC: andrew.robinson@latrobe.edu.au</li>
 </ul>
@@ -396,28 +300,28 @@ the contact email of the system administrator</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink9").click(function(e){
+        $("#showablelink5").click(function(e){
             e.preventDefault();
-            $("#showable9").toggleClass("showable-hidden");
+            $("#showable5").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable10">
+<div class="showable-container quest showable-hidden" id="showable6">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle10"><span class="link-like" id="showablelink10">1.2) Run the <em>sinfo</em> command.  How many nodes are there in this hpc?</span></div>
+<div class="showable-header quest" id="showabletitle6"><span class="link-like" id="showablelink6">1.2) Run the <em>sinfo</em> command.  How many nodes are there in this hpc?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable11">
+<div class="showable-container hint showable-hidden" id="showable7">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle11"><a href="" id="showablelink11">Hint</a></div>
-<div class="showable-body hint" id="showablebody11">
+<div class="showable-header hint" id="showabletitle7"><a href="" id="showablelink7">Hint</a></div>
+<div class="showable-body hint" id="showablebody7">
 <p>The <em><span class="environment_env" id="env17">lims-hpc-</span>[2-4]</em> is shorthand for <em><span class="environment_env" id="env18">lims-hpc-</span>2 <span class="environment_env" id="env19">lims-hpc-</span>3 and <span class="environment_env" id="env20">lims-hpc-</span>4</em> and <em><span class="environment_env" id="env21">lims-hpc-</span>[1,5]</em> is shorthand for
 <em><span class="environment_env" id="env22">lims-hpc-</span>1</em> and <em><span class="environment_env" id="env23">lims-hpc-</span>5</em></p>
-<div class="showable-container showable-hidden" id="showable12">
+<div class="showable-container showable-hidden" id="showable8">
 <div class="showable-inner">
-<div class="showable-header" id="showabletitle12"><a href="" id="showablelink12">more</a></div>
-<div class="showable-body" id="showablebody12">
+<div class="showable-header" id="showabletitle8"><a href="" id="showablelink8">more</a></div>
+<div class="showable-body" id="showablebody8">
 <p>Have a look at the NODELIST column.  Only count each node once.</p>
 <pre><code class="sh">$ sinfo
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
@@ -435,13 +339,13 @@ bigmem       up 200-00:00:      1   idle lims-hpc-1
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink12").click(function(e){
+        $("#showablelink8").click(function(e){
             e.preventDefault();
-            $("#showable12").toggleClass("showable-hidden");
-            if ($("#showable12").hasClass("showable-hidden")) {
-                $("#showablelink12").text("more");
+            $("#showable8").toggleClass("showable-hidden");
+            if ($("#showable8").hasClass("showable-hidden")) {
+                $("#showablelink8").text("more");
             } else {
-                $("#showablelink12").text("less");
+                $("#showablelink8").text("less");
             }
         });
     }); //-->]]>
@@ -452,16 +356,16 @@ bigmem       up 200-00:00:      1   idle lims-hpc-1
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink11").click(function(e){
+        $("#showablelink7").click(function(e){
             e.preventDefault();
-            $("#showable11").toggleClass("showable-hidden");
+            $("#showable7").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable13">
+<div class="showable-container answer showable-hidden" id="showable9">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle13"><a href="" id="showablelink13">Answer</a></div>
-<div class="showable-body answer" id="showablebody13">
+<div class="showable-header answer" id="showabletitle9"><a href="" id="showablelink9">Answer</a></div>
+<div class="showable-body answer" id="showablebody9">
 <p>The <em>sinfo</em> command lists all available partitions and the status of each node within them.  If you count up the names of nodes 
 (uniquely) you will get the total nodes in this cluster.  </p>
 <ul>
@@ -475,16 +379,16 @@ bigmem       up 200-00:00:      1   idle lims-hpc-1
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink13").click(function(e){
+        $("#showablelink9").click(function(e){
             e.preventDefault();
-            $("#showable13").toggleClass("showable-hidden");
+            $("#showable9").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container indent showable-hidden" id="showable14">
+<div class="showable-container indent showable-hidden" id="showable10">
 <div class="showable-inner">
-<div class="showable-header indent" id="showabletitle14"><a href="" id="showablelink14">Alternate Method</a></div>
-<div class="showable-body indent" id="showablebody14">
+<div class="showable-header indent" id="showabletitle10"><a href="" id="showablelink10">Alternate Method</a></div>
+<div class="showable-body indent" id="showablebody10">
 <p>An automatic (though more complex) way would have been running the following command:</p>
 <pre><code class="sh">$ scontrol show node | grep NodeName | wc -l
 </code></pre>
@@ -501,9 +405,9 @@ bigmem       up 200-00:00:      1   idle lims-hpc-1
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink14").click(function(e){
+        $("#showablelink10").click(function(e){
             e.preventDefault();
-            $("#showable14").toggleClass("showable-hidden");
+            $("#showable10").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -514,15 +418,15 @@ when needed for the user.</p>
 <p>In this topic we will discover what science software modules (tools) are available and load them ready for analysis.</p>
 <p>This topic uses the <em>man</em> and <em>module</em> commands heavily</p>
 <h3 id="exercises_1">Exercises</h3>
-<div class="showable-container quest showable-hidden" id="showable15">
+<div class="showable-container quest showable-hidden" id="showable11">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle15"><span class="link-like" id="showablelink15">2.1) What happens if you run the <em>module</em> command without any options / arguments?</span></div>
+<div class="showable-header quest" id="showabletitle11"><span class="link-like" id="showablelink11">2.1) What happens if you run the <em>module</em> command without any options / arguments?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable16">
+<div class="showable-container hint showable-hidden" id="showable12">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle16"><a href="" id="showablelink16">Hint</a></div>
-<div class="showable-body hint" id="showablebody16">
+<div class="showable-header hint" id="showabletitle12"><a href="" id="showablelink12">Hint</a></div>
+<div class="showable-body hint" id="showablebody12">
 <p>Literally type <em>module</em> and press <em>ENTER</em> key.</p>
 </div>
 </div>
@@ -530,16 +434,16 @@ when needed for the user.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink16").click(function(e){
+        $("#showablelink12").click(function(e){
             e.preventDefault();
-            $("#showable16").toggleClass("showable-hidden");
+            $("#showable12").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable17">
+<div class="showable-container answer showable-hidden" id="showable13">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle17"><a href="" id="showablelink17">Answer</a></div>
-<div class="showable-body answer" id="showablebody17">
+<div class="showable-header answer" id="showabletitle13"><a href="" id="showablelink13">Answer</a></div>
+<div class="showable-body answer" id="showablebody13">
 <p><strong>Answer</strong>: It prints an error followed by a list of available options / flags</p>
 <pre><code class="text">$ module
 cmdModule.c(166):ERROR:11: Usage is 'module command  [arguments ...] '
@@ -590,6 +494,84 @@ Switches:
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
+        $("#showablelink13").click(function(e){
+            e.preventDefault();
+            $("#showable13").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable14">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle14"><span class="link-like" id="showablelink14">2.2) How do you find a list of <em>available</em> software?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable15">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle15"><a href="" id="showablelink15">Hint</a></div>
+<div class="showable-body hint" id="showablebody15">
+<p>Try the <em>module</em> command.  Don't forget the <em>man</em> command to get help for a command</p>
+<div class="showable-container showable-hidden" id="showable16">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle16"><a href="" id="showablelink16">More</a></div>
+<div class="showable-body" id="showablebody16">
+<p>Run the command <em>man module</em></p>
+<p>Use a search to find out about the <em>avail</em> subcommand (e.g. /avail&lt;enter&gt;)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink16").click(function(e){
+            e.preventDefault();
+            $("#showable16").toggleClass("showable-hidden");
+            if ($("#showable16").hasClass("showable-hidden")) {
+                $("#showablelink16").text("More");
+            } else {
+                $("#showablelink16").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink15").click(function(e){
+            e.preventDefault();
+            $("#showable15").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable17">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle17"><a href="" id="showablelink17">Answer</a></div>
+<div class="showable-body answer" id="showablebody17">
+<p>The module command is used to show details of software modules (tools).</p>
+<p><strong>Answer</strong>:</p>
+<pre><code class="sh">$ module avail
+
+------------------- /usr/share/Modules/modulefiles --------------------
+dot         module-git  module-info modules     null        use.own
+
+------------------- /usr/local/Modules/modulefiles --------------------
+acana/1.60                         mafft-gcc/7.215
+aftrrad/4.1.20150201               malt/0.1.0
+arlequin/3.5.1.3                   matplotlib-gcc/1.3.1
+...
+</code></pre>
+
+<p>The modules list has been shortened because it is very long.  The modules after the <em>/usr/local/Modules/modulefiles</em> line
+are the science software; before this are a few built-in ones that you can ignore.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
         $("#showablelink17").click(function(e){
             e.preventDefault();
             $("#showable17").toggleClass("showable-hidden");
@@ -599,20 +581,26 @@ Switches:
 <hr />
 <div class="showable-container quest showable-hidden" id="showable18">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle18"><span class="link-like" id="showablelink18">2.2) How do you find a list of <em>available</em> software?</span></div>
+<div class="showable-header quest" id="showabletitle18"><span class="link-like" id="showablelink18">2.3) How many modules are there starting with '<em>f</em>'?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable19">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle19"><a href="" id="showablelink19">Hint</a></div>
 <div class="showable-body hint" id="showablebody19">
-<p>Try the <em>module</em> command.  Don't forget the <em>man</em> command to get help for a command</p>
+<p>Run the command <em>man module</em></p>
+<p>Use a search to find out about the <em>avail</em> subcommand (e.g. /avail&lt;enter&gt;).  You may have to press 'n' a few times
+to reach the section where the it describes the <em>avail</em> subcommand.</p>
 <div class="showable-container showable-hidden" id="showable20">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle20"><a href="" id="showablelink20">More</a></div>
 <div class="showable-body" id="showablebody20">
-<p>Run the command <em>man module</em></p>
-<p>Use a search to find out about the <em>avail</em> subcommand (e.g. /avail&lt;enter&gt;)</p>
+<blockquote>
+<p>If an argument is given, then each directory in the MODULEPATH is searched for modulefiles
+whose pathname match the argument</p>
+</blockquote>
+<p>This is a quote from the manual page for the module command explaining the avail subcommand.  It uses rather technical 
+language but basically it's saying you can put search terms after the avail subcommand when entering the command.</p>
 </div>
 </div>
 </div>
@@ -646,90 +634,6 @@ Switches:
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle21"><a href="" id="showablelink21">Answer</a></div>
 <div class="showable-body answer" id="showablebody21">
-<p>The module command is used to show details of software modules (tools).</p>
-<p><strong>Answer</strong>:</p>
-<pre><code class="sh">$ module avail
-
-------------------- /usr/share/Modules/modulefiles --------------------
-dot         module-git  module-info modules     null        use.own
-
-------------------- /usr/local/Modules/modulefiles --------------------
-acana/1.60                         mafft-gcc/7.215
-aftrrad/4.1.20150201               malt/0.1.0
-arlequin/3.5.1.3                   matplotlib-gcc/1.3.1
-...
-</code></pre>
-
-<p>The modules list has been shortened because it is very long.  The modules after the <em>/usr/local/Modules/modulefiles</em> line
-are the science software; before this are a few built-in ones that you can ignore.</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink21").click(function(e){
-            e.preventDefault();
-            $("#showable21").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<hr />
-<div class="showable-container quest showable-hidden" id="showable22">
-<div class="showable-inner">
-<div class="showable-header quest" id="showabletitle22"><span class="link-like" id="showablelink22">2.3) How many modules are there starting with '<em>f</em>'?</span></div>
-</div>
-</div>
-<div class="showable-container hint showable-hidden" id="showable23">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle23"><a href="" id="showablelink23">Hint</a></div>
-<div class="showable-body hint" id="showablebody23">
-<p>Run the command <em>man module</em></p>
-<p>Use a search to find out about the <em>avail</em> subcommand (e.g. /avail&lt;enter&gt;).  You may have to press 'n' a few times
-to reach the section where the it describes the <em>avail</em> subcommand.</p>
-<div class="showable-container showable-hidden" id="showable24">
-<div class="showable-inner">
-<div class="showable-header" id="showabletitle24"><a href="" id="showablelink24">More</a></div>
-<div class="showable-body" id="showablebody24">
-<blockquote>
-<p>If an argument is given, then each directory in the MODULEPATH is searched for modulefiles
-whose pathname match the argument</p>
-</blockquote>
-<p>This is a quote from the manual page for the module command explaining the avail subcommand.  It uses rather technical 
-language but basically it's saying you can put search terms after the avail subcommand when entering the command.</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink24").click(function(e){
-            e.preventDefault();
-            $("#showable24").toggleClass("showable-hidden");
-            if ($("#showable24").hasClass("showable-hidden")) {
-                $("#showablelink24").text("More");
-            } else {
-                $("#showablelink24").text("Less");
-            }
-        });
-    }); //-->]]>
-    </script>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink23").click(function(e){
-            e.preventDefault();
-            $("#showable23").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<div class="showable-container answer showable-hidden" id="showable25">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle25"><a href="" id="showablelink25">Answer</a></div>
-<div class="showable-body answer" id="showablebody25">
 <p>The man page told us that we could put a search term after <em>module avail</em>.</p>
 <pre><code class="sh">$ module avail f
 ------------------ /usr/local/Modules/modulefiles -------------------
@@ -753,16 +657,16 @@ fastx_toolkit-gcc/0.0.14         freetype-gcc/2.5.3
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink25").click(function(e){
+        $("#showablelink21").click(function(e){
             e.preventDefault();
-            $("#showable25").toggleClass("showable-hidden");
+            $("#showable21").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container indent showable-hidden" id="showable26">
+<div class="showable-container indent showable-hidden" id="showable22">
 <div class="showable-inner">
-<div class="showable-header indent" id="showabletitle26"><a href="" id="showablelink26">Alternate Method</a></div>
-<div class="showable-body indent" id="showablebody26">
+<div class="showable-header indent" id="showabletitle22"><a href="" id="showablelink22">Alternate Method</a></div>
+<div class="showable-body indent" id="showablebody22">
 <p>To get a fully automated solution your could run the following command:</p>
 <pre><code class="sh">$ module -l avail 2&gt;&amp;1 | grep &quot;^f&quot; | wc -l
 </code></pre>
@@ -782,22 +686,22 @@ the logical <em>output</em> stream.</li>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink26").click(function(e){
+        $("#showablelink22").click(function(e){
             e.preventDefault();
-            $("#showable26").toggleClass("showable-hidden");
+            $("#showable22").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable27">
+<div class="showable-container quest showable-hidden" id="showable23">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle27"><span class="link-like" id="showablelink27">2.4) Run the <em>pear</em> command (without loading it), does it work?</span></div>
+<div class="showable-header quest" id="showabletitle23"><span class="link-like" id="showablelink23">2.4) Run the <em>pear</em> command (without loading it), does it work?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable28">
+<div class="showable-container hint showable-hidden" id="showable24">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle28"><a href="" id="showablelink28">Hint</a></div>
-<div class="showable-body hint" id="showablebody28">
+<div class="showable-header hint" id="showabletitle24"><a href="" id="showablelink24">Hint</a></div>
+<div class="showable-body hint" id="showablebody24">
 <p>This question is very literal</p>
 </div>
 </div>
@@ -805,16 +709,16 @@ the logical <em>output</em> stream.</li>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink28").click(function(e){
+        $("#showablelink24").click(function(e){
             e.preventDefault();
-            $("#showable28").toggleClass("showable-hidden");
+            $("#showable24").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable29">
+<div class="showable-container answer showable-hidden" id="showable25">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle29"><a href="" id="showablelink29">Answer</a></div>
-<div class="showable-body answer" id="showablebody29">
+<div class="showable-header answer" id="showabletitle25"><a href="" id="showablelink25">Answer</a></div>
+<div class="showable-body answer" id="showablebody25">
 <pre><code class="sh">$ pear
 -bash: pear: command not found
 </code></pre>
@@ -827,27 +731,27 @@ the logical <em>output</em> stream.</li>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink29").click(function(e){
+        $("#showablelink25").click(function(e){
             e.preventDefault();
-            $("#showable29").toggleClass("showable-hidden");
+            $("#showable25").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable30">
+<div class="showable-container quest showable-hidden" id="showable26">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle30"><span class="link-like" id="showablelink30">2.5) How would we <em>load</em> the <em>pear</em> module?</span></div>
+<div class="showable-header quest" id="showabletitle26"><span class="link-like" id="showablelink26">2.5) How would we <em>load</em> the <em>pear</em> module?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable31">
+<div class="showable-container hint showable-hidden" id="showable27">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle31"><a href="" id="showablelink31">Hint</a></div>
-<div class="showable-body hint" id="showablebody31">
+<div class="showable-header hint" id="showabletitle27"><a href="" id="showablelink27">Hint</a></div>
+<div class="showable-body hint" id="showablebody27">
 <p>Check the man page for <em>module</em> again and look for a subcommand that might load modules; it is quite literal as well.</p>
-<div class="showable-container showable-hidden" id="showable32">
+<div class="showable-container showable-hidden" id="showable28">
 <div class="showable-inner">
-<div class="showable-header" id="showabletitle32"><a href="" id="showablelink32">More</a></div>
-<div class="showable-body" id="showablebody32">
+<div class="showable-header" id="showabletitle28"><a href="" id="showablelink28">More</a></div>
+<div class="showable-body" id="showablebody28">
 <p>Run the command <em>man module</em></p>
 <p>Use a search to find out about the <em>load</em> subcommand (e.g. /load&lt;enter&gt;)</p>
 </div>
@@ -856,13 +760,13 @@ the logical <em>output</em> stream.</li>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink32").click(function(e){
+        $("#showablelink28").click(function(e){
             e.preventDefault();
-            $("#showable32").toggleClass("showable-hidden");
-            if ($("#showable32").hasClass("showable-hidden")) {
-                $("#showablelink32").text("More");
+            $("#showable28").toggleClass("showable-hidden");
+            if ($("#showable28").hasClass("showable-hidden")) {
+                $("#showablelink28").text("More");
             } else {
-                $("#showablelink32").text("Less");
+                $("#showablelink28").text("Less");
             }
         });
     }); //-->]]>
@@ -873,16 +777,16 @@ the logical <em>output</em> stream.</li>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink31").click(function(e){
+        $("#showablelink27").click(function(e){
             e.preventDefault();
-            $("#showable31").toggleClass("showable-hidden");
+            $("#showable27").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable33">
+<div class="showable-container answer showable-hidden" id="showable29">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle33"><a href="" id="showablelink33">Answer</a></div>
-<div class="showable-body answer" id="showablebody33">
+<div class="showable-header answer" id="showabletitle29"><a href="" id="showablelink29">Answer</a></div>
+<div class="showable-body answer" id="showablebody29">
 <pre><code class="sh">$ module load pear-gcc/0.9.4
 </code></pre>
 
@@ -899,22 +803,22 @@ of the software.</div>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink33").click(function(e){
+        $("#showablelink29").click(function(e){
             e.preventDefault();
-            $("#showable33").toggleClass("showable-hidden");
+            $("#showable29").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable34">
+<div class="showable-container quest showable-hidden" id="showable30">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle34"><span class="link-like" id="showablelink34">2.6) Now it's <em>load</em>ed, run pear again, what does it do?</span></div>
+<div class="showable-header quest" id="showabletitle30"><span class="link-like" id="showablelink30">2.6) Now it's <em>load</em>ed, run pear again, what does it do?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable35">
+<div class="showable-container hint showable-hidden" id="showable31">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle35"><a href="" id="showablelink35">Hint</a></div>
-<div class="showable-body hint" id="showablebody35">
+<div class="showable-header hint" id="showabletitle31"><a href="" id="showablelink31">Hint</a></div>
+<div class="showable-body hint" id="showablebody31">
 <p>The paper citation gives a clue.</p>
 </div>
 </div>
@@ -922,16 +826,16 @@ of the software.</div>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink35").click(function(e){
+        $("#showablelink31").click(function(e){
             e.preventDefault();
-            $("#showable35").toggleClass("showable-hidden");
+            $("#showable31").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable36">
+<div class="showable-container answer showable-hidden" id="showable32">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle36"><a href="" id="showablelink36">Answer</a></div>
-<div class="showable-body answer" id="showablebody36">
+<div class="showable-header answer" id="showabletitle32"><a href="" id="showablelink32">Answer</a></div>
+<div class="showable-body answer" id="showablebody32">
 <pre><code class="sh">$ module load pear-gcc/0.9.4
 $ pear
  ____  _____    _    ____ 
@@ -954,22 +858,22 @@ Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/bt
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink36").click(function(e){
+        $("#showablelink32").click(function(e){
             e.preventDefault();
-            $("#showable36").toggleClass("showable-hidden");
+            $("#showable32").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable37">
+<div class="showable-container quest showable-hidden" id="showable33">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle37"><span class="link-like" id="showablelink37">2.7) <em>List</em> all the loaded modules. How many are there? Where did all the others come from?</span></div>
+<div class="showable-header quest" id="showabletitle33"><span class="link-like" id="showablelink33">2.7) <em>List</em> all the loaded modules. How many are there? Where did all the others come from?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable38">
+<div class="showable-container hint showable-hidden" id="showable34">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle38"><a href="" id="showablelink38">Hint</a></div>
-<div class="showable-body hint" id="showablebody38">
+<div class="showable-header hint" id="showabletitle34"><a href="" id="showablelink34">Hint</a></div>
+<div class="showable-body hint" id="showablebody34">
 <p>Use man to find a subcommand that will list currently loaded modules.</p>
 <p>We are not really expecting you to be able to answer the 2nd question however if you do get it correct then well-done, that was very tough.</p>
 </div>
@@ -978,16 +882,16 @@ Zhang et al (2014) Bioinformatics 30(5): 614-620 | doi:10.1093/bioinformatics/bt
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink38").click(function(e){
+        $("#showablelink34").click(function(e){
             e.preventDefault();
-            $("#showable38").toggleClass("showable-hidden");
+            $("#showable34").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable39">
+<div class="showable-container answer showable-hidden" id="showable35">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle39"><a href="" id="showablelink39">Answer</a></div>
-<div class="showable-body answer" id="showablebody39">
+<div class="showable-header answer" id="showabletitle35"><a href="" id="showablelink35">Answer</a></div>
+<div class="showable-body answer" id="showablebody35">
 <p><strong> <em>List</em> all the loaded modules. How many are there?</strong></p>
 <pre><code class="sh">$ module list
 Currently Loaded Modulefiles:
@@ -1006,22 +910,22 @@ automatically load some modules for you when you login.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink39").click(function(e){
+        $("#showablelink35").click(function(e){
             e.preventDefault();
-            $("#showable39").toggleClass("showable-hidden");
+            $("#showable35").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable40">
+<div class="showable-container quest showable-hidden" id="showable36">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle40"><span class="link-like" id="showablelink40">2.8) How do you undo the loading of the <em>pear</em> module?  List the loaded modules again, did they all disappear?</span></div>
+<div class="showable-header quest" id="showabletitle36"><span class="link-like" id="showablelink36">2.8) How do you undo the loading of the <em>pear</em> module?  List the loaded modules again, did they all disappear?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable41">
+<div class="showable-container hint showable-hidden" id="showable37">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle41"><a href="" id="showablelink41">Hint</a></div>
-<div class="showable-body hint" id="showablebody41">
+<div class="showable-header hint" id="showabletitle37"><a href="" id="showablelink37">Hint</a></div>
+<div class="showable-body hint" id="showablebody37">
 <p>Computer Scientists are not always inventive with naming commands, try something starting with <em>un</em></p>
 </div>
 </div>
@@ -1029,16 +933,16 @@ automatically load some modules for you when you login.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink41").click(function(e){
+        $("#showablelink37").click(function(e){
             e.preventDefault();
-            $("#showable41").toggleClass("showable-hidden");
+            $("#showable37").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable42">
+<div class="showable-container answer showable-hidden" id="showable38">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle42"><a href="" id="showablelink42">Answer</a></div>
-<div class="showable-body answer" id="showablebody42">
+<div class="showable-header answer" id="showabletitle38"><a href="" id="showablelink38">Answer</a></div>
+<div class="showable-body answer" id="showablebody38">
 <p><strong>How do you undo the loading of the <em>pear</em> module?</strong></p>
 <pre><code class="sh">$ module unload pear-gcc
 </code></pre>
@@ -1053,28 +957,28 @@ needed or not so we will need to do it manually (or see next question) </p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink42").click(function(e){
+        $("#showablelink38").click(function(e){
             e.preventDefault();
-            $("#showable42").toggleClass("showable-hidden");
+            $("#showable38").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable43">
+<div class="showable-container quest showable-hidden" id="showable39">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle43"><span class="link-like" id="showablelink43">2.9) How do you clear ALL loaded modules?</span></div>
+<div class="showable-header quest" id="showabletitle39"><span class="link-like" id="showablelink39">2.9) How do you clear ALL loaded modules?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable44">
+<div class="showable-container hint showable-hidden" id="showable40">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle44"><a href="" id="showablelink44">Hint</a></div>
-<div class="showable-body hint" id="showablebody44">
+<div class="showable-header hint" id="showabletitle40"><a href="" id="showablelink40">Hint</a></div>
+<div class="showable-body hint" id="showablebody40">
 <p>It's easier than running <em>unload</em> for all modules</p>
 <p>This one isn't that straight forward; try a <a href="https://www.google.com.au/search?q=rid+synonym">synonym</a> of <em>rid</em>.</p>
-<div class="showable-container showable-hidden" id="showable45">
+<div class="showable-container showable-hidden" id="showable41">
 <div class="showable-inner">
-<div class="showable-header" id="showabletitle45"><a href="" id="showablelink45">More</a></div>
-<div class="showable-body" id="showablebody45">
+<div class="showable-header" id="showabletitle41"><a href="" id="showablelink41">More</a></div>
+<div class="showable-body" id="showablebody41">
 <p>We will <em>purge</em> the list of loaded modules.</p>
 </div>
 </div>
@@ -1082,17 +986,65 @@ needed or not so we will need to do it manually (or see next question) </p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink45").click(function(e){
+        $("#showablelink41").click(function(e){
             e.preventDefault();
-            $("#showable45").toggleClass("showable-hidden");
-            if ($("#showable45").hasClass("showable-hidden")) {
-                $("#showablelink45").text("More");
+            $("#showable41").toggleClass("showable-hidden");
+            if ($("#showable41").hasClass("showable-hidden")) {
+                $("#showablelink41").text("More");
             } else {
-                $("#showablelink45").text("Less");
+                $("#showablelink41").text("Less");
             }
         });
     }); //-->]]>
     </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink40").click(function(e){
+            e.preventDefault();
+            $("#showable40").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable42">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle42"><a href="" id="showablelink42">Answer</a></div>
+<div class="showable-body answer" id="showablebody42">
+<pre><code class="sh">$ module purge 
+</code></pre>
+
+<p><strong>Answer</strong>: running the <em>purge</em> sub-command will unload all modules you loaded (and all dependencies).</p>
+<p><strong>Alternative</strong>: if you close your SSH connection and re-open it the new session will be blank as well.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink42").click(function(e){
+            e.preventDefault();
+            $("#showable42").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="environment_if" id="ifenv8">
+<p><strong>LIMS-HPC Specific</strong>: </p>
+<p>The following questions use the <em>moduleinfo</em> command; this is only available on LIMS-HPC so if you are using
+another HPC then you will need to skip ahead to topic 3. </p>
+<div class="showable-container quest showable-hidden" id="showable43">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle43"><span class="link-like" id="showablelink43">2.10) What does the <em>moduleinfo</em> command do?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable44">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle44"><a href="" id="showablelink44">Hint</a></div>
+<div class="showable-body hint" id="showablebody44">
+<p>Try running it (with <em>no</em> or only <em>-h</em> option)</p>
 </div>
 </div>
 </div>
@@ -1105,42 +1057,47 @@ needed or not so we will need to do it manually (or see next question) </p>
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable46">
+<div class="showable-container answer showable-hidden" id="showable45">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle46"><a href="" id="showablelink46">Answer</a></div>
-<div class="showable-body answer" id="showablebody46">
-<pre><code class="sh">$ module purge 
+<div class="showable-header answer" id="showabletitle45"><a href="" id="showablelink45">Answer</a></div>
+<div class="showable-body answer" id="showablebody45">
+<pre><code class="text">$ moduleinfo -h
+moduleinfo: support application for environment modules to provide 
+            licence and citation information about each module
+...
 </code></pre>
 
-<p><strong>Answer</strong>: running the <em>purge</em> sub-command will unload all modules you loaded (and all dependencies).</p>
-<p><strong>Alternative</strong>: if you close your SSH connection and re-open it the new session will be blank as well.</p>
+<p><strong>Answer</strong>: provides information about modules</p>
 </div>
 </div>
 </div>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink46").click(function(e){
+        $("#showablelink45").click(function(e){
             e.preventDefault();
-            $("#showable46").toggleClass("showable-hidden");
+            $("#showable45").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="environment_if" id="ifenv8">
-<p><strong>LIMS-HPC Specific</strong>: </p>
-<p>The following questions use the <em>moduleinfo</em> command; this is only available on LIMS-HPC so if you are using
-another HPC then you will need to skip ahead to topic 3. </p>
-<div class="showable-container quest showable-hidden" id="showable47">
+<div class="showable-container quest showable-hidden" id="showable46">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle47"><span class="link-like" id="showablelink47">2.10) What does the <em>moduleinfo</em> command do?</span></div>
+<div class="showable-header quest" id="showabletitle46"><span class="link-like" id="showablelink46">2.11) Find a <em>description</em> of the <em>biostreamtools</em> module</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable48">
+<div class="showable-container hint showable-hidden" id="showable47">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle48"><a href="" id="showablelink48">Hint</a></div>
-<div class="showable-body hint" id="showablebody48">
-<p>Try running it (with <em>no</em> or only <em>-h</em> option)</p>
+<div class="showable-header hint" id="showabletitle47"><a href="" id="showablelink47">Hint</a></div>
+<div class="showable-body hint" id="showablebody47">
+<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a description.</p>
+<p>Use the <em>module</em> command to find the full name for the <em>biostreamtools</em> module</p>
+<div class="showable-container showable-hidden" id="showable48">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle48"><a href="" id="showablelink48">More</a></div>
+<div class="showable-body" id="showablebody48">
+<p><em>Function</em>: desc</p>
+<p><em>Module</em>: biostreamtools-gcc/0.4.0</p>
 </div>
 </div>
 </div>
@@ -1150,6 +1107,23 @@ another HPC then you will need to skip ahead to topic 3. </p>
         $("#showablelink48").click(function(e){
             e.preventDefault();
             $("#showable48").toggleClass("showable-hidden");
+            if ($("#showable48").hasClass("showable-hidden")) {
+                $("#showablelink48").text("More");
+            } else {
+                $("#showablelink48").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink47").click(function(e){
+            e.preventDefault();
+            $("#showable47").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -1157,13 +1131,13 @@ another HPC then you will need to skip ahead to topic 3. </p>
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle49"><a href="" id="showablelink49">Answer</a></div>
 <div class="showable-body answer" id="showablebody49">
-<pre><code class="text">$ moduleinfo -h
-moduleinfo: support application for environment modules to provide 
-            licence and citation information about each module
-...
+<pre><code class="text">$ moduleinfo desc biostreamtools-gcc/0.4.0
+biostreamtools-gcc/0.4.0: A collection of fast generic bioinformatics 
+                          tools implemented in C++
 </code></pre>
 
-<p><strong>Answer</strong>: provides information about modules</p>
+<p><strong>Answer</strong>: A collection of fast generic bioinformatics tools implemented in C++.</p>
+<p><em>Disclaimer</em>: you may find that the author of this software also created this workshop :-P</p>
 </div>
 </div>
 </div>
@@ -1179,21 +1153,19 @@ moduleinfo: support application for environment modules to provide
 <hr />
 <div class="showable-container quest showable-hidden" id="showable50">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle50"><span class="link-like" id="showablelink50">2.11) Find a <em>description</em> of the <em>biostreamtools</em> module</span></div>
+<div class="showable-header quest" id="showabletitle50"><span class="link-like" id="showablelink50">2.12) How would you <em>cite</em> all currently loaded modules?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable51">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle51"><a href="" id="showablelink51">Hint</a></div>
 <div class="showable-body hint" id="showablebody51">
-<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a description.</p>
-<p>Use the <em>module</em> command to find the full name for the <em>biostreamtools</em> module</p>
+<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a citation.</p>
 <div class="showable-container showable-hidden" id="showable52">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle52"><a href="" id="showablelink52">More</a></div>
 <div class="showable-body" id="showablebody52">
-<p><em>Function</em>: desc</p>
-<p><em>Module</em>: biostreamtools-gcc/0.4.0</p>
+<p><em>Function</em>: cite</p>
 </div>
 </div>
 </div>
@@ -1227,13 +1199,22 @@ moduleinfo: support application for environment modules to provide
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle53"><a href="" id="showablelink53">Answer</a></div>
 <div class="showable-body answer" id="showablebody53">
-<pre><code class="text">$ moduleinfo desc biostreamtools-gcc/0.4.0
-biostreamtools-gcc/0.4.0: A collection of fast generic bioinformatics 
-                          tools implemented in C++
+<p>Assuming we had the pear module loaded</p>
+<pre><code class="text">$ moduleinfo cite
+gmp/5.1.3:                No information recorded
+mpfr/3.1.2:               No information recorded
+mpc/1.0.2:                No information recorded
+gcc/4.8.2:                No information recorded
+bzip2-gcc/1.0.6:          No information recorded
+pear-gcc/0.9.4:           J. Zhang, K. Kobert, T. Flouri, A. Stamatakis. 
+                          PEAR: A fast and accurate Illimuna Paired-End 
+                          reAd mergeR
 </code></pre>
 
-<p><strong>Answer</strong>: A collection of fast generic bioinformatics tools implemented in C++.</p>
-<p><em>Disclaimer</em>: you may find that the author of this software also created this workshop :-P</p>
+<p><strong>Answer</strong>: using the moduleinfo cite function with no module specified will display info for currently loaded modules.</p>
+<p><strong>Note</strong>: When you see <em>"No information recorded"</em> it means that there is no moduleinfo record for that module.
+<em>"nil"</em> it means none was requested (at time software was installed, you should check software's website for updates since).<br />
+<em>"No record"</em> means nothing could be found for this record/module</p>
 </div>
 </div>
 </div>
@@ -1249,19 +1230,22 @@ biostreamtools-gcc/0.4.0: A collection of fast generic bioinformatics
 <hr />
 <div class="showable-container quest showable-hidden" id="showable54">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle54"><span class="link-like" id="showablelink54">2.12) How would you <em>cite</em> all currently loaded modules?</span></div>
+<div class="showable-header quest" id="showabletitle54"><span class="link-like" id="showablelink54">2.13) The malt module requires a special licence, how can you find out details of this?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable55">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle55"><a href="" id="showablelink55">Hint</a></div>
 <div class="showable-body hint" id="showablebody55">
-<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a citation.</p>
+<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a description.</p>
+<p>Use the <em>module</em> command to find the full name for the <em>malt</em> module.</p>
 <div class="showable-container showable-hidden" id="showable56">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle56"><a href="" id="showablelink56">More</a></div>
 <div class="showable-body" id="showablebody56">
-<p><em>Function</em>: cite</p>
+<p>Verbose flag tells moduleinfo to give more information if it is available</p>
+<p><em>Function</em>: licence</p>
+<p><em>Module</em>: malt/0.1.0</p>
 </div>
 </div>
 </div>
@@ -1295,86 +1279,6 @@ biostreamtools-gcc/0.4.0: A collection of fast generic bioinformatics
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle57"><a href="" id="showablelink57">Answer</a></div>
 <div class="showable-body answer" id="showablebody57">
-<p>Assuming we had the pear module loaded</p>
-<pre><code class="text">$ moduleinfo cite
-gmp/5.1.3:                No information recorded
-mpfr/3.1.2:               No information recorded
-mpc/1.0.2:                No information recorded
-gcc/4.8.2:                No information recorded
-bzip2-gcc/1.0.6:          No information recorded
-pear-gcc/0.9.4:           J. Zhang, K. Kobert, T. Flouri, A. Stamatakis. 
-                          PEAR: A fast and accurate Illimuna Paired-End 
-                          reAd mergeR
-</code></pre>
-
-<p><strong>Answer</strong>: using the moduleinfo cite function with no module specified will display info for currently loaded modules.</p>
-<p><strong>Note</strong>: When you see <em>"No information recorded"</em> it means that there is no moduleinfo record for that module.
-<em>"nil"</em> it means none was requested (at time software was installed, you should check software's website for updates since).<br />
-<em>"No record"</em> means nothing could be found for this record/module</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink57").click(function(e){
-            e.preventDefault();
-            $("#showable57").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<hr />
-<div class="showable-container quest showable-hidden" id="showable58">
-<div class="showable-inner">
-<div class="showable-header quest" id="showabletitle58"><span class="link-like" id="showablelink58">2.13) The malt module requires a special licence, how can you find out details of this?</span></div>
-</div>
-</div>
-<div class="showable-container hint showable-hidden" id="showable59">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle59"><a href="" id="showablelink59">Hint</a></div>
-<div class="showable-body hint" id="showablebody59">
-<p>View the help information provided when you ran <em>moduleinfo -h</em>.  Search for a function that displays a description.</p>
-<p>Use the <em>module</em> command to find the full name for the <em>malt</em> module.</p>
-<div class="showable-container showable-hidden" id="showable60">
-<div class="showable-inner">
-<div class="showable-header" id="showabletitle60"><a href="" id="showablelink60">More</a></div>
-<div class="showable-body" id="showablebody60">
-<p>Verbose flag tells moduleinfo to give more information if it is available</p>
-<p><em>Function</em>: licence</p>
-<p><em>Module</em>: malt/0.1.0</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink60").click(function(e){
-            e.preventDefault();
-            $("#showable60").toggleClass("showable-hidden");
-            if ($("#showable60").hasClass("showable-hidden")) {
-                $("#showablelink60").text("More");
-            } else {
-                $("#showablelink60").text("Less");
-            }
-        });
-    }); //-->]]>
-    </script>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink59").click(function(e){
-            e.preventDefault();
-            $("#showable59").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<div class="showable-container answer showable-hidden" id="showable61">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle61"><a href="" id="showablelink61">Answer</a></div>
-<div class="showable-body answer" id="showablebody61">
 <pre><code class="text">$ moduleinfo -v licence malt/0.1.0
 [[malt/0.1.0]]
 -----[licence]-----
@@ -1401,9 +1305,9 @@ licence for malt.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink61").click(function(e){
+        $("#showablelink57").click(function(e){
             e.preventDefault();
-            $("#showable61").toggleClass("showable-hidden");
+            $("#showable57").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -1434,20 +1338,20 @@ for a period of time exclusively for you. </li>
 </ul>
 <h3 id="exercises_2">Exercises</h3>
 <p><strong>Useful Commands</strong>: <em>man, sinfo, cat, sbatch, squeue, cp, module, prime</em></p>
-<div class="showable-container quest showable-hidden" id="showable62">
+<div class="showable-container quest showable-hidden" id="showable58">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle62"><span class="link-like" id="showablelink62">3.1) Which nodes could a '<span class="environment_env" id="env2">training</span>' job go on?</span></div>
+<div class="showable-header quest" id="showabletitle58"><span class="link-like" id="showablelink58">3.1) Which nodes could a '<span class="environment_env" id="env2">training</span>' job go on?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable63">
+<div class="showable-container hint showable-hidden" id="showable59">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle63"><a href="" id="showablelink63">Hint</a></div>
-<div class="showable-body hint" id="showablebody63">
+<div class="showable-header hint" id="showabletitle59"><a href="" id="showablelink59">Hint</a></div>
+<div class="showable-body hint" id="showablebody59">
 <p>Try the <em>sinfo</em> command</p>
-<div class="showable-container showable-hidden" id="showable64">
+<div class="showable-container showable-hidden" id="showable60">
 <div class="showable-inner">
-<div class="showable-header" id="showabletitle64"><a href="" id="showablelink64">more</a></div>
-<div class="showable-body" id="showablebody64">
+<div class="showable-header" id="showabletitle60"><a href="" id="showablelink60">more</a></div>
+<div class="showable-body" id="showablebody60">
 <p>Have a look at the PARTITION and NODELIST columns.  The <em><span class="environment_env" id="env13">lims-hpc-</span>[2-4]</em> is shorthand for <em><span class="environment_env" id="env14">lims-hpc-</span>2 <span class="environment_env" id="env15">lims-hpc-</span>3 
 and <span class="environment_env" id="env16">lims-hpc-</span>4</em></p>
 <pre><code class="sh">$ sinfo
@@ -1468,13 +1372,13 @@ training     up    1:00:00      2   idle lims-hpc-3,lims-hpc-m
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink64").click(function(e){
+        $("#showablelink60").click(function(e){
             e.preventDefault();
-            $("#showable64").toggleClass("showable-hidden");
-            if ($("#showable64").hasClass("showable-hidden")) {
-                $("#showablelink64").text("more");
+            $("#showable60").toggleClass("showable-hidden");
+            if ($("#showable60").hasClass("showable-hidden")) {
+                $("#showablelink60").text("more");
             } else {
-                $("#showablelink64").text("less");
+                $("#showablelink60").text("less");
             }
         });
     }); //-->]]>
@@ -1485,16 +1389,16 @@ training     up    1:00:00      2   idle lims-hpc-3,lims-hpc-m
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink63").click(function(e){
+        $("#showablelink59").click(function(e){
             e.preventDefault();
-            $("#showable63").toggleClass("showable-hidden");
+            $("#showable59").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable65">
+<div class="showable-container answer showable-hidden" id="showable61">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle65"><a href="" id="showablelink65">Answer</a></div>
-<div class="showable-body answer" id="showablebody65">
+<div class="showable-header answer" id="showabletitle61"><a href="" id="showablelink61">Answer</a></div>
+<div class="showable-body answer" id="showablebody61">
 <p>The <em>sinfo</em> command will list the <em>partitions</em>.  It summaries the nodes by their current status so there may be more 
 than one line with <em><span class="environment_env" id="env7">training</span></em> in the partition column.  It lists the nodes in shorthand i.e. <span class="environment_env" id="env8">lims-hpc-</span>[1,3-5] means 
 <span class="environment_env" id="env9">lims-hpc-</span>1, <span class="environment_env" id="env10">lims-hpc-</span>3, <span class="environment_env" id="env11">lims-hpc-</span>4, <span class="environment_env" id="env12">lims-hpc-</span>5.</p>
@@ -1507,24 +1411,77 @@ than one line with <em><span class="environment_env" id="env7">training</span></
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink65").click(function(e){
+        $("#showablelink61").click(function(e){
             e.preventDefault();
-            $("#showable65").toggleClass("showable-hidden");
+            $("#showable61").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
 <div class="environment_if" id="ifenv12">
-<div class="showable-container quest showable-hidden" id="showable66">
+<div class="showable-container quest showable-hidden" id="showable62">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle66"><span class="link-like" id="showablelink66">3.2) What about an ‘<span class="environment_env" id="env1">8hour</span>’ job?</span></div>
+<div class="showable-header quest" id="showabletitle62"><span class="link-like" id="showablelink62">3.2) What about an ‘<span class="environment_env" id="env1">8hour</span>’ job?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable67">
+<div class="showable-container hint showable-hidden" id="showable63">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle67"><a href="" id="showablelink67">Hint</a></div>
-<div class="showable-body hint" id="showablebody67">
+<div class="showable-header hint" id="showabletitle63"><a href="" id="showablelink63">Hint</a></div>
+<div class="showable-body hint" id="showablebody63">
 <p>Use <em>sinfo</em> again but look at the <em><span class="environment_env" id="env0">8hour</span></em> rows</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink63").click(function(e){
+            e.preventDefault();
+            $("#showable63").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable64">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle64"><a href="" id="showablelink64">Answer</a></div>
+<div class="showable-body answer" id="showablebody64">
+<p><strong>Answer</strong>: lims-hpc-1, lims-hpc-2, lims-hpc-3, lims-hpc-4, lims-hpc-5, lims-hpc-6</p>
+<p>This is dependent on what the HPC Sys Admin gave us.  You are probably correct but check with the workshop facilitators if you wish.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink64").click(function(e){
+            e.preventDefault();
+            $("#showable64").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+</div>
+<hr />
+<p>Use the <em>cat</em> command to view the contents of <em>task01</em>, <em>task02</em> and <em>task03</em> job script</p>
+<div class="showable-container quest showable-hidden" id="showable65">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle65"><span class="link-like" id="showablelink65">3.3) How many <em>cpu cores</em> will each ask for?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable66">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle66"><a href="" id="showablelink66">Hint</a></div>
+<div class="showable-body hint" id="showablebody66">
+<p>Lookup the man page for <em>sbatch</em> command.  <em>sbatch</em>'s options match up with the <em>#SBATCH</em> comments at the top of each job 
+script.  Some will be affected by more than one option</p>
+<div class="showable-container showable-hidden" id="showable67">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle67"><a href="" id="showablelink67">More</a></div>
+<div class="showable-body" id="showablebody67">
+<p><strong>Non-exclusive (shared) jobs</strong>:</p>
+<p>It is <em>--cpus-per-task x --ntasks</em> but if <em>--ntasks</em> is not present it defaults to 1 so its <em>--cpus-per-task x 1</em></p>
+<p><strong>Exclusive jobs</strong>:</p>
+<p>The <em>--nodes</em> options tells us how many nodes we ask for and the <em>--exclusive</em> option says give us all it has.  This
+one is a bit tricky as we don't really know until it runs.</p>
 </div>
 </div>
 </div>
@@ -1534,6 +1491,23 @@ than one line with <em><span class="environment_env" id="env7">training</span></
         $("#showablelink67").click(function(e){
             e.preventDefault();
             $("#showable67").toggleClass("showable-hidden");
+            if ($("#showable67").hasClass("showable-hidden")) {
+                $("#showablelink67").text("More");
+            } else {
+                $("#showablelink67").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink66").click(function(e){
+            e.preventDefault();
+            $("#showable66").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -1541,8 +1515,13 @@ than one line with <em><span class="environment_env" id="env7">training</span></
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle68"><a href="" id="showablelink68">Answer</a></div>
 <div class="showable-body answer" id="showablebody68">
-<p><strong>Answer</strong>: lims-hpc-1, lims-hpc-2, lims-hpc-3, lims-hpc-4, lims-hpc-5, lims-hpc-6</p>
-<p>This is dependent on what the HPC Sys Admin gave us.  You are probably correct but check with the workshop facilitators if you wish.</p>
+<p><strong>Answer</strong>:</p>
+<ul>
+<li>task01: <strong>1 cpu core</strong></li>
+<li>task02: <strong>6 cpu cores</strong></li>
+<li>task03: <strong>at least 1</strong> as this has requested all cpu cores on the node its running on (<em>--exclusive</em>).<br />
+However, since we know that all nodes on <span class="environment_env" id="env6">LIMS-HPC</span> have 16, we know it will get 16.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1555,12 +1534,10 @@ than one line with <em><span class="environment_env" id="env7">training</span></
         });
     }); //-->]]>
     </script>
-</div>
 <hr />
-<p>Use the <em>cat</em> command to view the contents of <em>task01</em>, <em>task02</em> and <em>task03</em> job script</p>
 <div class="showable-container quest showable-hidden" id="showable69">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle69"><span class="link-like" id="showablelink69">3.3) How many <em>cpu cores</em> will each ask for?</span></div>
+<div class="showable-header quest" id="showabletitle69"><span class="link-like" id="showablelink69">3.4) What about total memory?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable70">
@@ -1573,11 +1550,9 @@ script.  Some will be affected by more than one option</p>
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle71"><a href="" id="showablelink71">More</a></div>
 <div class="showable-body" id="showablebody71">
-<p><strong>Non-exclusive (shared) jobs</strong>:</p>
-<p>It is <em>--cpus-per-task x --ntasks</em> but if <em>--ntasks</em> is not present it defaults to 1 so its <em>--cpus-per-task x 1</em></p>
-<p><strong>Exclusive jobs</strong>:</p>
-<p>The <em>--nodes</em> options tells us how many nodes we ask for and the <em>--exclusive</em> option says give us all it has.  This
-one is a bit tricky as we don't really know until it runs.</p>
+<p>The <em>--mem-per-cpu</em> OR <em>--mem</em> options are holding the answer to total memory.</p>
+<p>For task01 and task02 the calculation is <em>--mem-per-cpu x --cpus-per-task x --ntasks</em></p>
+<p>For task03, like with the cpus cores question, we get all the memory available on the node we get allocated</p>
 </div>
 </div>
 </div>
@@ -1611,77 +1586,6 @@ one is a bit tricky as we don't really know until it runs.</p>
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle72"><a href="" id="showablelink72">Answer</a></div>
 <div class="showable-body answer" id="showablebody72">
-<p><strong>Answer</strong>:</p>
-<ul>
-<li>task01: <strong>1 cpu core</strong></li>
-<li>task02: <strong>6 cpu cores</strong></li>
-<li>task03: <strong>at least 1</strong> as this has requested all cpu cores on the node its running on (<em>--exclusive</em>).<br />
-However, since we know that all nodes on <span class="environment_env" id="env6">LIMS-HPC</span> have 16, we know it will get 16.</li>
-</ul>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink72").click(function(e){
-            e.preventDefault();
-            $("#showable72").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<hr />
-<div class="showable-container quest showable-hidden" id="showable73">
-<div class="showable-inner">
-<div class="showable-header quest" id="showabletitle73"><span class="link-like" id="showablelink73">3.4) What about total memory?</span></div>
-</div>
-</div>
-<div class="showable-container hint showable-hidden" id="showable74">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle74"><a href="" id="showablelink74">Hint</a></div>
-<div class="showable-body hint" id="showablebody74">
-<p>Lookup the man page for <em>sbatch</em> command.  <em>sbatch</em>'s options match up with the <em>#SBATCH</em> comments at the top of each job 
-script.  Some will be affected by more than one option</p>
-<div class="showable-container showable-hidden" id="showable75">
-<div class="showable-inner">
-<div class="showable-header" id="showabletitle75"><a href="" id="showablelink75">More</a></div>
-<div class="showable-body" id="showablebody75">
-<p>The <em>--mem-per-cpu</em> OR <em>--mem</em> options are holding the answer to total memory.</p>
-<p>For task01 and task02 the calculation is <em>--mem-per-cpu x --cpus-per-task x --ntasks</em></p>
-<p>For task03, like with the cpus cores question, we get all the memory available on the node we get allocated</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink75").click(function(e){
-            e.preventDefault();
-            $("#showable75").toggleClass("showable-hidden");
-            if ($("#showable75").hasClass("showable-hidden")) {
-                $("#showablelink75").text("More");
-            } else {
-                $("#showablelink75").text("Less");
-            }
-        });
-    }); //-->]]>
-    </script>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink74").click(function(e){
-            e.preventDefault();
-            $("#showable74").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<div class="showable-container answer showable-hidden" id="showable76">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle76"><a href="" id="showablelink76">Answer</a></div>
-<div class="showable-body answer" id="showablebody76">
 <p>The <em>--mem-per-cpu</em> OR <em>--mem</em> options are holding the answer to total memory.</p>
 <p>For task01 and task02 the calculation is <em>--mem-per-cpu x --ntasks x --cpus-per-task</em></p>
 <p>For task03, like with the cpus cores question, we get all the memory available on the node we get allocated</p>
@@ -1703,22 +1607,22 @@ not actually allocate any of it to you so your job will get terminated once it t
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink76").click(function(e){
+        $("#showablelink72").click(function(e){
             e.preventDefault();
-            $("#showable76").toggleClass("showable-hidden");
+            $("#showable72").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable77">
+<div class="showable-container quest showable-hidden" id="showable73">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle77"><span class="link-like" id="showablelink77">3.5) How long can each run for?</span></div>
+<div class="showable-header quest" id="showabletitle73"><span class="link-like" id="showablelink73">3.5) How long can each run for?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable78">
+<div class="showable-container hint showable-hidden" id="showable74">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle78"><a href="" id="showablelink78">Hint</a></div>
-<div class="showable-body hint" id="showablebody78">
+<div class="showable-header hint" id="showabletitle74"><a href="" id="showablelink74">Hint</a></div>
+<div class="showable-body hint" id="showablebody74">
 <p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
 <em>/--time</em> and press enter)</p>
 </div>
@@ -1727,16 +1631,16 @@ not actually allocate any of it to you so your job will get terminated once it t
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink78").click(function(e){
+        $("#showablelink74").click(function(e){
             e.preventDefault();
-            $("#showable78").toggleClass("showable-hidden");
+            $("#showable74").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable79">
+<div class="showable-container answer showable-hidden" id="showable75">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle79"><a href="" id="showablelink79">Answer</a></div>
-<div class="showable-body answer" id="showablebody79">
+<div class="showable-header answer" id="showabletitle75"><a href="" id="showablelink75">Answer</a></div>
+<div class="showable-body answer" id="showablebody75">
 <p>The <em>--time</em> option is what tells slurm how long your job will run for.</p>
 <p><strong>Answer</strong>:</p>
 <ul>
@@ -1750,22 +1654,22 @@ not actually allocate any of it to you so your job will get terminated once it t
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink79").click(function(e){
+        $("#showablelink75").click(function(e){
             e.preventDefault();
-            $("#showable79").toggleClass("showable-hidden");
+            $("#showable75").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable80">
+<div class="showable-container quest showable-hidden" id="showable76">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle80"><span class="link-like" id="showablelink80">3.6) Is this maximum, minimum or both runtime?</span></div>
+<div class="showable-header quest" id="showabletitle76"><span class="link-like" id="showablelink76">3.6) Is this maximum, minimum or both runtime?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable81">
+<div class="showable-container hint showable-hidden" id="showable77">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle81"><a href="" id="showablelink81">Hint</a></div>
-<div class="showable-body hint" id="showablebody81">
+<div class="showable-header hint" id="showabletitle77"><a href="" id="showablelink77">Hint</a></div>
+<div class="showable-body hint" id="showablebody77">
 <p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
 <em>/--time</em> and press enter)</p>
 </div>
@@ -1774,16 +1678,16 @@ not actually allocate any of it to you so your job will get terminated once it t
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink81").click(function(e){
+        $("#showablelink77").click(function(e){
             e.preventDefault();
-            $("#showable81").toggleClass("showable-hidden");
+            $("#showable77").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable82">
+<div class="showable-container answer showable-hidden" id="showable78">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle82"><a href="" id="showablelink82">Answer</a></div>
-<div class="showable-body answer" id="showablebody82">
+<div class="showable-header answer" id="showabletitle78"><a href="" id="showablelink78">Answer</a></div>
+<div class="showable-body answer" id="showablebody78">
 <p>This is a maximum time.  Your job may finish early, at which point it hands back the resources for the next job.  However if it 
 tries to run longer the HPC will terminate the job.
 <div class="info"><b>HINT</b>: when selecting a time for your job its best to estimate your job runtime to be close to 
@@ -1795,17 +1699,17 @@ time.  If you think your job may not complete in time you can ask the system adm
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink82").click(function(e){
+        $("#showablelink78").click(function(e){
             e.preventDefault();
-            $("#showable82").toggleClass("showable-hidden");
+            $("#showable78").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest" id="showable83">
+<div class="showable-container quest" id="showable79">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle83"><a href="" id="showablelink83">3.7) Calculate the <em>--time</em> specification for the following runtimes:</a></div>
-<div class="showable-body quest" id="showablebody83">
+<div class="showable-header quest" id="showabletitle79"><a href="" id="showablelink79">3.7) Calculate the <em>--time</em> specification for the following runtimes:</a></div>
+<div class="showable-body quest" id="showablebody79">
 <ol>
 <li><span class="fix150">1h30m:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
 <li><span class="fix150">1m20s:</span><span class="fix60">--time=</span><span class="answer100"></span></li>
@@ -1818,16 +1722,16 @@ time.  If you think your job may not complete in time you can ask the system adm
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink83").click(function(e){
+        $("#showablelink79").click(function(e){
             e.preventDefault();
-            $("#showable83").toggleClass("showable-hidden");
+            $("#showable79").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container hint showable-hidden" id="showable84">
+<div class="showable-container hint showable-hidden" id="showable80">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle84"><a href="" id="showablelink84">Hint</a></div>
-<div class="showable-body hint" id="showablebody84">
+<div class="showable-header hint" id="showabletitle80"><a href="" id="showablelink80">Hint</a></div>
+<div class="showable-body hint" id="showablebody80">
 <p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
 <em>/--time</em> and press enter)</p>
 </div>
@@ -1836,16 +1740,16 @@ time.  If you think your job may not complete in time you can ask the system adm
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink84").click(function(e){
+        $("#showablelink80").click(function(e){
             e.preventDefault();
-            $("#showable84").toggleClass("showable-hidden");
+            $("#showable80").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable85">
+<div class="showable-container answer showable-hidden" id="showable81">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle85"><a href="" id="showablelink85">Answer</a></div>
-<div class="showable-body answer" id="showablebody85">
+<div class="showable-header answer" id="showabletitle81"><a href="" id="showablelink81">Answer</a></div>
+<div class="showable-body answer" id="showablebody81">
 <ol>
 <li><span class="fix150">1h30m:</span><span class="fix60">--time=01:30:00 (alternatively: 0-01:30)</span></li>
 <li><span class="fix150">1m20s:</span><span class="fix60">--time=01:20</span></li>
@@ -1858,22 +1762,86 @@ time.  If you think your job may not complete in time you can ask the system adm
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink85").click(function(e){
+        $("#showablelink81").click(function(e){
             e.preventDefault();
-            $("#showable85").toggleClass("showable-hidden");
+            $("#showable81").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest" id="showable86">
+<div class="showable-container quest" id="showable82">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle86"><a href="" id="showablelink86">3.8) What do the following --time specifications mean?</a></div>
-<div class="showable-body quest" id="showablebody86">
+<div class="showable-header quest" id="showabletitle82"><a href="" id="showablelink82">3.8) What do the following --time specifications mean?</a></div>
+<div class="showable-body quest" id="showablebody82">
 <ol>
 <li><span class="fix150">--time=12-00:20</span><span class="fix60"></span><span class="answer100"></span></li>
 <li><span class="fix150">--time=45</span><span class="fix60"></span><span class="answer100"></span></li>
 <li><span class="fix150">--time=00:30</span><span class="fix60"></span><span class="answer100"></span></li>
 </ol>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink82").click(function(e){
+            e.preventDefault();
+            $("#showable82").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container hint showable-hidden" id="showable83">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle83"><a href="" id="showablelink83">Hint</a></div>
+<div class="showable-body hint" id="showablebody83">
+<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
+<em>/--time</em> and press enter)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink83").click(function(e){
+            e.preventDefault();
+            $("#showable83").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable84">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle84"><a href="" id="showablelink84">Answer</a></div>
+<div class="showable-body answer" id="showablebody84">
+<ol>
+<li><span class="fix150">--time=12-00:20</span><span class="fix60">12 days and 20 minutes</span></li>
+<li><span class="fix150">--time=45</span><span class="fix60">45 minutes</span></li>
+<li><span class="fix150">--time=00:30</span><span class="fix60">30 seconds</span></li>
+</ol>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink84").click(function(e){
+            e.preventDefault();
+            $("#showable84").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<p>Now use sbatch to submit the <em>task01</em> job:</p>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable85">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle85"><span class="link-like" id="showablelink85">3.9) What job id was your job given?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable86">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle86"><a href="" id="showablelink86">Hint</a></div>
+<div class="showable-body hint" id="showablebody86">
+<p>Use the man page for the sbatch command.  The <em>Synopsis</em> at the top will give you an idea how to run it.</p>
 </div>
 </div>
 </div>
@@ -1886,12 +1854,15 @@ time.  If you think your job may not complete in time you can ask the system adm
         });
     }); //-->]]>
     </script>
-<div class="showable-container hint showable-hidden" id="showable87">
+<div class="showable-container answer showable-hidden" id="showable87">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle87"><a href="" id="showablelink87">Hint</a></div>
-<div class="showable-body hint" id="showablebody87">
-<p>Use the <em>man sbatch</em> command to look up the time specification.  If you search for <em>--time</em> it will describe the formats it uses (i.e. type 
-<em>/--time</em> and press enter)</p>
+<div class="showable-header answer" id="showabletitle87"><a href="" id="showablelink87">Answer</a></div>
+<div class="showable-body answer" id="showablebody87">
+<pre><code class="sh">$ sbatch task01 
+Submitted batch job 9998
+</code></pre>
+
+<p><strong>Answer</strong>: it's unique for each job; in the above example mine was <em>9998</em></p>
 </div>
 </div>
 </div>
@@ -1904,83 +1875,16 @@ time.  If you think your job may not complete in time you can ask the system adm
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable88">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle88"><a href="" id="showablelink88">Answer</a></div>
-<div class="showable-body answer" id="showablebody88">
-<ol>
-<li><span class="fix150">--time=12-00:20</span><span class="fix60">12 days and 20 minutes</span></li>
-<li><span class="fix150">--time=45</span><span class="fix60">45 minutes</span></li>
-<li><span class="fix150">--time=00:30</span><span class="fix60">30 seconds</span></li>
-</ol>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink88").click(function(e){
-            e.preventDefault();
-            $("#showable88").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
 <hr />
-<p>Now use sbatch to submit the <em>task01</em> job:</p>
-<hr />
-<div class="showable-container quest showable-hidden" id="showable89">
+<div class="showable-container quest showable-hidden" id="showable88">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle89"><span class="link-like" id="showablelink89">3.9) What job id was your job given?</span></div>
+<div class="showable-header quest" id="showabletitle88"><span class="link-like" id="showablelink88">3.10) Which node did your job go on?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable90">
+<div class="showable-container hint showable-hidden" id="showable89">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle90"><a href="" id="showablelink90">Hint</a></div>
-<div class="showable-body hint" id="showablebody90">
-<p>Use the man page for the sbatch command.  The <em>Synopsis</em> at the top will give you an idea how to run it.</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink90").click(function(e){
-            e.preventDefault();
-            $("#showable90").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<div class="showable-container answer showable-hidden" id="showable91">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle91"><a href="" id="showablelink91">Answer</a></div>
-<div class="showable-body answer" id="showablebody91">
-<pre><code class="sh">$ sbatch task01 
-Submitted batch job 9998
-</code></pre>
-
-<p><strong>Answer</strong>: it's unique for each job; in the above example mine was <em>9998</em></p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink91").click(function(e){
-            e.preventDefault();
-            $("#showable91").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<hr />
-<div class="showable-container quest showable-hidden" id="showable92">
-<div class="showable-inner">
-<div class="showable-header quest" id="showabletitle92"><span class="link-like" id="showablelink92">3.10) Which node did your job go on?</span></div>
-</div>
-</div>
-<div class="showable-container hint showable-hidden" id="showable93">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle93"><a href="" id="showablelink93">Hint</a></div>
-<div class="showable-body hint" id="showablebody93">
+<div class="showable-header hint" id="showabletitle89"><a href="" id="showablelink89">Hint</a></div>
+<div class="showable-body hint" id="showablebody89">
 <p>The <em>squeue</em> command shows you the currently running jobs.  If it's been longer than 30 seconds since you submitted it you might have to resubmit it.</p>
 </div>
 </div>
@@ -1988,16 +1892,16 @@ Submitted batch job 9998
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink93").click(function(e){
+        $("#showablelink89").click(function(e){
             e.preventDefault();
-            $("#showable93").toggleClass("showable-hidden");
+            $("#showable89").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable94">
+<div class="showable-container answer showable-hidden" id="showable90">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle94"><a href="" id="showablelink94">Answer</a></div>
-<div class="showable-body answer" id="showablebody94">
+<div class="showable-header answer" id="showabletitle90"><a href="" id="showablelink90">Answer</a></div>
+<div class="showable-body answer" id="showablebody90">
 <p>Use the <em>squeue</em> command to show all jobs.  Search for your <em>jobid</em> and look in the <em>NODELIST</em> column.</p>
 <div class="info"><b>NOTE</b>: if there are lots of jobs you can use <b>squeue -u YOUR_USERNAME</b> to only show your jobs, where 
 YOUR_USERNAME is replaced with your actual username.</div>
@@ -2016,23 +1920,23 @@ $ squeue -u training01
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink94").click(function(e){
+        $("#showablelink90").click(function(e){
             e.preventDefault();
-            $("#showable94").toggleClass("showable-hidden");
+            $("#showable90").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <h3 id="advanced">Advanced</h3>
-<div class="showable-container quest showable-hidden" id="showable95">
+<div class="showable-container quest showable-hidden" id="showable91">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle95"><span class="link-like" id="showablelink95">3.11) Make a copy of <em>task01</em> and call it <em>prime_numbers</em>.  Make it load the training module and use the <em>prime</em> command to calculate prime 
+<div class="showable-header quest" id="showabletitle91"><span class="link-like" id="showablelink91">3.11) Make a copy of <em>task01</em> and call it <em>prime_numbers</em>.  Make it load the training module and use the <em>prime</em> command to calculate prime 
 numbers for 20 seconds.</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable96">
+<div class="showable-container hint showable-hidden" id="showable92">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle96"><a href="" id="showablelink96">Hint</a></div>
-<div class="showable-body hint" id="showablebody96">
+<div class="showable-header hint" id="showabletitle92"><a href="" id="showablelink92">Hint</a></div>
+<div class="showable-body hint" id="showablebody92">
 <p>You can find the <em>prime</em> command in the <em>training-gcc/1.0</em> module</p>
 </div>
 </div>
@@ -2040,16 +1944,16 @@ numbers for 20 seconds.</span></div>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink96").click(function(e){
+        $("#showablelink92").click(function(e){
             e.preventDefault();
-            $("#showable96").toggleClass("showable-hidden");
+            $("#showable92").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable97">
+<div class="showable-container answer showable-hidden" id="showable93">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle97"><a href="" id="showablelink97">Answer</a></div>
-<div class="showable-body answer" id="showablebody97">
+<div class="showable-header answer" id="showabletitle93"><a href="" id="showablelink93">Answer</a></div>
+<div class="showable-body answer" id="showablebody93">
 <p>The key points to change in the task01 script are:</p>
 <ol>
 <li>adding the <em>module load training-gcc/1.0</em></li>
@@ -2083,22 +1987,22 @@ of when this job was run.  If you have one before and after your main program yo
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink97").click(function(e){
+        $("#showablelink93").click(function(e){
             e.preventDefault();
-            $("#showable97").toggleClass("showable-hidden");
+            $("#showable93").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable98">
+<div class="showable-container quest showable-hidden" id="showable94">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle98"><span class="link-like" id="showablelink98">3.12) Submit the job.  What was the <em>largest</em> prime number it found in 20 seconds?</span></div>
+<div class="showable-header quest" id="showabletitle94"><span class="link-like" id="showablelink94">3.12) Submit the job.  What was the <em>largest</em> prime number it found in 20 seconds?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable99">
+<div class="showable-container hint showable-hidden" id="showable95">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle99"><a href="" id="showablelink99">Hint</a></div>
-<div class="showable-body hint" id="showablebody99">
+<div class="showable-header hint" id="showabletitle95"><a href="" id="showablelink95">Hint</a></div>
+<div class="showable-body hint" id="showablebody95">
 <p>The output from the program will provide the results that we are after.  For HPC jobs this will be placed in the <em>SLURM output file</em>; this is called
 <em>slurm-JOBID.out</em> where JOBID is replaced by the actual job id.</p>
 </div>
@@ -2107,16 +2011,16 @@ of when this job was run.  If you have one before and after your main program yo
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink99").click(function(e){
+        $("#showablelink95").click(function(e){
             e.preventDefault();
-            $("#showable99").toggleClass("showable-hidden");
+            $("#showable95").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable100">
+<div class="showable-container answer showable-hidden" id="showable96">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle100"><a href="" id="showablelink100">Answer</a></div>
-<div class="showable-body answer" id="showablebody100">
+<div class="showable-header answer" id="showabletitle96"><a href="" id="showablelink96">Answer</a></div>
+<div class="showable-body answer" id="showablebody96">
 <p>You should get results similar to below however the actual numbers will vary as amount of computations performed will be affected by 
 the amount of other jobs running on the HPC</p>
 <pre><code class="bash">$ sbatch prime_numbers
@@ -2137,17 +2041,17 @@ Finished at: Fri May  8 16:11:27 AEST 2015
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink100").click(function(e){
+        $("#showablelink96").click(function(e){
             e.preventDefault();
-            $("#showable100").toggleClass("showable-hidden");
+            $("#showable96").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest" id="showable101">
+<div class="showable-container quest" id="showable97">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle101"><a href="" id="showablelink101">3.13) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again</a></div>
-<div class="showable-body quest" id="showablebody101">
+<div class="showable-header quest" id="showabletitle97"><a href="" id="showablelink97">3.13) Modify your prime_numbers script to notify you via email when it starts and ends.  Submit it again</a></div>
+<div class="showable-body quest" id="showablebody97">
 <ul>
 <li><strong>Did it start immediately or have some delay?</strong></li>
 <li><strong>How long did it actually run for?</strong></li>
@@ -2158,21 +2062,21 @@ Finished at: Fri May  8 16:11:27 AEST 2015
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink101").click(function(e){
+        $("#showablelink97").click(function(e){
             e.preventDefault();
-            $("#showable101").toggleClass("showable-hidden");
+            $("#showable97").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container hint showable-hidden" id="showable102">
+<div class="showable-container hint showable-hidden" id="showable98">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle102"><a href="" id="showablelink102">Hint</a></div>
-<div class="showable-body hint" id="showablebody102">
+<div class="showable-header hint" id="showabletitle98"><a href="" id="showablelink98">Hint</a></div>
+<div class="showable-body hint" id="showablebody98">
 <p>There are two options that you will need to set.  See sbatch manpage for details.</p>
-<div class="showable-container showable-hidden" id="showable103">
+<div class="showable-container showable-hidden" id="showable99">
 <div class="showable-inner">
-<div class="showable-header" id="showabletitle103"><a href="" id="showablelink103">More</a></div>
-<div class="showable-body" id="showablebody103">
+<div class="showable-header" id="showabletitle99"><a href="" id="showablelink99">More</a></div>
+<div class="showable-body" id="showablebody99">
 <p>Both start with <em>--mail</em></p>
 </div>
 </div>
@@ -2180,13 +2084,13 @@ Finished at: Fri May  8 16:11:27 AEST 2015
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink103").click(function(e){
+        $("#showablelink99").click(function(e){
             e.preventDefault();
-            $("#showable103").toggleClass("showable-hidden");
-            if ($("#showable103").hasClass("showable-hidden")) {
-                $("#showablelink103").text("More");
+            $("#showable99").toggleClass("showable-hidden");
+            if ($("#showable99").hasClass("showable-hidden")) {
+                $("#showablelink99").text("More");
             } else {
-                $("#showablelink103").text("Less");
+                $("#showablelink99").text("Less");
             }
         });
     }); //-->]]>
@@ -2197,16 +2101,16 @@ Finished at: Fri May  8 16:11:27 AEST 2015
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink102").click(function(e){
+        $("#showablelink98").click(function(e){
             e.preventDefault();
-            $("#showable102").toggleClass("showable-hidden");
+            $("#showable98").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable104">
+<div class="showable-container answer showable-hidden" id="showable100">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle104"><a href="" id="showablelink104">Answer</a></div>
-<div class="showable-body answer" id="showablebody104">
+<div class="showable-header answer" id="showabletitle100"><a href="" id="showablelink100">Answer</a></div>
+<div class="showable-body answer" id="showablebody100">
 <div class="environment_if" id="ifenv19">
 <pre><code class="bash">#!/bin/bash
 #SBATCH --cpus-per-task=1
@@ -2237,9 +2141,9 @@ be ~20 seconds.</li>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink104").click(function(e){
+        $("#showablelink100").click(function(e){
             e.preventDefault();
-            $("#showable104").toggleClass("showable-hidden");
+            $("#showable100").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -2249,15 +2153,15 @@ on a number of factors (data set, number of CPU's, processing step etc.).</p>
 <p>In this topic we will cover some of the tools that are available that enable you to <em>watch</em> what is happening so we can make better predictions
 in the future.</p>
 <h3 id="exercises_3">Exercises</h3>
-<div class="showable-container quest showable-hidden" id="showable105">
+<div class="showable-container quest showable-hidden" id="showable101">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle105"><span class="link-like" id="showablelink105">4.1) What does the <em>top</em> command show?</span></div>
+<div class="showable-header quest" id="showabletitle101"><span class="link-like" id="showablelink101">4.1) What does the <em>top</em> command show?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable106">
+<div class="showable-container hint showable-hidden" id="showable102">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle106"><a href="" id="showablelink106">Hint</a></div>
-<div class="showable-body hint" id="showablebody106">
+<div class="showable-header hint" id="showabletitle102"><a href="" id="showablelink102">Hint</a></div>
+<div class="showable-body hint" id="showablebody102">
 <p>When all else fails, try <em>man</em>; specifically, the description section</p>
 </div>
 </div>
@@ -2265,16 +2169,16 @@ in the future.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink106").click(function(e){
+        $("#showablelink102").click(function(e){
             e.preventDefault();
-            $("#showable106").toggleClass("showable-hidden");
+            $("#showable102").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable107">
+<div class="showable-container answer showable-hidden" id="showable103">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle107"><a href="" id="showablelink107">Answer</a></div>
-<div class="showable-body answer" id="showablebody107">
+<div class="showable-header answer" id="showabletitle103"><a href="" id="showablelink103">Answer</a></div>
+<div class="showable-body answer" id="showablebody103">
 <h4 id="top">Top</h4>
 <pre><code class="sh">$ man top
 ...
@@ -2290,25 +2194,76 @@ DESCRIPTION
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink107").click(function(e){
+        $("#showablelink103").click(function(e){
             e.preventDefault();
-            $("#showable107").toggleClass("showable-hidden");
+            $("#showable103").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
 <p>Run the <em>top</em> command.  Above the black line it shows some <em>system-wide statistics</em> and below are statistics specific to a single 
 process (a.k.a, tasks OR software applications).</p>
-<div class="showable-container quest showable-hidden" id="showable108">
+<div class="showable-container quest showable-hidden" id="showable104">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle108"><span class="link-like" id="showablelink108">4.2) How much total memory does this HPC (head-node) have?</span></div>
+<div class="showable-header quest" id="showabletitle104"><span class="link-like" id="showablelink104">4.2) How much total memory does this HPC (head-node) have?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable109">
+<div class="showable-container hint showable-hidden" id="showable105">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle109"><a href="" id="showablelink109">Hint</a></div>
-<div class="showable-body hint" id="showablebody109">
+<div class="showable-header hint" id="showabletitle105"><a href="" id="showablelink105">Hint</a></div>
+<div class="showable-body hint" id="showablebody105">
 <p>This would be a system-wide statistic.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink105").click(function(e){
+            e.preventDefault();
+            $("#showable105").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable106">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle106"><a href="" id="showablelink106">Answer</a></div>
+<div class="showable-body answer" id="showablebody106">
+<p><strong>Answer</strong>: If you look at the first value on the <em>Mem</em> line (line 4) it will tell you the total memory on this computer (node).</p>
+<ul>
+<li><strong>BARCOO</strong>: 65942760k or ~64 GigaBytes</li>
+<li><strong>SNOWY</strong>: 132035040k or ~128 GigaBytes</li>
+<li><strong>LIMS-HPC</strong>: 132085396k or ~128 GigaBytes</li>
+</ul>
+<p>To transfer from kB to MB you divide by 1024 and MB to GB by 1024 again.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink106").click(function(e){
+            e.preventDefault();
+            $("#showable106").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable107">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle107"><span class="link-like" id="showablelink107">4.3) What is the current total CPU usage?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable108">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle108"><a href="" id="showablelink108">Hint</a></div>
+<div class="showable-body hint" id="showablebody108">
+<p>This might be easier to work out what is not used and subtract it from 100%</p>
+<div class="showable-container showable-hidden" id="showable109">
+<div class="showable-inner">
+<div class="showable-header" id="showabletitle109"><a href="" id="showablelink109">More</a></div>
+<div class="showable-body" id="showablebody109">
+<p><em>Idle</em> is another term for not used (or <em>id</em> for short)</p>
 </div>
 </div>
 </div>
@@ -2318,6 +2273,23 @@ process (a.k.a, tasks OR software applications).</p>
         $("#showablelink109").click(function(e){
             e.preventDefault();
             $("#showable109").toggleClass("showable-hidden");
+            if ($("#showable109").hasClass("showable-hidden")) {
+                $("#showablelink109").text("More");
+            } else {
+                $("#showablelink109").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink108").click(function(e){
+            e.preventDefault();
+            $("#showable108").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -2325,13 +2297,7 @@ process (a.k.a, tasks OR software applications).</p>
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle110"><a href="" id="showablelink110">Answer</a></div>
 <div class="showable-body answer" id="showablebody110">
-<p><strong>Answer</strong>: If you look at the first value on the <em>Mem</em> line (line 4) it will tell you the total memory on this computer (node).</p>
-<ul>
-<li><strong>BARCOO</strong>: 65942760k or ~64 GigaBytes</li>
-<li><strong>SNOWY</strong>: 132035040k or ~128 GigaBytes</li>
-<li><strong>LIMS-HPC</strong>: 132085396k or ~128 GigaBytes</li>
-</ul>
-<p>To transfer from kB to MB you divide by 1024 and MB to GB by 1024 again.</p>
+<p><strong>Answer</strong>: If you subtract the <em>%id</em> value (4th value on Cpu(s) line) from 100% you will get the total CPU Usage</p>
 </div>
 </div>
 </div>
@@ -2347,36 +2313,14 @@ process (a.k.a, tasks OR software applications).</p>
 <hr />
 <div class="showable-container quest showable-hidden" id="showable111">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle111"><span class="link-like" id="showablelink111">4.3) What is the current total CPU usage?</span></div>
+<div class="showable-header quest" id="showabletitle111"><span class="link-like" id="showablelink111">4.4) What column does it appear to be sorting the processes by? Is this <em>low-to-high</em> OR <em>high-to-low</em>?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable112">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle112"><a href="" id="showablelink112">Hint</a></div>
 <div class="showable-body hint" id="showablebody112">
-<p>This might be easier to work out what is not used and subtract it from 100%</p>
-<div class="showable-container showable-hidden" id="showable113">
-<div class="showable-inner">
-<div class="showable-header" id="showabletitle113"><a href="" id="showablelink113">More</a></div>
-<div class="showable-body" id="showablebody113">
-<p><em>Idle</em> is another term for not used (or <em>id</em> for short)</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink113").click(function(e){
-            e.preventDefault();
-            $("#showable113").toggleClass("showable-hidden");
-            if ($("#showable113").hasClass("showable-hidden")) {
-                $("#showablelink113").text("More");
-            } else {
-                $("#showablelink113").text("Less");
-            }
-        });
-    }); //-->]]>
-    </script>
+<p>It's not PID but from time to time it might be ordered sequentially.</p>
 </div>
 </div>
 </div>
@@ -2389,34 +2333,56 @@ process (a.k.a, tasks OR software applications).</p>
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable114">
+<div class="showable-container answer showable-hidden" id="showable113">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle114"><a href="" id="showablelink114">Answer</a></div>
-<div class="showable-body answer" id="showablebody114">
-<p><strong>Answer</strong>: If you subtract the <em>%id</em> value (4th value on Cpu(s) line) from 100% you will get the total CPU Usage</p>
+<div class="showable-header answer" id="showabletitle113"><a href="" id="showablelink113">Answer</a></div>
+<div class="showable-body answer" id="showablebody113">
+<p><strong>Answer</strong>: <em>%CPU</em> which gives you an indication of how much CPU time each process uses and sorted high-to-low.</p>
 </div>
 </div>
 </div>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink114").click(function(e){
+        $("#showablelink113").click(function(e){
             e.preventDefault();
-            $("#showable114").toggleClass("showable-hidden");
+            $("#showable113").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable115">
+<p>Add up the top few CPU usages of processes and compare this to the system-wide CPU usage at that time.  NOTE: you may need to quit 
+<em>top</em> (by pressing q) so you can compare before it updates.</p>
+<div class="showable-container quest showable-hidden" id="showable114">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle115"><span class="link-like" id="showablelink115">4.4) What column does it appear to be sorting the processes by? Is this <em>low-to-high</em> OR <em>high-to-low</em>?</span></div>
+<div class="showable-header quest" id="showabletitle114"><span class="link-like" id="showablelink114">4.5) Why might the numbers disagree?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable116">
+<div class="showable-container hint showable-hidden" id="showable115">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle116"><a href="" id="showablelink116">Hint</a></div>
-<div class="showable-body hint" id="showablebody116">
-<p>It's not PID but from time to time it might be ordered sequentially.</p>
+<div class="showable-header hint" id="showabletitle115"><a href="" id="showablelink115">Hint</a></div>
+<div class="showable-body hint" id="showablebody115">
+<p>It might have something to do with the total number of CPU Cores on the system.</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink115").click(function(e){
+            e.preventDefault();
+            $("#showable115").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<div class="showable-container answer showable-hidden" id="showable116">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle116"><a href="" id="showablelink116">Answer</a></div>
+<div class="showable-body answer" id="showablebody116">
+<p><strong>Answer</strong>: <em>%CPU</em> column gives you an indication of how much this process uses of 1 CPU Core, where as the system-wide values at the top 
+are exactly that, how much the entire system is utilised.  i.e. if you could see all processes in <em>top</em> (excluding round errors) 
+they would add up 100% x the number of cpu cores available; on LIMS-HPC this would be 0-1600% in the individual processes and 0-100% 
+on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for individual processes.</p>
 </div>
 </div>
 </div>
@@ -2429,11 +2395,12 @@ process (a.k.a, tasks OR software applications).</p>
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable117">
+<hr />
+<div class="showable-container quest" id="showable117">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle117"><a href="" id="showablelink117">Answer</a></div>
-<div class="showable-body answer" id="showablebody117">
-<p><strong>Answer</strong>: <em>%CPU</em> which gives you an indication of how much CPU time each process uses and sorted high-to-low.</p>
+<div class="showable-header quest" id="showabletitle117"><a href="" id="showablelink117">4.6) What command-line flag instructs <em>top</em> to sort results by <em>%MEM</em>?</a></div>
+<div class="showable-body quest" id="showablebody117">
+<p>Can you think of a reason that this might be useful?</p>
 </div>
 </div>
 </div>
@@ -2446,19 +2413,16 @@ process (a.k.a, tasks OR software applications).</p>
         });
     }); //-->]]>
     </script>
-<hr />
-<p>Add up the top few CPU usages of processes and compare this to the system-wide CPU usage at that time.  NOTE: you may need to quit 
-<em>top</em> (by pressing q) so you can compare before it updates.</p>
-<div class="showable-container quest showable-hidden" id="showable118">
+<div class="showable-container hint showable-hidden" id="showable118">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle118"><span class="link-like" id="showablelink118">4.5) Why might the numbers disagree?</span></div>
-</div>
-</div>
-<div class="showable-container hint showable-hidden" id="showable119">
+<div class="showable-header hint" id="showabletitle118"><a href="" id="showablelink118">Hint</a></div>
+<div class="showable-body hint" id="showablebody118">
+<p>Use the <em>top</em> manpage.</p>
+<div class="showable-container showable-hidden" id="showable119">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle119"><a href="" id="showablelink119">Hint</a></div>
-<div class="showable-body hint" id="showablebody119">
-<p>It might have something to do with the total number of CPU Cores on the system.</p>
+<div class="showable-header" id="showabletitle119"><a href="" id="showablelink119">More</a></div>
+<div class="showable-body" id="showablebody119">
+<p><em>"a is for allocated memory!"</em></p>
 </div>
 </div>
 </div>
@@ -2468,6 +2432,23 @@ process (a.k.a, tasks OR software applications).</p>
         $("#showablelink119").click(function(e){
             e.preventDefault();
             $("#showable119").toggleClass("showable-hidden");
+            if ($("#showable119").hasClass("showable-hidden")) {
+                $("#showablelink119").text("More");
+            } else {
+                $("#showablelink119").text("Less");
+            }
+        });
+    }); //-->]]>
+    </script>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink118").click(function(e){
+            e.preventDefault();
+            $("#showable118").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -2475,10 +2456,9 @@ process (a.k.a, tasks OR software applications).</p>
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle120"><a href="" id="showablelink120">Answer</a></div>
 <div class="showable-body answer" id="showablebody120">
-<p><strong>Answer</strong>: <em>%CPU</em> column gives you an indication of how much this process uses of 1 CPU Core, where as the system-wide values at the top 
-are exactly that, how much the entire system is utilised.  i.e. if you could see all processes in <em>top</em> (excluding round errors) 
-they would add up 100% x the number of cpu cores available; on LIMS-HPC this would be 0-1600% in the individual processes and 0-100% 
-on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for individual processes.</p>
+<p><strong>Answer</strong>: <em>top -a</em> will cause <em>top</em> to sort the processes by memory usage.  a.k.a. allocated memory</p>
+<p><strong>Can you think of a reason that this might be useful?</strong></p>
+<p>Your program might be using a lot of memory and you want to know how much; by sorting by memory will cause your program to stay at the top.</p>
 </div>
 </div>
 </div>
@@ -2492,23 +2472,11 @@ on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for in
     }); //-->]]>
     </script>
 <hr />
-<div class="showable-container quest" id="showable121">
+<div class="showable-container quest showable-hidden" id="showable121">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle121"><a href="" id="showablelink121">4.6) What command-line flag instructs <em>top</em> to sort results by <em>%MEM</em>?</a></div>
-<div class="showable-body quest" id="showablebody121">
-<p>Can you think of a reason that this might be useful?</p>
+<div class="showable-header quest" id="showabletitle121"><span class="link-like" id="showablelink121">4.7) Run <em>"top -c"</em>.  What does it do?  How might this be helpful?</span></div>
 </div>
 </div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink121").click(function(e){
-            e.preventDefault();
-            $("#showable121").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
 <div class="showable-container hint showable-hidden" id="showable122">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle122"><a href="" id="showablelink122">Hint</a></div>
@@ -2518,7 +2486,8 @@ on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for in
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle123"><a href="" id="showablelink123">More</a></div>
 <div class="showable-body" id="showablebody123">
-<p><em>"a is for allocated memory!"</em></p>
+<p><em>"c is for complete!"</em></p>
+<p><em>"c is also for command!"</em> which is another name for program</p>
 </div>
 </div>
 </div>
@@ -2552,9 +2521,13 @@ on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for in
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle124"><a href="" id="showablelink124">Answer</a></div>
 <div class="showable-body answer" id="showablebody124">
-<p><strong>Answer</strong>: <em>top -a</em> will cause <em>top</em> to sort the processes by memory usage.  a.k.a. allocated memory</p>
-<p><strong>Can you think of a reason that this might be useful?</strong></p>
-<p>Your program might be using a lot of memory and you want to know how much; by sorting by memory will cause your program to stay at the top.</p>
+<p><strong>What does it do?</strong><br />
+It changes the COMMAND column (right most) to show the complete command (or as much that fits) including the flags and options.</p>
+<p><strong>How might this be helpful?</strong><br />
+Sometimes you might be running a lot of commands with the same name that only differ by the command-line options.  In this case it is hard 
+to tell which ones are still running unless you use the <em>-c</em> flag to show the complete command.</p>
+<p><strong>NOTE</strong>:<br />
+If <em>top</em> is running you can press the <em>c</em> key to toggle show/hide complete command</p>
 </div>
 </div>
 </div>
@@ -2570,7 +2543,7 @@ on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for in
 <hr />
 <div class="showable-container quest showable-hidden" id="showable125">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle125"><span class="link-like" id="showablelink125">4.7) Run <em>"top -c"</em>.  What does it do?  How might this be helpful?</span></div>
+<div class="showable-header quest" id="showabletitle125"><span class="link-like" id="showablelink125">4.8) How can you get <em>top</em> to only show your processes?  Why might this be useful?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable126">
@@ -2582,8 +2555,7 @@ on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for in
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle127"><a href="" id="showablelink127">More</a></div>
 <div class="showable-body" id="showablebody127">
-<p><em>"c is for complete!"</em></p>
-<p><em>"c is also for command!"</em> which is another name for program</p>
+<p><em>"u is for user[name]!"</em></p>
 </div>
 </div>
 </div>
@@ -2617,13 +2589,12 @@ on the system-wide section.  BARCOO it is 0-2400% and SNOWY it is 0-3200% for in
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle128"><a href="" id="showablelink128">Answer</a></div>
 <div class="showable-body answer" id="showablebody128">
-<p><strong>What does it do?</strong><br />
-It changes the COMMAND column (right most) to show the complete command (or as much that fits) including the flags and options.</p>
-<p><strong>How might this be helpful?</strong><br />
-Sometimes you might be running a lot of commands with the same name that only differ by the command-line options.  In this case it is hard 
-to tell which ones are still running unless you use the <em>-c</em> flag to show the complete command.</p>
-<p><strong>NOTE</strong>:<br />
-If <em>top</em> is running you can press the <em>c</em> key to toggle show/hide complete command</p>
+<p><strong>How can you get <em>top</em> to only show your processes?</strong><br />
+<strong>Answer 1</strong>: <em>top -u YOURUSERNAME</em><br />
+<strong>Answer 2</strong>: while running <em>top</em> press the <em>u</em> key, type YOURUSERNAME and press <ENTER> key </p>
+<p><strong>Why might this be useful?</strong><br />
+When you are looking to see how much CPU or Memory you are using on a node that has other user jobs running it can be hard
+to quickly identify yours.</p>
 </div>
 </div>
 </div>
@@ -2637,21 +2608,26 @@ If <em>top</em> is running you can press the <em>c</em> key to toggle show/hide 
     }); //-->]]>
     </script>
 <hr />
+<h4 id="sacct-slurm-accounting">Sacct (Slurm Accounting)</h4>
+<p>If you need some statistics about your job after it has completed you can use the sacct command to find out some summary 
+statistics.  Unfortunately <em>sacct</em> needs to be instructed to show memory usage and cannot show maximum CPU usage.</p>
+<hr />
 <div class="showable-container quest showable-hidden" id="showable129">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle129"><span class="link-like" id="showablelink129">4.8) How can you get <em>top</em> to only show your processes?  Why might this be useful?</span></div>
+<div class="showable-header quest" id="showabletitle129"><span class="link-like" id="showablelink129">4.9) How can you get <em>sacct</em> to show the <em>maximum</em> memory usage?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable130">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle130"><a href="" id="showablelink130">Hint</a></div>
 <div class="showable-body hint" id="showablebody130">
-<p>Use the <em>top</em> manpage.</p>
+<p>Use the <em>sacct</em>'s man page to find out which option alters the <em>output</em> columns.  The command <em>sacct -e</em> can list all 
+the available columns but it is tricky to work out which one to use</p>
 <div class="showable-container showable-hidden" id="showable131">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle131"><a href="" id="showablelink131">More</a></div>
 <div class="showable-body" id="showablebody131">
-<p><em>"u is for user[name]!"</em></p>
+<p>This one is quite hard; the maximum memory column is MaxRSS.</p>
 </div>
 </div>
 </div>
@@ -2685,12 +2661,32 @@ If <em>top</em> is running you can press the <em>c</em> key to toggle show/hide 
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle132"><a href="" id="showablelink132">Answer</a></div>
 <div class="showable-body answer" id="showablebody132">
-<p><strong>How can you get <em>top</em> to only show your processes?</strong><br />
-<strong>Answer 1</strong>: <em>top -u YOURUSERNAME</em><br />
-<strong>Answer 2</strong>: while running <em>top</em> press the <em>u</em> key, type YOURUSERNAME and press <ENTER> key </p>
-<p><strong>Why might this be useful?</strong><br />
-When you are looking to see how much CPU or Memory you are using on a node that has other user jobs running it can be hard
-to quickly identify yours.</p>
+<p><strong>Minimal Answer</strong>: <em>sacct -o JobID,MaxRSS</em></p>
+<p><strong>Useful Command</strong>:</p>
+<p>A good command for checking your requested vs actual usage:</p>
+<pre><code class="sh">$ sacct -o JobID,JobName,ReqMem,ReqCPUS,MaxRSS,Timelimit,Elapsed
+
+       JobID    JobName     ReqMem  ReqCPUS     MaxRSS  Timelimit    Elapsed
+------------ ---------- ---------- -------- ---------- ---------- ----------
+144341       monAR.slu+     1024Mc        1              00:06:00   00:05:00
+144341.batch      batch     1024Mc        1   1043104K              00:05:00
+144346       monAR.slu+     1024Mc        2              00:06:00   00:05:00
+144346.batch      batch     1024Mc        1   1043100K              00:05:00
+</code></pre>
+
+<p>For job# 144341 above, we requested 1024MB memory for 6 minutes and used 1043104K (~1019MB) for 5 minutes</p>
+<p>For job# 144346 above, we requested 2048MB memory (2x 1024MB) for 6 minutes and used 1043104K (~1019MB) for 5 minutes</p>
+<p>There will be (at least) two lines resulting for your job once it is complete.  The '.batch' one is useful for overall job 
+statistics.</p>
+<ul>
+<li><strong>JobID</strong>: Slurm alocated job number</li>
+<li><strong>JobName</strong>: the name you gave your job (or filename)</li>
+<li><strong>ReqMem</strong>: the amount of memory requested.  If it ends with 'c' then it is memory per CPU so you need to multiply it by ReqCPUS to get total requested memory</li>
+<li><strong>ReqCPUS</strong>: Number of CPUS the job requested</li>
+<li><strong>MaxRSS</strong>: Maximum memory used by the job</li>
+<li><strong>Timelimit</strong>: Maximum amount of time requested</li>
+<li><strong>Elapsed</strong>: Amount actually used</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2703,27 +2699,28 @@ to quickly identify yours.</p>
         });
     }); //-->]]>
     </script>
-<hr />
-<h4 id="sacct-slurm-accounting">Sacct (Slurm Accounting)</h4>
-<p>If you need some statistics about your job after it has completed you can use the sacct command to find out some summary 
-statistics.  Unfortunately <em>sacct</em> needs to be instructed to show memory usage and cannot show maximum CPU usage.</p>
-<hr />
 <div class="showable-container quest showable-hidden" id="showable133">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle133"><span class="link-like" id="showablelink133">4.9) How can you get <em>sacct</em> to show the <em>maximum</em> memory usage?</span></div>
+<div class="showable-header quest" id="showabletitle133"><span class="link-like" id="showablelink133">4.10) Modify the more useful command in the previous question to show jobs from all users which completed yesterday.  Who has the closest requested time limit to elapsed?  What about Requested Memory to Max used memory?</span></div>
 </div>
 </div>
 <div class="showable-container hint showable-hidden" id="showable134">
 <div class="showable-inner">
 <div class="showable-header hint" id="showabletitle134"><a href="" id="showablelink134">Hint</a></div>
 <div class="showable-body hint" id="showablebody134">
-<p>Use the <em>sacct</em>'s man page to find out which option alters the <em>output</em> columns.  The command <em>sacct -e</em> can list all 
-the available columns but it is tricky to work out which one to use</p>
+<p>Use the <em>sacct</em>'s man page to find out which options you need add.</p>
 <div class="showable-container showable-hidden" id="showable135">
 <div class="showable-inner">
 <div class="showable-header" id="showabletitle135"><a href="" id="showablelink135">More</a></div>
 <div class="showable-body" id="showablebody135">
-<p>This one is quite hard; the maximum memory column is MaxRSS.</p>
+<p>In other words, you need flags/options to do:</p>
+<ul>
+<li>show <em>all users</em> jobs</li>
+<li><em>state</em> <em>completed</em></li>
+<li>completed <em>start</em>ing yesterday <em>00:00:00</em></li>
+<li>completed <em>end</em>ing yesterday <em>23:59:59</em></li>
+<li>add User column to output format </li>
+</ul>
 </div>
 </div>
 </div>
@@ -2757,99 +2754,6 @@ the available columns but it is tricky to work out which one to use</p>
 <div class="showable-inner">
 <div class="showable-header answer" id="showabletitle136"><a href="" id="showablelink136">Answer</a></div>
 <div class="showable-body answer" id="showablebody136">
-<p><strong>Minimal Answer</strong>: <em>sacct -o JobID,MaxRSS</em></p>
-<p><strong>Useful Command</strong>:</p>
-<p>A good command for checking your requested vs actual usage:</p>
-<pre><code class="sh">$ sacct -o JobID,JobName,ReqMem,ReqCPUS,MaxRSS,Timelimit,Elapsed
-
-       JobID    JobName     ReqMem  ReqCPUS     MaxRSS  Timelimit    Elapsed
------------- ---------- ---------- -------- ---------- ---------- ----------
-144341       monAR.slu+     1024Mc        1              00:06:00   00:05:00
-144341.batch      batch     1024Mc        1   1043104K              00:05:00
-144346       monAR.slu+     1024Mc        2              00:06:00   00:05:00
-144346.batch      batch     1024Mc        1   1043100K              00:05:00
-</code></pre>
-
-<p>For job# 144341 above, we requested 1024MB memory for 6 minutes and used 1043104K (~1019MB) for 5 minutes</p>
-<p>For job# 144346 above, we requested 2048MB memory (2x 1024MB) for 6 minutes and used 1043104K (~1019MB) for 5 minutes</p>
-<p>There will be (at least) two lines resulting for your job once it is complete.  The '.batch' one is useful for overall job 
-statistics.</p>
-<ul>
-<li><strong>JobID</strong>: Slurm alocated job number</li>
-<li><strong>JobName</strong>: the name you gave your job (or filename)</li>
-<li><strong>ReqMem</strong>: the amount of memory requested.  If it ends with 'c' then it is memory per CPU so you need to multiply it by ReqCPUS to get total requested memory</li>
-<li><strong>ReqCPUS</strong>: Number of CPUS the job requested</li>
-<li><strong>MaxRSS</strong>: Maximum memory used by the job</li>
-<li><strong>Timelimit</strong>: Maximum amount of time requested</li>
-<li><strong>Elapsed</strong>: Amount actually used</li>
-</ul>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink136").click(function(e){
-            e.preventDefault();
-            $("#showable136").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<div class="showable-container quest showable-hidden" id="showable137">
-<div class="showable-inner">
-<div class="showable-header quest" id="showabletitle137"><span class="link-like" id="showablelink137">4.10) Modify the more useful command in the previous question to show jobs from all users which completed yesterday.  Who has the closest requested time limit to elapsed?  What about Requested Memory to Max used memory?</span></div>
-</div>
-</div>
-<div class="showable-container hint showable-hidden" id="showable138">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle138"><a href="" id="showablelink138">Hint</a></div>
-<div class="showable-body hint" id="showablebody138">
-<p>Use the <em>sacct</em>'s man page to find out which options you need add.</p>
-<div class="showable-container showable-hidden" id="showable139">
-<div class="showable-inner">
-<div class="showable-header" id="showabletitle139"><a href="" id="showablelink139">More</a></div>
-<div class="showable-body" id="showablebody139">
-<p>In other words, you need flags/options to do:</p>
-<ul>
-<li>show <em>all users</em> jobs</li>
-<li><em>state</em> <em>completed</em></li>
-<li>completed <em>start</em>ing yesterday <em>00:00:00</em></li>
-<li>completed <em>end</em>ing yesterday <em>23:59:59</em></li>
-<li>add User column to output format </li>
-</ul>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink139").click(function(e){
-            e.preventDefault();
-            $("#showable139").toggleClass("showable-hidden");
-            if ($("#showable139").hasClass("showable-hidden")) {
-                $("#showablelink139").text("More");
-            } else {
-                $("#showablelink139").text("Less");
-            }
-        });
-    }); //-->]]>
-    </script>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink138").click(function(e){
-            e.preventDefault();
-            $("#showable138").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<div class="showable-container answer showable-hidden" id="showable140">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle140"><a href="" id="showablelink140">Answer</a></div>
-<div class="showable-body answer" id="showablebody140">
 <p><strong>Answer</strong>: <em>sacct -o JobID,JobName,ReqMem,ReqCPUS,MaxRSS,Timelimit,Elapsed,User --allusers --state completed --starttime YYYY-MM-DDT00:00:00 --endtime YYYY-MM-DDT23:59:59</em>  (Where <em>YYYY-MM-DD</em> is replaced with the date corresponding to yesterday)</p>
 <p><strong>Who has the closest requested time limit to elapsed?</strong></p>
 <p>Compare the <em>Timelimit</em> to <em>Elapsed</em> columns to see which is the closest; check with the facilitator to see if you are correct.</p>
@@ -2862,9 +2766,9 @@ statistics.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink140").click(function(e){
+        $("#showablelink136").click(function(e){
             e.preventDefault();
-            $("#showable140").toggleClass("showable-hidden");
+            $("#showable136").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -2873,15 +2777,15 @@ statistics.</p>
 <p>LIMS-HPC has an extra monitoring and graphing tool called Munin.</p>
 <p>Open the munin webpage and have a look at the graphs</p>
 <p><strong>Munin</strong>: <a href="http://munin-lims.latrobe.edu.au/lims-hpc.html">http://munin-lims.latrobe.edu.au/lims-hpc.html</a></p>
-<div class="showable-container quest showable-hidden" id="showable141">
+<div class="showable-container quest showable-hidden" id="showable137">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle141"><span class="link-like" id="showablelink141">4.11) What are the graphs showing?</span></div>
+<div class="showable-header quest" id="showabletitle137"><span class="link-like" id="showablelink137">4.11) What are the graphs showing?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable142">
+<div class="showable-container hint showable-hidden" id="showable138">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle142"><a href="" id="showablelink142">Hint</a></div>
-<div class="showable-body hint" id="showablebody142">
+<div class="showable-header hint" id="showabletitle138"><a href="" id="showablelink138">Hint</a></div>
+<div class="showable-body hint" id="showablebody138">
 <p>Take a look at the title on the graphs.  Then the style of graphs.</p>
 </div>
 </div>
@@ -2889,17 +2793,67 @@ statistics.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink142").click(function(e){
+        $("#showablelink138").click(function(e){
             e.preventDefault();
-            $("#showable142").toggleClass("showable-hidden");
+            $("#showable138").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable143">
+<div class="showable-container answer showable-hidden" id="showable139">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle143"><a href="" id="showablelink143">Answer</a></div>
-<div class="showable-body answer" id="showablebody143">
+<div class="showable-header answer" id="showabletitle139"><a href="" id="showablelink139">Answer</a></div>
+<div class="showable-body answer" id="showablebody139">
 <p><strong>Answer</strong>: CPU usage (stacked by type of usage)</p>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink139").click(function(e){
+            e.preventDefault();
+            $("#showable139").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable140">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle140"><span class="link-like" id="showablelink140">4.12) How much is the Compute Node 5 being used currently?</span></div>
+</div>
+</div>
+<div class="showable-container answer showable-hidden" id="showable141">
+<div class="showable-inner">
+<div class="showable-header answer" id="showabletitle141"><a href="" id="showablelink141">Answer</a></div>
+<div class="showable-body answer" id="showablebody141">
+<p>You can either:</p>
+<ol>
+<li>estimate this off the right most position on the graph (everything except mid-yellow is the CPU doing something) or </li>
+<li>look at the <em>cur</em> value for <em>idle</em> and subtract it from 1600 (the maximum value for a 16 core server)</li>
+</ol>
+</div>
+</div>
+</div>
+<script>
+    //<![CDATA[<!--
+    $(document).ready(function(){
+        $("#showablelink141").click(function(e){
+            e.preventDefault();
+            $("#showable141").toggleClass("showable-hidden");
+        });
+    }); //-->]]>
+    </script>
+<hr />
+<div class="showable-container quest showable-hidden" id="showable142">
+<div class="showable-inner">
+<div class="showable-header quest" id="showabletitle142"><span class="link-like" id="showablelink142">4.13) And at midday yesterday?</span></div>
+</div>
+</div>
+<div class="showable-container hint showable-hidden" id="showable143">
+<div class="showable-inner">
+<div class="showable-header hint" id="showabletitle143"><a href="" id="showablelink143">Hint</a></div>
+<div class="showable-body hint" id="showablebody143">
+<p>It's easiest to think in reverse (i.e. What is not being used?)</p>
 </div>
 </div>
 </div>
@@ -2912,60 +2866,10 @@ statistics.</p>
         });
     }); //-->]]>
     </script>
-<hr />
-<div class="showable-container quest showable-hidden" id="showable144">
+<div class="showable-container answer showable-hidden" id="showable144">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle144"><span class="link-like" id="showablelink144">4.12) How much is the Compute Node 5 being used currently?</span></div>
-</div>
-</div>
-<div class="showable-container answer showable-hidden" id="showable145">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle145"><a href="" id="showablelink145">Answer</a></div>
-<div class="showable-body answer" id="showablebody145">
-<p>You can either:</p>
-<ol>
-<li>estimate this off the right most position on the graph (everything except mid-yellow is the CPU doing something) or </li>
-<li>look at the <em>cur</em> value for <em>idle</em> and subtract it from 1600 (the maximum value for a 16 core server)</li>
-</ol>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink145").click(function(e){
-            e.preventDefault();
-            $("#showable145").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<hr />
-<div class="showable-container quest showable-hidden" id="showable146">
-<div class="showable-inner">
-<div class="showable-header quest" id="showabletitle146"><span class="link-like" id="showablelink146">4.13) And at midday yesterday?</span></div>
-</div>
-</div>
-<div class="showable-container hint showable-hidden" id="showable147">
-<div class="showable-inner">
-<div class="showable-header hint" id="showabletitle147"><a href="" id="showablelink147">Hint</a></div>
-<div class="showable-body hint" id="showablebody147">
-<p>It's easiest to think in reverse (i.e. What is not being used?)</p>
-</div>
-</div>
-</div>
-<script>
-    //<![CDATA[<!--
-    $(document).ready(function(){
-        $("#showablelink147").click(function(e){
-            e.preventDefault();
-            $("#showable147").toggleClass("showable-hidden");
-        });
-    }); //-->]]>
-    </script>
-<div class="showable-container answer showable-hidden" id="showable148">
-<div class="showable-inner">
-<div class="showable-header answer" id="showabletitle148"><a href="" id="showablelink148">Answer</a></div>
-<div class="showable-body answer" id="showablebody148">
+<div class="showable-header answer" id="showabletitle144"><a href="" id="showablelink144">Answer</a></div>
+<div class="showable-body answer" id="showablebody144">
 <p>You have to estimate system idle at the point on the graph indicating 12:00 (yesterday).</p>
 </div>
 </div>
@@ -2973,9 +2877,9 @@ statistics.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink148").click(function(e){
+        $("#showablelink144").click(function(e){
             e.preventDefault();
-            $("#showable148").toggleClass("showable-hidden");
+            $("#showable144").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
@@ -3070,15 +2974,15 @@ Changes to:
 <p>Once logged in to the relevant compute node you can run <em>top</em> to view your job.  Remember the <em>u</em> and <em>c</em> options we learnt 
 earlier; they will be helpful here when everyone is running the same jobs.</p>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable149">
+<div class="showable-container quest showable-hidden" id="showable145">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle149"><span class="link-like" id="showablelink149">How does the CPU and Memory usage change over time?</span></div>
+<div class="showable-header quest" id="showabletitle145"><span class="link-like" id="showablelink145">How does the CPU and Memory usage change over time?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable150">
+<div class="showable-container hint showable-hidden" id="showable146">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle150"><a href="" id="showablelink150">Hint</a></div>
-<div class="showable-body hint" id="showablebody150">
+<div class="showable-header hint" id="showabletitle146"><a href="" id="showablelink146">Hint</a></div>
+<div class="showable-body hint" id="showablebody146">
 <p>It should vary (within the limits you set in the job script)</p>
 </div>
 </div>
@@ -3086,16 +2990,16 @@ earlier; they will be helpful here when everyone is running the same jobs.</p>
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink150").click(function(e){
+        $("#showablelink146").click(function(e){
             e.preventDefault();
-            $("#showable150").toggleClass("showable-hidden");
+            $("#showable146").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable151">
+<div class="showable-container answer showable-hidden" id="showable147">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle151"><a href="" id="showablelink151">Answer</a></div>
-<div class="showable-body answer" id="showablebody151">
+<div class="showable-header answer" id="showabletitle147"><a href="" id="showablelink147">Answer</a></div>
+<div class="showable-body answer" id="showablebody147">
 <p>The <em>fakejob</em> program should vary its CPU usage between 50 and 100% CPU and 500 and 1000MB of memory.  The percentage that it shows is based on the total 
 memory of the node that runs your job; check Topic 4, Question 4.2 to remember how to find the total memory.</p>
 </div>
@@ -3104,29 +3008,29 @@ memory of the node that runs your job; check Topic 4, Question 4.2 to remember h
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink151").click(function(e){
+        $("#showablelink147").click(function(e){
             e.preventDefault();
-            $("#showable151").toggleClass("showable-hidden");
+            $("#showable147").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
 <hr />
 <p>Wait for the job to complete.</p>
 <hr />
-<div class="showable-container quest showable-hidden" id="showable152">
+<div class="showable-container quest showable-hidden" id="showable148">
 <div class="showable-inner">
-<div class="showable-header quest" id="showabletitle152"><span class="link-like" id="showablelink152">Does the maximum memory observed agree with <em>sacct</em>?</span></div>
+<div class="showable-header quest" id="showabletitle148"><span class="link-like" id="showablelink148">Does the maximum memory observed agree with <em>sacct</em>?</span></div>
 </div>
 </div>
-<div class="showable-container hint showable-hidden" id="showable153">
+<div class="showable-container hint showable-hidden" id="showable149">
 <div class="showable-inner">
-<div class="showable-header hint" id="showabletitle153"><a href="" id="showablelink153">Hint</a></div>
-<div class="showable-body hint" id="showablebody153">
+<div class="showable-header hint" id="showabletitle149"><a href="" id="showablelink149">Hint</a></div>
+<div class="showable-body hint" id="showablebody149">
 <p>See Topic 4, Question 4.9 and 4.10 to remember how to use sacct.  Don't forget to add column MaxRSS.</p>
-<div class="showable-container showable-hidden" id="showable154">
+<div class="showable-container showable-hidden" id="showable150">
 <div class="showable-inner">
-<div class="showable-header" id="showabletitle154"><a href="" id="showablelink154">More</a></div>
-<div class="showable-body" id="showablebody154">
+<div class="showable-header" id="showabletitle150"><a href="" id="showablelink150">More</a></div>
+<div class="showable-body" id="showablebody150">
 <pre><code class="sh">$ sacct -u $USER -o JobID,MaxRSS,Elapsed
 </code></pre>
 
@@ -3136,13 +3040,13 @@ memory of the node that runs your job; check Topic 4, Question 4.2 to remember h
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink154").click(function(e){
+        $("#showablelink150").click(function(e){
             e.preventDefault();
-            $("#showable154").toggleClass("showable-hidden");
-            if ($("#showable154").hasClass("showable-hidden")) {
-                $("#showablelink154").text("More");
+            $("#showable150").toggleClass("showable-hidden");
+            if ($("#showable150").hasClass("showable-hidden")) {
+                $("#showablelink150").text("More");
             } else {
-                $("#showablelink154").text("Less");
+                $("#showablelink150").text("Less");
             }
         });
     }); //-->]]>
@@ -3153,16 +3057,16 @@ memory of the node that runs your job; check Topic 4, Question 4.2 to remember h
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink153").click(function(e){
+        $("#showablelink149").click(function(e){
             e.preventDefault();
-            $("#showable153").toggleClass("showable-hidden");
+            $("#showable149").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
-<div class="showable-container answer showable-hidden" id="showable155">
+<div class="showable-container answer showable-hidden" id="showable151">
 <div class="showable-inner">
-<div class="showable-header answer" id="showabletitle155"><a href="" id="showablelink155">Answer</a></div>
-<div class="showable-body answer" id="showablebody155">
+<div class="showable-header answer" id="showabletitle151"><a href="" id="showablelink151">Answer</a></div>
+<div class="showable-body answer" id="showablebody151">
 <pre><code class="sh">$ sacct -u $USER -o JobID,MaxRSS,Elapsed
        JobID     MaxRSS    Elapsed
 ------------ ---------- ----------
@@ -3177,9 +3081,9 @@ memory of the node that runs your job; check Topic 4, Question 4.2 to remember h
 <script>
     //<![CDATA[<!--
     $(document).ready(function(){
-        $("#showablelink155").click(function(e){
+        $("#showablelink151").click(function(e){
             e.preventDefault();
-            $("#showable155").toggleClass("showable-hidden");
+            $("#showable151").toggleClass("showable-hidden");
         });
     }); //-->]]>
     </script>
